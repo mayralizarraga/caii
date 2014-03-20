@@ -1,0 +1,24 @@
+entidad_financiera:
+    resource: "@EntidadFinancieraBundle/Resources/config/routing.yml"
+    prefix:   /
+
+portada:
+    resource: "@PortadaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+publicaciones:
+    resource: "@PublicacionesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+proyecto:
+    resource: "@ProyectoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+miembro:
+    resource: "@MiembroBundle/Resources/config/routing.yml"
+    prefix:   /
+
+backend:
+    resource: "@BackendBundle/Resources/config/routing.yml"
+    prefix:   /
+

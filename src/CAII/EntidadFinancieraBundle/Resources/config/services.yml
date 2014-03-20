@@ -1,0 +1,7 @@
+parameters:
+#    entidad_financiera.example.class: CAII\EntidadFinancieraBundle\Example
+
+services:
+#    entidad_financiera.example:
+#        class: %entidad_financiera.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

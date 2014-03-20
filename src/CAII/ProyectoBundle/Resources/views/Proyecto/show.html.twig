@@ -1,0 +1,36 @@
+{% extends '::frontend.html.twig' %}
+
+{% block contenido %}
+    <h1>Proyecto</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Fecha_inicio</th>
+                <td>{{ entity.fechaInicio|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Fecha_final</th>
+               <td>{{ entity.fechaFinal|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Monto_financiero</th>
+                <td>{{ entity.montoFinanciero }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+       
+{% endblock %}

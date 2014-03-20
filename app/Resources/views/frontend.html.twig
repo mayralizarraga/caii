@@ -1,0 +1,102 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+  <link href="{{ asset('bundles/portada/css/foundation.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('bundles/portada/css/master.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascripts %}
+{% javascripts '@PortadaBundle/Resources/public/js/vendor/modernizr.js'
+               '@PortadaBundle/Resources/public/js/vendor/zepto.js'
+               '@PortadaBundle/Resources/public/js/vendor/jquery.js'
+               '@PortadaBundle/Resources/public/js/foundation.min.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.section.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.reveal.js'
+                %}
+<script src="{{ asset_url }}" type="text/javascript"></script>
+{% endjavascripts %}
+<script>
+  $(document).foundation();
+  
+$(document).foundation({
+  orbit: {
+    animation: 'slide',
+    timer_speed: 1000,
+    pause_on_hover: true,
+    animation_speed: 500,
+    navigation_arrows: true,
+    variable_height: false,
+    bullets: false
+  }
+});
+</script>
+
+{% block funcionesjs %}{% endblock %}
+{% endblock %}
+
+{% block header %}
+    <!-- Header -->
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+          <li class="name">
+            <h1><a href="{{ path('portada_homepage') }}">Inicio</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        </ul>
+      
+        <section class="top-bar-section">
+          
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="{{ path('miembro') }}">Miembros</a></li>
+            <li><a href="{{ path('Publicacion') }}">Publicaciones</a></li>
+            <li><a href="{{ path('Proyecto') }}">Proyectos</a></li>
+            <li><a href="{{ path('noticias') }}">Noticias</a></li>
+          </ul>
+        </section>
+        
+      </nav>
+    <div class="row">
+    <div class="medium-3 columns">
+      <h1><img src="{{ asset('bundles/portada/img/caii.png') }}" width="50%" height="50%" /></h1>
+    </div>
+   <!-- <div class="small-9 columns">
+      <h2>Cuerpo Académico </h2>
+      <h2>Informática Industrial</h2>
+    </div>-->
+    </div>
+
+    <div class="row">
+    
+     <hr>
+   </div>
+
+      
+{% endblock %}
+
+{% block body %}
+
+
+    <!-- Contenido --> 
+    {% block contenido %}{% endblock %}
+        
+{% endblock %}
+
+{% block footer %}
+<!-- FOOTER   -->
+ <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright at CAII.</p>
+        </div>
+        
+      </div>
+    </div> 
+  </footer>
+{% endblock %}
+
+
+

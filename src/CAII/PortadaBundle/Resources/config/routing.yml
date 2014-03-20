@@ -1,0 +1,19 @@
+portada_homepage:
+    pattern:  /index/
+    defaults: { _controller: PortadaBundle:Default:index }
+
+_root:
+    pattern:  /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada_homepage}
+
+_portada_homepage:
+    pattern:  /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada_homepage}
+
+noticias:
+    pattern:  /noticias/
+    defaults: { _controller: PortadaBundle:Noticias:index }
+
+_noticias:
+    pattern:  /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: noticias}

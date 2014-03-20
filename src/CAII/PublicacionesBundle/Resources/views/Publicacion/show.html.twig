@@ -1,0 +1,96 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Publicacion</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Doi</th>
+                <td>{{ entity.doi }}</td>
+            </tr>
+            <tr>
+                <th>Paginas</th>
+                <td>{{ entity.paginas }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ entity.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Enlace</th>
+                <td>{{ entity.enlace }}</td>
+            </tr>
+            <tr>
+                <th>Tipo_reporte</th>
+                <td>{{ entity.tipoReporte }}</td>
+            </tr>
+            <tr>
+                <th>Ciudad</th>
+                <td>{{ entity.ciudad }}</td>
+            </tr>
+            <tr>
+                <th>Congreso</th>
+                <td>{{ entity.congreso }}</td>
+            </tr>
+            <tr>
+                <th>Issn</th>
+                <td>{{ entity.issn }}</td>
+            </tr>
+            <tr>
+                <th>Capitulo</th>
+                <td>{{ entity.capitulo }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ entity.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Mostrar</th>
+                <td>{{ entity.mostrar }}</td>
+            </tr>
+            <tr>
+                <th>Journal</th>
+                <td>{{ entity.journal }}</td>
+            </tr>
+            <tr>
+                <th>Volumen</th>
+                <td>{{ entity.volumen }}</td>
+            </tr>
+            <tr>
+                <th>Editorial</th>
+                <td>{{ entity.editorial }}</td>
+            </tr>
+            <tr>
+                <th>Serie</th>
+                <td>{{ entity.serie }}</td>
+            </tr>
+            <tr>
+                <th>Edicion</th>
+                <td>{{ entity.edicion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('publicacion') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('publicacion_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

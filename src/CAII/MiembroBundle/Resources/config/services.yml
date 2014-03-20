@@ -1,0 +1,7 @@
+parameters:
+#    miembro.example.class: CAII\MiembroBundle\Example
+
+services:
+#    miembro.example:
+#        class: %miembro.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

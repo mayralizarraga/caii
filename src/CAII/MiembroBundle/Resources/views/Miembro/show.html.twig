@@ -1,0 +1,65 @@
+{% extends '::frontend.html.twig' %}
+
+{% block contenido %}
+
+    
+
+    <div class="row">
+        <div class="large-12 columns">
+            <!--<h1>Miembro</h1>-->
+            <h1><small>{{ entity.nombre }} {{ entity.apellidoP }} {{ entity.apellidoM }}</small></h1>
+            <div class="large-3 columns">
+                {% if entity.fotoURL %} 
+                    <img src="{{ asset('bundles/portada/img/fotosAlumnos/' ~ entity.fotoURL) }}" alt=""  />
+                {% else %}   
+                     <img src="{{ asset('bundles/portada/img/fotosAlumnos/unknown-person.gif') }}" alt=""  />
+                {% endif %}
+            </div>    
+            <div class="large-9 columns">   
+                
+                <dl>
+                    <dt>Ocupación</dt>
+                    <dd>Description value</dd>
+                    <dt>Description name</dt>
+                    <dd>{% if entity.status==1 %}
+                            Activo
+                        {% else %}
+                                Fuera
+                        {% endif %}</dd>
+                    <dt>Pagina personal</dt>
+                    <dd><a href="">{{ entity.linkPagina }}</a></dd>
+                </dl>
+                               <br>
+                
+            </div> 
+        
+        </div>
+    </div>    
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="large-8 columns">
+                <h3>Descripción</h3>
+
+                {{ entity.alumDescripcion }}
+
+            </div>        
+         </div>     
+     </div>      
+
+
+            <!--ACCIONES
+                <ul class="record_actions">
+            <li>
+                <a href="{{ path('miembro') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('miembro_edit', { 'id': entity.id }) }}">
+                    Edit
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+            </ul>-->
+
+{% endblock %}

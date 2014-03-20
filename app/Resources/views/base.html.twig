@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CAII{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('caii.ico') }}" />
+        <link rel="stylesheet" type="image/x-icon" href="{{ asset('bundles/portada/css/foundation.css') }}" />
+    </head>
+    <body>
+        {% block header %}{% endblock %}
+        {% block body %}{% endblock %}   
+        {% block footer %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

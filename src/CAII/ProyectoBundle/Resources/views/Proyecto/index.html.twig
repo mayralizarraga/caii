@@ -1,0 +1,28 @@
+{% extends '::frontend.html.twig' %}
+
+{% block contenido %}
+<div class="row">
+    <div class="large-12 columns">
+    <h1>Proyectos</h1>
+
+    
+        {% for entity in entities %}
+          	<h2><small> {{ entity.nombre }}</small></h2>
+          	<ul class="no-bullet">
+  				<li>Duracion: {{ entity.fechaInicio|date('d-m-Y') }} - {% if entity.fechaFinal %} {{ entity.fechaFinal|date('d-m-Y') }}{% endif %}</li>
+  				<li>Estado: {% if entity.status==1 %}
+	                            Activo
+	                        {% else %}
+	                                Fuera
+	                        {% endif %} </li>
+  			</ul>	
+          	
+            
+            
+        {% endfor %}
+        
+
+        
+    </div>
+    </div>
+    {% endblock %}

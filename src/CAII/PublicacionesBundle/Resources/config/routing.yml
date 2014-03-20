@@ -1,0 +1,64 @@
+TipoPublicacion:
+    pattern:  /tipopublicacion
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:index }
+    
+_TipoPublicacion:
+    pattern: /tipopublicacion/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: tipopublicacion}
+
+TipoPublicacion_new:
+    pattern:  /tipopublicacion/new
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:new }
+
+TipoPublicacion_edit:
+    pattern:  /tipopublicacion/edit/{id}
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:edit }
+
+TipoPublicacion_show:
+    pattern:  /tipopublicacion/show/{id}
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:show }
+
+TipoPublicacion_create:
+    pattern:  /tipopublicacion/create
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:create }
+
+TipoPublicacion_update:
+    pattern:  /tipopublicacion/update/{id}
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:update }
+
+TipoPublicacion_delete:
+    pattern:  /tipopublicacion/delete/{id}
+    defaults: { _controller: PublicacionesBundle:TipoPublicacion:delete}
+
+
+Publicacion:
+    pattern:  /Publicacion
+    defaults: { _controller: PublicacionesBundle:Publicacion:index }
+
+_Publicacion:
+    pattern: /Publicacion/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Publicacion}
+
+Publicacion_new:
+    pattern:  /Publicacion/new
+    defaults: { _controller: PublicacionesBundle:Publicacion:new }
+
+Publicacion_edit:
+    pattern:  /Publicacion/edit/{id}
+    defaults: { _controller: PublicacionesBundle:Publicacion:edit }
+
+Publicacion_show:
+    pattern:  /Publicacion/show/{id}
+    defaults: { _controller: PublicacionesBundle:Publicacion:show }
+
+Publicacion_create:
+    pattern:  /Publicacion/create
+    defaults: { _controller: PublicacionesBundle:Publicacion:create }
+
+Publicacion_update:
+    pattern:  /Publicacion/update/{id}
+    defaults: { _controller: PublicacionesBundle:Publicacion:update }
+
+Publicacion_delete:
+    pattern:  /Publicacion/delete/{id}
+    defaults: { _controller: PublicacionesBundle:Publicacion:delete}

@@ -1,0 +1,67 @@
+{% extends '::frontend.html.twig' %}
+
+{% block contenido %}
+<!-- First Band (Slider) -->
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="orbit-container">
+      
+        <ul class="example-orbit" data-orbit >
+          <li>
+            <img src="{{ asset('bundles/portada/img/slide/IMG_5.jpg') }}" />
+           <!-- <div class="orbit-caption">
+              Caption One.
+            </div>-->
+          </li>
+          <li>
+            <img src="{{ asset('bundles/portada/img/slide/IMG_4.jpg') }}" />
+            <!-- <div class="orbit-caption">
+              Caption Two.
+            </div> -->
+          </li>
+          <li>
+            <img src="{{ asset('bundles/portada/img/slide/IMG_3.jpg') }}" />
+            <!-- <div class="orbit-caption">
+              Caption Three.
+            </div> -->
+          </li>
+        </ul>
+
+      </div>
+    
+      <hr />
+    </div>
+  </div>
+  
+<!-- Three-up Content Blocks -->
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <img src="{{ asset('bundles/portada/img/slide/IMG_2.jpg') }}" />
+      <h4>This is a content section.</h4>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    </div>
+    
+    
+  
+  </div>
+    
+<!-- Call to Action Panel -->
+<div class="row">
+    <div class="large-12 columns">
+    
+      <div class="panel">
+        <h4>Get in touch!</h4>
+            
+        <div class="row">
+          <div class="large-9 columns">
+            <p>We'd love to hear from you, you attractive person you.</p>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>	
+{% endblock %}
