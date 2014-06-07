@@ -40,14 +40,14 @@ class Proyecto
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_Inicio", type="date")
+     * @ORM\Column(name="fecha_Inicio", type="date", nullable=true)
      */
     private $fecha_Inicio;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_Final", type="date")
+     * @ORM\Column(name="fecha_Final", type="date",nullable=true)
      */
     private $fecha_Final;
 
@@ -61,7 +61,7 @@ class Proyecto
     /**
      * @var float
      *
-     * @ORM\Column(name="monto_Financiero", type="float")
+     * @ORM\Column(name="monto_Financiero", type="float", nullable=true)
      */
     private $monto_Financiero;
 

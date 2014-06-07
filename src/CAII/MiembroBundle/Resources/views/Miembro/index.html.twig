@@ -4,28 +4,31 @@
 
     <div class="row">
     <div class="large-12 columns">
-    <h1>Miembros</h1>
+    <!--<h1>Miembros</h1>-->
 
         {% for ocupacion in ocupaciones %}
-            <h3>{{ocupacion.Descripcion}}</h3>
-            <table class="records_list">
+            <h3>{{ocupacion.descripcion  }}</h3>
+            
+           <table class="table table-hover">
                 <tbody>
                 {% for entity in entities %}
-            
+                {% if ocupacion.descripcion==entity.idOcupacion %} 
                     <tr>
                        <td>{% if entity.fotoURL %} 
                                 <img src="{{ asset('bundles/portada/img/fotosAlumnos/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
                             {% else %}   
                                  <img src="{{ asset('bundles/portada/img/fotosAlumnos/unknown-person.gif') }}" alt="" height="42" width="42" />
                             {% endif %}    </td>
-                        <td><a href="{{ path('miembro_show', { 'id': entity.id }) }}">{{ entity.nombre }} {{ entity.apellidoP }} {{ entity.apellidoM }}</a></td>
+                        <td><h5><a href="{{ path('miembro_show', { 'id': entity.id }) }}">{{ entity.nombre }} {{ entity.apellidoP }} {{ entity.apellidoM }}</a></h5></td>
                        
                         
                     </tr>
-                
+                {% endif %}
             {% endfor %}
+
             </tbody>
             </table>
+             
         {% endfor %}
         
     

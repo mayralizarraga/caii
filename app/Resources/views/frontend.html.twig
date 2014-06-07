@@ -1,8 +1,11 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
+  <link href="{{ asset('bundles/backend/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('bundles/backend/css/bootstrap-responsive.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('bundles/portada/css/foundation.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('bundles/portada/css/master.css') }}" rel="stylesheet" type="text/css" />
+
 {% endblock %}
 
 {% block javascripts %}
@@ -36,30 +39,50 @@ $(document).foundation({
 
 {% block header %}
     <!-- Header -->
-    <nav class="top-bar" data-topbar>
+    <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar data-options="sticky_on: large">
       <ul class="title-area">
           <li class="name">
-            <h1><a href="{{ path('portada_homepage') }}">Inicio</a></h1>
+            <h1><a href="{{ path('portada_homepage') }}">{{ 'inicio' | trans }}</a></h1>
           </li>
           <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
         </ul>
       
         <section class="top-bar-section">
           
-
           <!-- Left Nav Section -->
           <ul class="left">
-            <li><a href="{{ path('miembro') }}">Miembros</a></li>
-            <li><a href="{{ path('Publicacion') }}">Publicaciones</a></li>
-            <li><a href="{{ path('Proyecto') }}">Proyectos</a></li>
-            <li><a href="{{ path('noticias') }}">Noticias</a></li>
+            <li><a href="{{ path('miembro') }}">{{ "miembros" | trans }}</a></li>
+            <li><a href="{{ path('Publicacion') }}">{{ "publicaciones" | trans }}</a></li>
+            <li><a href="{{ path('Proyecto') }}">{{ 'proyectos' | trans }}</a></li>
+            <li><a href="{{ path('noticias') }}">{{ 'noticias' | trans }}</a></li>
+          </ul>
+
+
+          <ul class="right">
+                {% set locale = app.request.locale %}
+                {% if locale == 'es' %}
+                <li><a href="{{ path('portada_homepage', { '_locale': 'en' }) }}"><img src="{{ asset('bundles/portada/img/icons/us-icon.png') }}"/> English</a></li>
+                {% elseif locale == 'en' %}
+                <li><a href="{{ path('portada_homepage', { '_locale': 'es' }) }}"><img src="{{ asset('bundles/portada/img/icons/sp-icon.png') }}"/> Español</a></li>
+                {% endif %}
+
           </ul>
         </section>
+
+        
+       
+
         
       </nav>
+      </div>
     <div class="row">
-    <div class="medium-3 columns">
-      <h1><img src="{{ asset('bundles/portada/img/caii.png') }}" width="50%" height="50%" /></h1>
+    <div class="medium-4 columns">
+      <img src="{{ asset('bundles/portada/img/caii.png') }}" height="40%" width="40%" />
+    </div>
+    <div class="medium-2 columns">
+          <!--<img src="{{ asset('bundles/portada/img/logo.png') }}" height="60%" width="60%"/>-->
+
     </div>
    <!-- <div class="small-9 columns">
       <h2>Cuerpo Académico </h2>
@@ -77,10 +100,10 @@ $(document).foundation({
 
 {% block body %}
 
-
+   
     <!-- Contenido --> 
     {% block contenido %}{% endblock %}
-        
+      
 {% endblock %}
 
 {% block footer %}

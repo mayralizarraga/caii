@@ -30,9 +30,14 @@ class ProyectoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ProyectoBundle:Proyecto')->findAll();
+        //$entities2 = $em->getRepository('MiembroBundle:MiembroProyecto')->findAll();
+        $as = $em->getRepository('MiembroBundle:MiembroProyecto')->findMiembroProyecto();
+        
 
         return array(
             'entities' => $entities,
+            'mims' => $as,
+           
         );
     }
     

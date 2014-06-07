@@ -28,11 +28,40 @@ class PublicacionController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $dql = $em->createQueryBuilder();
+        
+        //Query para tipos de publicacion 
+        $dql->select('TipoPublicacion.nombre')
+            ->from('PublicacionesBundle:Publicacion', 'Publicacion')
+            ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
+            ->groupBy('Publicacion.TipoPublicacion');
+        $tipos =$dql->getQuery()->getResult();
 
-        $entities = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
+        //Query para las publicaciones ordenadas por fecha
+        $repository = $this->getDoctrine()
+                    ->getRepository('PublicacionesBundle:Publicacion');
+        $dql = $repository->createQueryBuilder('p')
+                ->select('p')
+                ->orderBy('p.fecha', 'DESC');
+        $entities =$dql->getQuery()->getResult();
+                
+
+        //Query miembros-publicacion
+        $dql->select('MiembroPublicacion.id i', 
+                     'Miembro.nombre nombreMiembro, Miembro.apellidoP', 
+                     'Publicacion.id idpublicacion')
+            ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
+            ->Join('MiembroPublicacion.idMiembro', 'Miembro')
+            ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
+            ->groupBy('MiembroPublicacion.id');
+
+        $miembros=$dql->getQuery()->getResult();
+       
 
         return array(
             'entities' => $entities,
+            'tipos' => $tipos,
+            'miembros'=>$miembros,
         );
     }
     /**

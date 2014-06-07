@@ -1,5 +1,4 @@
 <?php
-	// src/CAII/MiembroBundle/DataFixtures/ORM/ocupaciiones.php 
 	namespace CAII\MiembroBundle\DataFixtures\ORM;
 	use Doctrine\Common\DataFixtures\AbstractFixture;
 	use Doctrine\Common\DataFixtures\OrderedFixtureInterface;

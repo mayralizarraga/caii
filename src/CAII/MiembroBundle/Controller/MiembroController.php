@@ -29,16 +29,25 @@ class MiembroController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $ocupaciones = $em->getRepository('MiembroBundle:Ocupacion')->findAll();
-       
         $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
+        
+        $dql = $em->createQueryBuilder();
+ 
+        $dql->select('Ocupacion.descripcion')
+            ->from('MiembroBundle:Miembro', 'Miembro')
+            ->Join('Miembro.idOcupacion', 'Ocupacion')
+            ->groupBy('Miembro.idOcupacion');
+
+        $ocupaciones =$dql->getQuery()->getResult();
 
         return array(
             'entities' => $entities,
             'ocupaciones' => $ocupaciones,
             
+            
         );
     }
+
     /**
      * Creates a new Miembro entity.
      *

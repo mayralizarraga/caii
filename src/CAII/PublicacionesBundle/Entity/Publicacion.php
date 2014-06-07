@@ -25,126 +25,133 @@ class Publicacion
      * @var integer
      *
      * @ORM\ManyToOne(targetEntity="CAII\PublicacionesBundle\Entity\TipoPublicacion")
-     * @ORM\JoinColumn(name="idTipo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="TipoPublicacion", referencedColumnName="id")
      */
-    private $idTipo;
+    private $TipoPublicacion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="doi", type="string", length=45)
+     * @ORM\Column(name="doi", type="string", length=45, nullable=true)
      */
     private $doi;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="paginas", type="integer", length=11)
+     * @ORM\Column(name="paginas", type="string", length=11, nullable=true)
      */
     private $paginas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titulo", type="string", length=80)
+     * @ORM\Column(name="titulo", type="string", length=250,nullable=true)
      */
     private $titulo;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="tituloLibro", type="string", length=250,nullable=true)
+     */
+    private $tituloLibro;
+
+    /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha", type="date")
+     * @ORM\Column(name="fecha", type="date", nullable=true)
      */
     private $fecha;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="enlace", type="string", length=80)
+     * @ORM\Column(name="enlace", type="string", length=250,nullable=true)
      */
     private $enlace;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo_Reporte", type="string", length=45)
+     * @ORM\Column(name="tipoReporte", type="string", length=250, nullable=true)
      */
-    private $tipo_Reporte;
+    private $tipoReporte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ciudad", type="string", length=45)
+     * @ORM\Column(name="ciudad", type="string", length=45, nullable=true)
      */
     private $ciudad;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="congreso", type="string", length=80)
+     * @ORM\Column(name="congreso", type="string", length=250, nullable=true)
      */
     private $congreso;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="issn", type="integer", length=11)
+     * @ORM\Column(name="issn", type="integer", length=11, nullable=true)
      */
     private $issn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="capitulo", type="string", length=80)
+     * @ORM\Column(name="capitulo", type="string", length=80, nullable=true)
      */
     private $capitulo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="isbn", type="integer", length=11)
+     * @ORM\Column(name="isbn", type="integer", length=11, nullable=true)
      */
     private $isbn;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="mostrar", type="integer", length=11)
+     * @ORM\Column(name="mostrar", type="string", length=250, nullable=true)
      */
     private $mostrar;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="journal", type="string", length=80)
+     * @ORM\Column(name="journal", type="string", length=250, nullable=true)
      */
     private $journal;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="volumen", type="integer", length=11)
+     * @ORM\Column(name="volumen", type="integer", length=11, nullable=true)
      */
     private $volumen;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="editorial", type="string", length=80)
+     * @ORM\Column(name="editorial", type="string", length=250, nullable=true)
      */
     private $editorial;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="serie", type="string", length=80)
+     * @ORM\Column(name="serie", type="string", length=250, nullable=true)
      */
     private $serie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="edicion", type="string", length=45)
+     * @ORM\Column(name="edicion", type="string", length=100, nullable=true)
      */
     private $edicion;
 
@@ -160,26 +167,26 @@ class Publicacion
     }
 
     /**
-     * Set idTipo
+     * Set TipoPublicacion
      *
      * @param CAII\PublicacionesBundle\Entity\TipoPublicacion
      * @return Publicacion
      */
-    public function setIdTipo(CAII\PublicacionesBundle\Entity\TipoPublicacion $idTipo)
+    public function setTipoPublicacion(CAII\PublicacionesBundle\Entity\TipoPublicacion $TipoPublicacion)
     {
-        $this->idTipo = $idTipo;
+        $this->TipoPublicacion = $TipoPublicacion;
     
         return $this;
     }
 
     /**
-     * Get idTipo
+     * Get TipoPublicacion
      *
      * @return CAII\PublicacionesBundle\Entity\TipoPublicacion 
      */
-    public function getIdTipo()
+    public function getTipoPublicacion()
     {
-        return $this->idTipo;
+        return $this->TipoPublicacion;
     }
 
     /**
@@ -208,7 +215,7 @@ class Publicacion
     /**
      * Set paginas
      *
-     * @param integer $paginas
+     * @param string $paginas
      * @return Publicacion
      */
     public function setPaginas($paginas)
@@ -221,7 +228,7 @@ class Publicacion
     /**
      * Get paginas
      *
-     * @return integer 
+     * @return string 
      */
     public function getPaginas()
     {
@@ -249,6 +256,31 @@ class Publicacion
     public function getTitulo()
     {
         return $this->titulo;
+    }
+
+
+
+    /**
+     * Set tituloLibro
+     *
+     * @param string $tituloLibro
+     * @return Publicacion
+     */
+    public function setTituloLibro($tituloLibro)
+    {
+        $this->tituloLibro = $tituloLibro;
+    
+        return $this;
+    }
+
+    /**
+     * Get tituloLibro
+     *
+     * @return string 
+     */
+    public function getTituloLibro()
+    {
+        return $this->tituloLibro;
     }
 
     /**
@@ -298,26 +330,26 @@ class Publicacion
     }
 
     /**
-     * Set tipo_Reporte
+     * Set tipoReporte
      *
      * @param string $tipoReporte
      * @return Publicacion
      */
     public function setTipoReporte($tipoReporte)
     {
-        $this->tipo_Reporte = $tipoReporte;
+        $this->tipoReporte = $tipoReporte;
     
         return $this;
     }
 
     /**
-     * Get tipo_Reporte
+     * Get tipoReporte
      *
      * @return string 
      */
     public function getTipoReporte()
     {
-        return $this->tipo_Reporte;
+        return $this->tipoReporte;
     }
 
     /**
@@ -438,7 +470,7 @@ class Publicacion
     /**
      * Set mostrar
      *
-     * @param integer $mostrar
+     * @param string $mostrar
      * @return Publicacion
      */
     public function setMostrar($mostrar)
@@ -451,7 +483,7 @@ class Publicacion
     /**
      * Get mostrar
      *
-     * @return integer 
+     * @return string 
      */
     public function getMostrar()
     {
@@ -575,6 +607,6 @@ class Publicacion
 
     public function __toString()
     {
-        return $this->getNombre();
+        return $this->getTitulo();
     }
 }

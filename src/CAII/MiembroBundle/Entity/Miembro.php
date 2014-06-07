@@ -45,28 +45,28 @@ class Miembro
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", length=11)
+     * @ORM\Column(name="status", type="integer", length=11,nullable=true)
      */
     private $status;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="link_Pagina", type="string", length=80)
+     * @ORM\Column(name="link_Pagina", type="string", length=200,nullable=true)
      */
     private $link_Pagina;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fotoURL", type="string", length=80)
+     * @ORM\Column(name="fotoURL", type="string", length=100,nullable=true)
      */
     private $fotoURL;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="alum_Descripcion", type="text")
+     * @ORM\Column(name="alum_Descripcion", type="text",nullable=true)
      */
     private $alum_Descripcion;
 
