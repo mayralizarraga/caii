@@ -3,6 +3,9 @@
 namespace CAII\PublicacionesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+
 
 /**
  * TipoPublicacion
@@ -10,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class TipoPublicacion
+class TipoPublicacion implements Translatable
 {
     /**
      * @var integer
@@ -23,7 +26,7 @@ class TipoPublicacion
 
     /**
      * @var string
-     *
+     * @Gedmo\Translatable
      * @ORM\Column(name="nombre", type="string", length=45)
      */
     private $nombre;
@@ -66,5 +69,14 @@ class TipoPublicacion
     public function __toString()
     {
         return $this->getNombre();
+    }
+
+    /**
+    * @Gedmo\Locale
+    */
+    private $locale;
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 }

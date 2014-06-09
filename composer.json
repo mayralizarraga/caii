@@ -19,16 +19,16 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-        "mopa/bootstrap-bundle": "dev-master",
-        "twbs/bootstrap": "dev-master",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-menu": "2.0.*@dev",
         "craue/formflow-bundle": "dev-master",
 	    "doctrine/doctrine-fixtures-bundle": "dev-master",
 	    "doctrine/data-fixtures": "dev-master",
-        "mopa/bootstrap-bundle": "v3.0.0-beta2",
-        "twitter/bootstrap": "v3.0.0"
+        "stof/doctrine-extensions-bundle": "@dev",
+        "gedmo/doctrine-extensions": "dev-master",
+        "gedmo/doctrine-extensions": "2.3.*@dev"
+
 
     },
     "scripts": {

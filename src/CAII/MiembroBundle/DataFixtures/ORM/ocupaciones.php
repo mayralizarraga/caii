@@ -21,9 +21,19 @@
 				$entidad = new Ocupacion();
 				$entidad->setDescripcion($ocupacion['descripcion']);
 				$manager->persist($entidad);
-				
+				$manager->flush();
+
+				// Traducir los contenidos al inglés
+				$id = $entidad->getId();
+				$description = $manager->find('MiembroBundle:Ocupacion', $id);
+				$description->setDescripcion('ENGLISH '.$entidad->getDescripcion());
+				$description->setTranslatableLocale('en');
+				$manager->persist($description);
+				$manager->flush();
+
+
 			}
-			$manager->flush();
+			
 		}
 
 		public function getOrder()

@@ -1,6 +1,8 @@
 <?php
 
 namespace CAII\MiembroBundle\Entity;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
 
 use Doctrine\ORM\Mapping as ORM;
 

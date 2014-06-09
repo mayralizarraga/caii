@@ -12,8 +12,9 @@
            <table class="table table-hover">
                 <tbody>
                 {% for entity in entities %}
-                {% if ocupacion.descripcion==entity.idOcupacion %} 
+               
                     <tr>
+                        <td>{{entity.idOcupacion  }}</td>
                        <td>{% if entity.fotoURL %} 
                                 <img src="{{ asset('bundles/portada/img/fotosAlumnos/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
                             {% else %}   
@@ -23,8 +24,9 @@
                        
                         
                     </tr>
-                {% endif %}
+                
             {% endfor %}
+
 
             </tbody>
             </table>

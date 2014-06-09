@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new CAII\PublicacionesBundle\PublicacionesBundle(),
             new CAII\PortadaBundle\PortadaBundle(),
             new CAII\EntidadFinancieraBundle\EntidadFinancieraBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             
         );
 

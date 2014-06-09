@@ -3,6 +3,9 @@
 namespace CAII\MiembroBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+
 
 /**
  * Ocupacion
@@ -10,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Ocupacion
+class Ocupacion implements Translatable
 {
     /**
      * @var integer
@@ -23,7 +26,7 @@ class Ocupacion
 
     /**
      * @var string
-     *
+     * @Gedmo\Translatable
      * @ORM\Column(name="descripcion", type="string", length=80)
      */
     private $descripcion;
@@ -67,4 +70,14 @@ class Ocupacion
     {
         return $this->getDescripcion();
     }
+
+    /**
+    * @Gedmo\Locale
+    */
+    private $locale;
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
+    }
+
 }

@@ -38,11 +38,18 @@ class MiembroController extends Controller
             ->Join('Miembro.idOcupacion', 'Ocupacion')
             ->groupBy('Miembro.idOcupacion');
 
+        $oferta = $em->find('MiembroBundle:Ocupacion', 1);
+
+        $repositorio = $em->getRepository('Gedmo\Translatable\Entity\Translation');
+        $traducciones = $repositorio->findTranslations($oferta);
+
+
         $ocupaciones =$dql->getQuery()->getResult();
 
         return array(
             'entities' => $entities,
             'ocupaciones' => $ocupaciones,
+            'traducciones'=> $traducciones,
             
             
         );

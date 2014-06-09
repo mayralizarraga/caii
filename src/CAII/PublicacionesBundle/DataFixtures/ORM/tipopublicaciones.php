@@ -24,9 +24,18 @@
 				$entidad = new TipoPublicacion();
 				$entidad->setNombre($tipo['nombre']);
 				$manager->persist($entidad);
+				$manager->flush();
+
+				// Traducir los contenidos de la oferta al inglés
+				$id = $entidad->getId();
+				$description = $manager->find('PublicacionesBundle:TipoPublicacion', $id);
+				$description->setNombre('ENGLISH '.$entidad->getNombre());
+				$description->setTranslatableLocale('en');
+				$manager->persist($description);
+				$manager->flush();
 				
 			}
-			$manager->flush();
+			
 		}
 
 		public function getOrder()
