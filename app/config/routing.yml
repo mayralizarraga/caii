@@ -1,6 +1,6 @@
 entidad_financiera:
     resource: "@EntidadFinancieraBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
+    prefix:   /
     requirements:
         _locale: en|es
 
@@ -11,19 +11,19 @@ portada:
 
 publicaciones:
     resource: "@PublicacionesBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
+    prefix:   /
     requirements:
         _locale: en|es
 
 proyecto:
     resource: "@ProyectoBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
+    prefix:   /
     requirements:
         _locale: en|es
 
 miembro:
     resource: "@MiembroBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
+    prefix:   /
     requirements:
         _locale: en|es
 

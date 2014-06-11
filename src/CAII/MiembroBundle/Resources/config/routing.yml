@@ -1,31 +1,31 @@
 miembro:
-    pattern:  /miembro
+    pattern:  /{_locale}/miembro
     defaults: { _controller: MiembroBundle:Miembro:index }
 
 _miembro:
-    pattern: /miembro/
+    pattern: /{_locale}/miembro/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: miembro}
 
 miembro_new:
-    pattern:  /miembro/new
+    pattern:  /backend/miembro/new
     defaults: { _controller: MiembroBundle:Miembro:new }
 
 miembro_edit:
-    pattern:  /miembro/edit/{id}
+    pattern:  /backend/miembro/edit/{id}
     defaults: { _controller: MiembroBundle:Miembro:edit }
 
 miembro_show:
-    pattern:  /miembro/show/{id}
+    pattern:  /backend/miembro/show/{id}
     defaults: { _controller: MiembroBundle:Miembro:show }
 
 miembro_create:
-    pattern:  /miembro/create
+    pattern:  /backend/miembro/create
     defaults: { _controller: MiembroBundle:Miembro:create }
 
 miembro_update:
-    pattern:  /miembro/update/{id}
+    pattern:  /backend/miembro/update/{id}
     defaults: { _controller: MiembroBundle:Miembro:update }
 
 miembro_delete:
-    pattern:  /miembro/delete/{id}
+    pattern:  /backend/miembro/delete/{id}
     defaults: { _controller: MiembroBundle:Miembro:delete}

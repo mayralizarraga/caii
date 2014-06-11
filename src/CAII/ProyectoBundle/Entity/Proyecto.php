@@ -104,10 +104,10 @@ class Proyecto
     /**
      * Set id_Entidad
      *
-     * @param CAII\EntidadFinancieraBundle\Entity\EntidadFinanciadora
+     * @param EntidadFinanciadora
      * @return Proyecto
      */
-    public function setIdEntidad(CAII\EntidadFinancieraBundle\Entity\EntidadFinanciadora $idEntidad)
+    public function setIdEntidad(EntidadFinanciadora $idEntidad)
     {
         $this->id_Entidad = $idEntidad;
     

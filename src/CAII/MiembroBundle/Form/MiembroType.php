@@ -22,6 +22,7 @@ class MiembroType extends AbstractType
             ->add('link_Pagina')
             ->add('fotoURL')
             ->add('alum_Descripcion')
+            ->add('idOcupacion')
         ;
     }
     

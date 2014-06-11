@@ -260,12 +260,13 @@ class Miembro
     /**
      * Set idOcupacion
      *
-     * @param CAII\MiembroBundle\Entity\Ocupacion
+     * @param Ocupacion
      * @return Miembro
      */
-    public function setIdOcupacion(CAII\MiembroBundle\Entity\Ocupacion $idOcupacion)
+    public function setIdOcupacion(Ocupacion $id_Ocupacion)
     {
-        $this->idOcupacion = $idOcupacion;
+        $this->idOcupacion = $id_Ocupacion;
+        return $this;
     
        
     }

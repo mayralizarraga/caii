@@ -31,26 +31,25 @@ class MiembroController extends Controller
 
         $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
         
+       /* $dql = $em->createQueryBuilder();
+        $dql->select('Miembro.fotoURL , Miembro.id , Miembro.nombre , Miembro.apellidoP , Miembro.apellidoM, Miembro.idOcupacion')
+            ->from('MiembroBundle:Miembro', 'Miembro')
+            ->where('Miembro.status=1');
+        $entities =$dql->getQuery()->getResult();*/
+
+
+
         $dql = $em->createQueryBuilder();
- 
         $dql->select('Ocupacion.descripcion')
             ->from('MiembroBundle:Miembro', 'Miembro')
             ->Join('Miembro.idOcupacion', 'Ocupacion')
             ->groupBy('Miembro.idOcupacion');
-
-        $oferta = $em->find('MiembroBundle:Ocupacion', 1);
-
-        $repositorio = $em->getRepository('Gedmo\Translatable\Entity\Translation');
-        $traducciones = $repositorio->findTranslations($oferta);
-
-
         $ocupaciones =$dql->getQuery()->getResult();
 
         return array(
             'entities' => $entities,
             'ocupaciones' => $ocupaciones,
-            'traducciones'=> $traducciones,
-            
+                     
             
         );
     }

@@ -21,7 +21,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Lists all EntidadFinanciadora entities.
      *
-     * @Route("/", name="entidadfinanciadora")
+     * @Route("/", name="EntidadFinanciera")
      * @Method("GET")
      * @Template()
      */
@@ -38,7 +38,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Creates a new EntidadFinanciadora entity.
      *
-     * @Route("/", name="entidadfinanciadora_create")
+     * @Route("/", name="EntidadFinanciera_create")
      * @Method("POST")
      * @Template("EntidadFinancieraBundle:EntidadFinanciadora:new.html.twig")
      */
@@ -53,7 +53,7 @@ class EntidadFinanciadoraController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('entidadfinanciadora_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('EntidadFinanciera_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -72,7 +72,7 @@ class EntidadFinanciadoraController extends Controller
     private function createCreateForm(EntidadFinanciadora $entity)
     {
         $form = $this->createForm(new EntidadFinanciadoraType(), $entity, array(
-            'action' => $this->generateUrl('entidadfinanciadora_create'),
+            'action' => $this->generateUrl('EntidadFinanciera_create'),
             'method' => 'POST',
         ));
 
@@ -84,7 +84,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Displays a form to create a new EntidadFinanciadora entity.
      *
-     * @Route("/new", name="entidadfinanciadora_new")
+     * @Route("/new", name="EntidadFinanciera_new")
      * @Method("GET")
      * @Template()
      */
@@ -102,7 +102,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Finds and displays a EntidadFinanciadora entity.
      *
-     * @Route("/{id}", name="entidadfinanciadora_show")
+     * @Route("/{id}", name="EntidadFinanciera_show")
      * @Method("GET")
      * @Template()
      */
@@ -127,7 +127,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Displays a form to edit an existing EntidadFinanciadora entity.
      *
-     * @Route("/{id}/edit", name="entidadfinanciadora_edit")
+     * @Route("/{id}/edit", name="EntidadFinanciera_edit")
      * @Method("GET")
      * @Template()
      */
@@ -205,7 +205,7 @@ class EntidadFinanciadoraController extends Controller
     /**
      * Deletes a EntidadFinanciadora entity.
      *
-     * @Route("/{id}", name="entidadfinanciadora_delete")
+     * @Route("/{id}", name="EntidadFinanciera_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -238,7 +238,7 @@ class EntidadFinanciadoraController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('entidadfinanciadora_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('EntidadFinanciera_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

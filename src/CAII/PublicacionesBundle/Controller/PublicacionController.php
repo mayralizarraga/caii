@@ -64,10 +64,13 @@ class PublicacionController extends Controller
             'miembros'=>$miembros,
         );
     }
+
+
+
     /**
      * Creates a new Publicacion entity.
      *
-     * @Route("/", name="publicacion_create")
+     * @Route("/", name="Publicacion_create")
      * @Method("POST")
      * @Template("PublicacionesBundle:Publicacion:new.html.twig")
      */
@@ -101,7 +104,7 @@ class PublicacionController extends Controller
     private function createCreateForm(Publicacion $entity)
     {
         $form = $this->createForm(new PublicacionType(), $entity, array(
-            'action' => $this->generateUrl('publicacion_create'),
+            'action' => $this->generateUrl('Publicacion_create'),
             'method' => 'POST',
         ));
 

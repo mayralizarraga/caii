@@ -169,10 +169,10 @@ class Publicacion
     /**
      * Set TipoPublicacion
      *
-     * @param CAII\PublicacionesBundle\Entity\TipoPublicacion
+     * @param TipoPublicacion
      * @return Publicacion
      */
-    public function setTipoPublicacion(CAII\PublicacionesBundle\Entity\TipoPublicacion $TipoPublicacion)
+    public function setTipoPublicacion(TipoPublicacion $TipoPublicacion)
     {
         $this->TipoPublicacion = $TipoPublicacion;
     

@@ -1,35 +1,35 @@
 proyecto:
-    pattern:  /Proyecto
+    pattern:  /{_locale}/Proyecto
     defaults: { _controller: ProyectoBundle:Proyecto:index }
 
 Proyecto:
-    pattern:  /Proyecto
+    pattern:  /{_locale}/Proyecto
     defaults: { _controller: ProyectoBundle:Proyecto:index }
 
 _proyecto:
-    pattern: /Proyecto/
+    pattern: /{_locale}/Proyecto/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Proyecto}
 
 proyecto_new:
-    pattern:  /Proyecto/new
+    pattern:  /backend/Proyecto/new
     defaults: { _controller: ProyectoBundle:Proyecto:new }
 
 proyecto_edit:
-    pattern:  /Proyecto/edit/{id}
+    pattern:  /backend/Proyecto/edit/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:edit }
 
 proyecto_show:
-    pattern:  /Proyecto/show/{id}
+    pattern:  /backend/Proyecto/show/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:show }
 
 proyecto_create:
-    pattern:  /Proyecto/create
+    pattern:  /backend/Proyecto/create
     defaults: { _controller: ProyectoBundle:Proyecto:create }
 
 proyecto_update:
-    pattern:  /Proyecto/update/{id}
+    pattern:  /backend/Proyecto/update/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:update }
 
 proyecto_delete:
-    pattern:  /Proyecto/delete/{id}
+    pattern:  /backend/Proyecto/delete/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:delete}

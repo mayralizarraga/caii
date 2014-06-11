@@ -15,11 +15,11 @@
 			$ocupacion = $manager->getRepository('MiembroBundle:Ocupacion')->find(4);
 			$miembros = array(
 				array('nombre' => 'Mayra Leticia','apellidoP' => 'Lizarraga','apellidoM' => 'Camberos','status' => '1','link_Pagina' => 'paginapersonal.com',
-					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => 'breve descripcion del miembro'),
+					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => 'breve descripcion del miembro','idOcupacion'=>'1'),
 				array('nombre' => 'Andres','apellidoP' => 'Buelna','apellidoM' => 'Benitez','status' => '0','link_Pagina' => 'paginapersonal.com',
-					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => 'breve descripcion del miembro'),
+					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => 'breve descripcion del miembro','idOcupacion'=>'1'),
 				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => 'paginapersonal.com',
-					'fotoURL' => 'sealtyelcastillo.jpg','alum_Descripcion' => 'breve descripcion del miembro'),
+					'fotoURL' => 'sealtyelcastillo.jpg','alum_Descripcion' => 'breve descripcion del miembro','idOcupacion'=>'1'),
 				
 				
 			);
@@ -33,6 +33,7 @@
 				$entidad->setLinkPagina($miembro['link_Pagina']);
 				$entidad->setFotoURL($miembro['fotoURL']);
 				$entidad->setAlumDescripcion($miembro['alum_Descripcion']);
+				//$entidad->setIdOcupacion($miembro['idOcupacion']);
 				$manager->persist($entidad);
 			}
 			$manager->flush();

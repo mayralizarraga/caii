@@ -32,7 +32,7 @@ class PublicacionType extends AbstractType
             ->add('editorial')
             ->add('serie')
             ->add('edicion')
-            ->add('idTipo')
+            ->add('TipoPublicacion')
         ;
     }
     
