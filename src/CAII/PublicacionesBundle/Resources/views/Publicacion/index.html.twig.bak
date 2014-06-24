@@ -1,71 +1,89 @@
 {% extends '::frontend.html.twig' %}
 
 {% block contenido %}
-<div class="row">
-    <div class="large-12 columns">
-        <h1>Publicaciones</h1>
-        
-            <table class="records_list">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Doi</th>
-                        <th>Paginas</th>
-                        <th>Titulo</th>
-                        <th>Fecha</th>
-                        <th>Enlace</th>
-                        <th>Tipo_reporte</th>
-                        <th>Ciudad</th>
-                        <th>Congreso</th>
-                        <th>Issn</th>
-                        <th>Capitulo</th>
-                        <th>Isbn</th>
-                        <th>Mostrar</th>
-                        <th>Journal</th>
-                        <th>Volumen</th>
-                        <th>Editorial</th>
-                        <th>Serie</th>
-                        <th>Edicion</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for entity in entities %}
-                    <tr>
-                        <td><a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                        <td>{{ entity.doi }}</td>
-                        <td>{{ entity.paginas }}</td>
-                        <td>{{ entity.titulo }}</td>
-                        <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
-                        <td>{{ entity.enlace }}</td>
-                        <td>{{ entity.tipoReporte }}</td>
-                        <td>{{ entity.ciudad }}</td>
-                        <td>{{ entity.congreso }}</td>
-                        <td>{{ entity.issn }}</td>
-                        <td>{{ entity.capitulo }}</td>
-                        <td>{{ entity.isbn }}</td>
-                        <td>{{ entity.mostrar }}</td>
-                        <td>{{ entity.journal }}</td>
-                        <td>{{ entity.volumen }}</td>
-                        <td>{{ entity.editorial }}</td>
-                        <td>{{ entity.serie }}</td>
-                        <td>{{ entity.edicion }}</td>
-                        <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">show</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('Publicacion_edit', { 'id': entity.id }) }}">edit</a>
-                            </li>
-                        </ul>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-
-   
-    </div>
-</div>
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Publicaciones</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Publicaciones</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <table class="table">
+                            <thead>
+                    
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Doi</th>
+                                    <th>Paginas</th>
+                                    <th>Titulo</th>
+                                    <th>Fecha</th>
+                                    <th>Enlace</th>
+                                    <th>Tipo_reporte</th>
+                                    <th>Ciudad</th>
+                                    <th>Congreso</th>
+                                    <th>Issn</th>
+                                    <th>Capitulo</th>
+                                    <th>Isbn</th>
+                                    <th>Mostrar</th>
+                                    <th>Journal</th>
+                                    <th>Volumen</th>
+                                    <th>Editorial</th>
+                                    <th>Serie</th>
+                                    <th>Edicion</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    <td><a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <td>{{ entity.doi }}</td>
+                                    <td>{{ entity.paginas }}</td>
+                                    <td>{{ entity.titulo }}</td>
+                                    <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{{ entity.enlace }}</td>
+                                    <td>{{ entity.tipoReporte }}</td>
+                                    <td>{{ entity.ciudad }}</td>
+                                    <td>{{ entity.congreso }}</td>
+                                    <td>{{ entity.issn }}</td>
+                                    <td>{{ entity.capitulo }}</td>
+                                    <td>{{ entity.isbn }}</td>
+                                    <td>{{ entity.mostrar }}</td>
+                                    <td>{{ entity.journal }}</td>
+                                    <td>{{ entity.volumen }}</td>
+                                    <td>{{ entity.editorial }}</td>
+                                    <td>{{ entity.serie }}</td>
+                                    <td>{{ entity.edicion }}</td>
+                                    <td>
+                                    <ul>
+                                        <li>{{ form(delete_form) }}</li>
+                                        <li>
+                                            <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">show</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('Publicacion_edit', { 'id': entity.id }) }}">edit</a>
+                                        </li>
+                                    </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             </div>
+        </div>
 {% endblock %}

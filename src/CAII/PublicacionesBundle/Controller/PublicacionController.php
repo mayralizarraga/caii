@@ -21,7 +21,7 @@ class PublicacionController extends Controller
     /**
      * Lists all Publicacion entities.
      *
-     * @Route("/", name="publicacion")
+     * @Route("/", name="Publicacion")
      * @Method("GET")
      * @Template()
      */
@@ -34,6 +34,7 @@ class PublicacionController extends Controller
         $dql->select('TipoPublicacion.nombre')
             ->from('PublicacionesBundle:Publicacion', 'Publicacion')
             ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
+            ->orderBy('TipoPublicacion.prioridad', 'ASC')
             ->groupBy('Publicacion.TipoPublicacion');
         $tipos =$dql->getQuery()->getResult();
 
@@ -65,6 +66,25 @@ class PublicacionController extends Controller
         );
     }
 
+    /**
+     * Lists all Miembro entities.
+     *
+     * @Route("/", name="Publicacion_backend")
+     * @Method("GET")
+     * @Template("PublicacionesBundle:Publicacion:indexBackend.html.twig")
+     */
+    public function indexBackendAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
+        return array(
+            'entities' => $entities,
+                          
+            
+        );
+    }
+
 
 
     /**
@@ -85,7 +105,7 @@ class PublicacionController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('publicacion_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('Publicacion_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -116,7 +136,7 @@ class PublicacionController extends Controller
     /**
      * Displays a form to create a new Publicacion entity.
      *
-     * @Route("/new", name="publicacion_new")
+     * @Route("/new", name="Publicacion_new")
      * @Method("GET")
      * @Template()
      */
@@ -134,7 +154,7 @@ class PublicacionController extends Controller
     /**
      * Finds and displays a Publicacion entity.
      *
-     * @Route("/{id}", name="publicacion_show")
+     * @Route("/{id}", name="Publicacion_show")
      * @Method("GET")
      * @Template()
      */
@@ -159,7 +179,7 @@ class PublicacionController extends Controller
     /**
      * Displays a form to edit an existing Publicacion entity.
      *
-     * @Route("/{id}/edit", name="publicacion_edit")
+     * @Route("/{id}/edit", name="Publicacion_edit")
      * @Method("GET")
      * @Template()
      */
@@ -193,7 +213,7 @@ class PublicacionController extends Controller
     private function createEditForm(Publicacion $entity)
     {
         $form = $this->createForm(new PublicacionType(), $entity, array(
-            'action' => $this->generateUrl('publicacion_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('Publicacion_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -204,7 +224,7 @@ class PublicacionController extends Controller
     /**
      * Edits an existing Publicacion entity.
      *
-     * @Route("/{id}", name="publicacion_update")
+     * @Route("/{id}", name="Publicacion_update")
      * @Method("PUT")
      * @Template("PublicacionesBundle:Publicacion:edit.html.twig")
      */
@@ -225,7 +245,7 @@ class PublicacionController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('publicacion_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('Publicacion_edit', array('id' => $id)));
         }
 
         return array(
@@ -237,7 +257,7 @@ class PublicacionController extends Controller
     /**
      * Deletes a Publicacion entity.
      *
-     * @Route("/{id}", name="publicacion_delete")
+     * @Route("/{id}", name="Publicacion_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -270,7 +290,7 @@ class PublicacionController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('publicacion_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('Publicacion_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

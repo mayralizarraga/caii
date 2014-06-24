@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CAII{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('caii.ico') }}" />
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/vendors/easypiechart/jquery.easy-pie-chart.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/assets/styles.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/assets/DT_bootstrap.css') }}" rel="stylesheet" media="screen">
+               
+ </head>
+<body>
+
+{% block javascripts %}
+{% javascripts 
+               '@BackendBundle/Resources/public/vendors/modernizr-2.6.2-respond-1.1.0.min.js'
+               '@BackendBundle/Resources/public/bootstrap/js/bootstrap.js'
+               '@BackendBundle/Resources/public/bootstrap/js/bootstrap.min.js'
+               '@BackendBundle/Resources/public/assets/scripts.js'
+               '@BackendBundle/Resources/public/assets/DT_bootstrap.js'
+               '@BackendBundle/Resources/public/assets/jquery-ui-1.10.4.custom.js'
+               '@BackendBundle/Resources/public/assets/jquery-1.10.2.js'
+               '@BackendBundle/Resources/public/vendors/datatables/js/jquery.dataTables.min.js'
+          %}
+<script src="{{ asset_url }}" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+{% endjavascripts %}
+<script>
+     $(document).foundation();
+</script>
+{% block funcionesjs %}{% endblock %}
+
+
+{% endblock %}
+
+
+                       {% block contenido %}{% endblock %}
+              
+      
+  </body>
+</html>
+
+
+

@@ -1,9 +1,9 @@
 TipoPublicacion:
-    pattern:  /tipopublicacion
+    pattern:  /backend/tipopublicacion
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:index }
     
 _TipoPublicacion:
-    pattern: /tipopublicacion/
+    pattern: /backend/tipopublicacion/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: tipopublicacion}
 
 TipoPublicacion_new:
@@ -45,6 +45,10 @@ Publicacion_new:
 Publicacion_edit:
     pattern:  /backend/Publicacion/edit/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:edit }
+
+Publicacion_backend:
+    pattern:  /backend/Publicacion
+    defaults: { _controller: PublicacionesBundle:Publicacion:indexBackend }
 
 Publicacion_show:
     pattern:  /backend/Publicacion/show/{id}

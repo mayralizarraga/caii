@@ -1,0 +1,93 @@
+{% extends '::backend.html.twig' %}
+
+{% block contenido %}
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Miembros</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Miembros</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="table-toolbar">
+                          <div class="btn-group">
+                             <a href="{{path('miembro_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                          </div>
+                        </div>
+                        <div class="mygrid-wrapper-div">  
+                          <table class="table" id="example">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                                <th>Apellido P.</th>
+                                <th>Apellido M.</th>
+                                <th>Estatus</th>
+                                <th>Pagina</th>
+                                <th>Tipo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                                  {% for entity in entities %}
+                                 
+                                      <tr>
+                                          <td>{{ entity.id }}</td>
+                                          <td>{% if entity.fotoURL %} 
+                                                  <img src="{{ asset('bundles/portada/img/fotosAlumnos/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
+                                              {% else %}   
+                                                   <img src="{{ asset('bundles/portada/img/fotosAlumnos/unknown-person.gif') }}" alt="" height="42" width="42" />
+                                              {% endif %}  
+                                          </td>
+                                          <td>{{ entity.nombre }}</td>
+                                          <td>{{ entity.apellidoP }}</td> 
+                                          <td>{{ entity.apellidoM }}</td>
+                                          <td>{% if entity.status==1 %}
+                                              Activo
+                                          {% else %}
+                                              Inactivo
+                                          {% endif %}</td>
+                                          <td>{{ entity.linkPagina }}</td>
+                                          <td>{{ entity.idOcupacion }}</td>
+                                          <td>
+                                              <ul>
+                                                  <li>
+                                                        <a href="{{ path('miembro_delete', { 'id': entity.id }) }}">delete</a>
+                                                  </li>
+                                                  <li>
+                                                        <a href="{{ path('miembro_edit', { 'id': entity.id }) }}">edit</a>
+                                                  </li>
+                                              </ul>
+                                          </td>    
+                                          
+                                      </tr>
+                                  
+                                  {% endfor %}
+
+                            </tbody>
+                          </table>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+        </div>
+     
+    
+
+      
+    
+    {% endblock %}

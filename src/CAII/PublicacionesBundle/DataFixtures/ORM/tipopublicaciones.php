@@ -10,26 +10,33 @@
 		public function load(ObjectManager $manager)
 		{
 			$tipos = array(
-				array('nombre' => 'Artículo'),
-				array('nombre' => 'Capítulo de libro'),
-				array('nombre' => 'Conferencia'),
-				array('nombre' => 'Libro'),
-				array('nombre' => 'Reporte técnico'),
-				array('nombre' => 'Tesis maestria'),
-				array('nombre' => 'Tesis doctorado'),
+				
+				
+				
+				array('nombre' => 'Libro' ,'prioridad' => '1','name'=>'Book'),
+				array('nombre' => 'Capítulo de libro','prioridad' => '2','name'=>'Book chapter'),
+				array('nombre' => 'Revista' ,'prioridad' => '3','name'=>'Journal'),
+				array('nombre' => 'Artículo', 'prioridad' => '4','name'=>'Article'),
+				array('nombre' => 'Articulo de conferencia','prioridad' => '5','name'=>'Conference\'s article'),
+				array('nombre' => 'Articulo de congreso','prioridad' => '6','name'=>'Congress\'s article'),
+				array('nombre' => 'Reporte técnico','prioridad' => '7','name'=>'Technical Report'),
+				array('nombre' => 'Tesis','prioridad' => '8','name'=>'Thesis'),
+				
 				
 			);
 			
 			foreach ($tipos as $tipo) {
 				$entidad = new TipoPublicacion();
 				$entidad->setNombre($tipo['nombre']);
+				$entidad->setPrioridad($tipo['prioridad']);
 				$manager->persist($entidad);
 				$manager->flush();
+				$this->addReference(''.$entidad->getId(), $entidad);
 
 				// Traducir los contenidos de la oferta al inglés
 				$id = $entidad->getId();
 				$description = $manager->find('PublicacionesBundle:TipoPublicacion', $id);
-				$description->setNombre('ENGLISH '.$entidad->getNombre());
+				$description->setNombre($tipo['name']);
 				$description->setTranslatableLocale('en');
 				$manager->persist($description);
 				$manager->flush();

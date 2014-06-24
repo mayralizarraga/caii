@@ -1,0 +1,97 @@
+{% extends '::backend.html.twig' %}
+
+{% block contenido %}
+<!--indexBackend Proyecto-->
+
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Proyectos</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Proyectos</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="table-toolbar">
+                          <div class="btn-group">
+                             <a href="{{path('proyecto_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                          </div>
+                        </div>
+                        <div class="mygrid-wrapper-div">
+                          <table class="table" id="example">
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Fecha de Inicio</th>
+                                <th>Fecha de Terminación</th>
+                                <th>Estatus</th>
+                                <th>Entidad Financiadora</th>
+                                <th>Monto</th>
+                              </tr>
+                            </thead>
+                            <tbody> 
+                                {% for entity in entities %}   
+                                  <tr>
+                                      <td>{{ entity.nombre }}</td>
+                                      <td>{{ entity.fechaInicio|date('d-m-Y') }}</td>
+                                      <td>{{ entity.fechaFinal|date('d-m-Y') }}</td>
+                                      <td>{% if entity.status==1 %}
+                                            Activo
+                                          {% else %}
+                                            Inactivo
+                                          {% endif %}</td>
+                                      <td>{{ entity.idEntidad }} </td>
+                                      <td>{{ entity.montoFinanciero}}</td>
+                                      <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Miembros</a></td>
+                                      <td>
+                                              <ul>
+                                                  <li>
+                                                        <a href="{{ path('proyecto_delete', { 'id': entity.id }) }}">delete</a>
+                                                  </li>
+                                                  <li>
+                                                        <a href="{{ path('proyecto_edit', { 'id': entity.id }) }}">edit</a>
+                                                  </li>
+                                              </ul>
+                                          </td> 
+                                  </tr>
+              
+                                {% endfor %}
+          
+                            </tbody>
+                          </table>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+
+         
+
+          <!-- Modal -->
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Miembros</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+{% endblock %}

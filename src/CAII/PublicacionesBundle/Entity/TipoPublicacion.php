@@ -31,6 +31,15 @@ class TipoPublicacion implements Translatable
      */
     private $nombre;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prioridad", type="integer", length=11, nullable=true)
+     * 
+     * 
+     */
+    private $prioridad;
+
 
     /**
      * Get id
@@ -63,6 +72,31 @@ class TipoPublicacion implements Translatable
     public function getNombre()
     {
         return $this->nombre;
+    }
+
+
+
+    /**
+     * Set prioridad
+     *
+     * @param integer $prioridad
+     * @return TipoPublicacion
+     */
+    public function setPrioridad($prioridad)
+    {
+        $this->prioridad = $prioridad;
+    
+        return $this;
+    }
+
+    /**
+     * Get prioridad
+     *
+     * @return integer 
+     */
+    public function getPrioridad()
+    {
+        return $this->prioridad;
     }
 
 

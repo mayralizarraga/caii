@@ -209,12 +209,9 @@ class TipoPublicacionController extends Controller
      * @Route("/{id}", name="TipoPublicacion_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
+        
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('PublicacionesBundle:TipoPublicacion')->find($id);
 
@@ -224,7 +221,7 @@ class TipoPublicacionController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
+        
 
         return $this->redirect($this->generateUrl('TipoPublicacion'));
     }

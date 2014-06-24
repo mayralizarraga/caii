@@ -29,30 +29,54 @@ class MiembroController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
+       // $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
         
-       /* $dql = $em->createQueryBuilder();
-        $dql->select('Miembro.fotoURL , Miembro.id , Miembro.nombre , Miembro.apellidoP , Miembro.apellidoM, Miembro.idOcupacion')
-            ->from('MiembroBundle:Miembro', 'Miembro')
-            ->where('Miembro.status=1');
-        $entities =$dql->getQuery()->getResult();*/
-
-
-
         $dql = $em->createQueryBuilder();
-        $dql->select('Ocupacion.descripcion')
+        $dql->select('Miembro.fotoURL , Miembro.id , Miembro.nombre , Miembro.apellidoP , Miembro.apellidoM, Ocupacion.id ocupacion')
             ->from('MiembroBundle:Miembro', 'Miembro')
             ->Join('Miembro.idOcupacion', 'Ocupacion')
+            ->where('Miembro.status=1');
+        $entities =$dql->getQuery()->getResult();
+
+        $ocupaciones2 = $em->getRepository('MiembroBundle:Ocupacion')->findAll();
+
+        $dql = $em->createQueryBuilder();
+        $dql->select('Ocupacion.id')
+            ->from('MiembroBundle:Miembro', 'Miembro')
+            ->Join('Miembro.idOcupacion', 'Ocupacion')
+            ->where('Miembro.status=1')
             ->groupBy('Miembro.idOcupacion');
+
         $ocupaciones =$dql->getQuery()->getResult();
 
         return array(
             'entities' => $entities,
             'ocupaciones' => $ocupaciones,
-                     
-            
+            'ocupaciones2' => $ocupaciones2,         
+             
         );
     }
+
+
+    /**
+     * Lists all Miembro entities.
+     *
+     * @Route("/", name="miembro_backend")
+     * @Method("GET")
+     * @Template("MiembroBundle:Miembro:indexBackend.html.twig")
+     */
+    public function indexBackendAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
+        
+       return array(
+            'entities' => $entities,
+            );
+    }
+
+
 
     /**
      * Creates a new Miembro entity.
@@ -227,9 +251,9 @@ class MiembroController extends Controller
      * @Route("/{id}", name="miembro_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($id);
+       /* $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -242,9 +266,19 @@ class MiembroController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
+        }*/
 
-        return $this->redirect($this->generateUrl('miembro'));
+        $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('MiembroBundle:Miembro')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Miembro entity.');
+            }
+
+            $em->remove($entity);
+            $em->flush();
+
+        return $this->redirect($this->generateUrl('miembro_backend'));
     }
 
     /**

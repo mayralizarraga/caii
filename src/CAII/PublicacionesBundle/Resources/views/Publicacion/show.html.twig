@@ -82,15 +82,15 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('publicacion') }}">
+        <a href="{{ path('Publicacion_backend') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('publicacion_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('Publicacion_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+   
 </ul>
 {% endblock %}

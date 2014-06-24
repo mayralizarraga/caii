@@ -10,6 +10,10 @@ _proyecto:
     pattern: /{_locale}/Proyecto/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Proyecto}
 
+proyecto_backend:
+    pattern:  /backend/Proyecto
+    defaults: { _controller: ProyectoBundle:Proyecto:indexBackend}
+
 proyecto_new:
     pattern:  /backend/Proyecto/new
     defaults: { _controller: ProyectoBundle:Proyecto:new }
@@ -17,6 +21,11 @@ proyecto_new:
 proyecto_edit:
     pattern:  /backend/Proyecto/edit/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:edit }
+
+
+proyecto_miembros:
+    pattern:  /backend/Proyecto/miembros/{id}
+    defaults: { _controller: ProyectoBundle:Proyecto:proyectoMiembros }
 
 proyecto_show:
     pattern:  /backend/Proyecto/show/{id}

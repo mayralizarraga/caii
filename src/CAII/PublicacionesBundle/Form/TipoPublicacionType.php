@@ -16,6 +16,7 @@ class TipoPublicacionType extends AbstractType
     {
         $builder
             ->add('nombre')
+            ->add('prioridad')
         ;
     }
     

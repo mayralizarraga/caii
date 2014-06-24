@@ -18,7 +18,7 @@ class MiembroType extends AbstractType
             ->add('nombre')
             ->add('apellidoP')
             ->add('apellidoM')
-            ->add('status')
+            ->add('status', 'choice', array('choices' => array('1' => 'Activo', '0' => 'Inactivo')))
             ->add('link_Pagina')
             ->add('fotoURL')
             ->add('alum_Descripcion')

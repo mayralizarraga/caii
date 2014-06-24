@@ -29,3 +29,11 @@ miembro_update:
 miembro_delete:
     pattern:  /backend/miembro/delete/{id}
     defaults: { _controller: MiembroBundle:Miembro:delete}
+
+miembro_backend:
+    pattern:  /backend/miembro
+    defaults: { _controller: MiembroBundle:Miembro:indexBackend }
+
+proyecto_miembro_new:
+    pattern:  /backend/proyecto/miembros/new
+    defaults: { _controller: MiembroBundle:MiembroProyecto:new }

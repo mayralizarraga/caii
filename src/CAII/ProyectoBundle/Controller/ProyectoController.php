@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CAII\ProyectoBundle\Entity\Proyecto;
 use CAII\ProyectoBundle\Form\ProyectoType;
+use CAII\MiembroBundle\Entity\MiembroProyecto;
+use CAII\MiembroBundle\Form\MiembroProyectoType;
 
 /**
  * Proyecto controller.
@@ -38,6 +40,27 @@ class ProyectoController extends Controller
             'entities' => $entities,
             'mims' => $as,
            
+        );
+    }
+
+
+
+    /**
+     * Lists all projects entities.
+     *
+     * @Route("/", name="proyecto_backend")
+     * @Method("GET")
+     * @Template("ProyectoBundle:Proyecto:indexBackend.html.twig")
+     */
+    public function indexBackendAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ProyectoBundle:Proyecto')->findAll();
+        return array(
+            'entities' => $entities,
+                          
+            
         );
     }
     
@@ -132,6 +155,15 @@ class ProyectoController extends Controller
         );
     }
 
+
+
+
+
+
+
+
+
+
     /**
      * Displays a form to edit an existing Proyecto entity.
      *
@@ -158,6 +190,43 @@ class ProyectoController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+
+
+    /**
+     * Displays miembros-proyecto.
+     *
+     * @Route("/{id}/miembros", name="proyecto_miembros")
+     * @Method("GET")
+     * @Template("ProyectoBundle:Proyecto:miembros.html.twig")
+     */
+    public function proyectoMiembrosAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('ProyectoBundle:Proyecto')->find($id);
+
+        $dql = $em->createQueryBuilder();
+ 
+        $dql->select('MiembroProyecto.id', 
+                     'Miembro.nombre nombreMiembro, Miembro.id idmiembro, Miembro.apellidoP, Miembro.apellidoM', 
+                     'Proyecto.nombre, Proyecto.id idproyecto')
+            ->from('MiembroBundle:MiembroProyecto', 'MiembroProyecto')
+            ->Join('MiembroProyecto.idMiembro', 'Miembro')
+            ->Join('MiembroProyecto.idProyecto', 'Proyecto')
+            ->where('Proyecto.id = :id_MiembroProyecto' );
+        $dql->setParameter('id_MiembroProyecto', $id);
+
+        $members = $dql->getQuery()->getResult();
+     
+
+        return array(
+            'entity'      => $entity,
+            'members'   => $members,
+            
+        );
+    }
+
+
 
     /**
     * Creates a form to edit a Proyecto entity.
@@ -216,24 +285,19 @@ class ProyectoController extends Controller
      * @Route("/{id}", name="proyecto_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction( $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+         $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('ProyectoBundle:Proyecto')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Proyecto entity.');
+                throw $this->createNotFoundException('Unable to find Miembro entity.');
             }
 
             $em->remove($entity);
             $em->flush();
-        }
 
-        return $this->redirect($this->generateUrl('proyecto'));
+        return $this->redirect($this->generateUrl('proyecto_backend'));
     }
 
     /**

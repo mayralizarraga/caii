@@ -16,9 +16,18 @@ class ProyectoType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('fecha_Inicio')
+            ->add('fecha_Inicio' ,'date',array(
+
+            'widget' => 'single_text',
+
+            'format' => 'dd-MM-yyyy',
+
+            'attr' => array('class' => 'date')
+
+        ))
+
             ->add('fecha_Final')
-            ->add('status')
+            ->add('status', 'choice', array('choices' => array('1' => 'Activo', '0' => 'Inactivo')))
             ->add('monto_Financiero')
             ->add('id_Entidad')
         ;
