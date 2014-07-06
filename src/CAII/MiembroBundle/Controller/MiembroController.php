@@ -96,7 +96,7 @@ class MiembroController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('miembro_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('miembro_backend', array('id' => $entity->getId())));
         }
 
         return array(
@@ -134,7 +134,22 @@ class MiembroController extends Controller
     public function newAction()
     {
         $entity = new Miembro();
-        $form   = $this->createCreateForm($entity);
+        //$form   = $this->createCreateForm($entity);
+
+
+        $form   = $this->createForm(new MiembroType(), $entity);
+
+        $form->handleRequest($this->getRequest());
+
+
+        if ($form->isValid()) {
+            $entity->subirFoto($this->container->getParameter('miembros.directorio.imagenes'));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('miembro_backend', array('id' => $entity->getId())));
+        }
 
         return array(
             'entity' => $entity,
@@ -184,14 +199,27 @@ class MiembroController extends Controller
             throw $this->createNotFoundException('Unable to find Miembro entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $form = $this->createForm(new MiembroType(), $entity, array(
+            'action' => $this->generateUrl('miembro_edit', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->handleRequest($this->getRequest());
+
+       if ($form->isValid()) {
+            $entity->subirFoto($this->container->getParameter('miembros.directorio.imagenes'));
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('miembro_backend'));
+        }
+
+        /*$editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);*/
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+            'entity' => $entity, 
+            'form' => $form->createView()
+        );   
     }
 
     /**

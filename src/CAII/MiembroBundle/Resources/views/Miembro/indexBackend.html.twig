@@ -47,9 +47,9 @@
                                       <tr>
                                           <td>{{ entity.id }}</td>
                                           <td>{% if entity.fotoURL %} 
-                                                  <img src="{{ asset('bundles/portada/img/fotosAlumnos/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
+                                                  <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
                                               {% else %}   
-                                                   <img src="{{ asset('bundles/portada/img/fotosAlumnos/unknown-person.gif') }}" alt="" height="42" width="42" />
+                                                   <img src="{{ asset('uploads/images/miembros/unknown-person.gif') }}" alt="" height="42" width="42" />
                                               {% endif %}  
                                           </td>
                                           <td>{{ entity.nombre }}</td>

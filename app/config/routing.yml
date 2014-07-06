@@ -1,3 +1,7 @@
+noticia:
+    resource: "@NoticiaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 entidad_financiera:
     resource: "@EntidadFinancieraBundle/Resources/config/routing.yml"
     prefix:   /

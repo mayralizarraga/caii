@@ -24,8 +24,8 @@
 			foreach ($proyectos as $proyecto) {
 				$entidad = new Proyecto();
 				$entidad->setNombre($proyecto['nombre']);
-				$entidad->setFechaInicio(new \DateTime());
-				$entidad->setFechaFinal(new \DateTime());
+				$entidad->setFechaInicio(new \DateTime($proyecto['fecha_Inicio']));
+				$entidad->setFechaFinal(new \DateTime($proyecto['fecha_Final']));
 				$entidad->setStatus($proyecto['status']);
 				$manager->persist($entidad);
 			}

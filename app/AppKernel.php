@@ -24,7 +24,7 @@ class AppKernel extends Kernel
             new CAII\PortadaBundle\PortadaBundle(),
             new CAII\EntidadFinancieraBundle\EntidadFinancieraBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            
+            new CAII\NoticiaBundle\NoticiaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

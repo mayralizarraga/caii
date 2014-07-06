@@ -82,3 +82,15 @@ stof_doctrine_extensions:
     orm:
         default:
             translatable: true
+
+services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
+
+#Parametros
+parameters:
+    miembros.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/miembros/
+    noticia.directorio.imagenes:  %kernel.root_dir%/../web/uploads/images/noticias/
+    slide.directorio.imagenes:  %kernel.root_dir%/../web/uploads/images/slide/

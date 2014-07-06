@@ -19,9 +19,32 @@
             </div>
             <!-- block -->
             
-			    <h1>Nuevo Miembro</h1>
-
-			    {{ form(form) }}
+			   
+			   <fieldset>
+                    <legend><h1>Nuevo Miembro</h1></legend>
+                    {{ form_start(form, { 'action': path('miembro_new'), 'method': 'POST' }) }} 
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre) }}
+                        {{ form_label(form.apellidoP, 'Apellido Paterno') }}
+                        {{ form_widget(form.apellidoP) }}
+                        {{ form_label(form.apellidoM, 'Apellido Materno') }}
+                        {{ form_widget(form.apellidoM) }}
+                        {{ form_label(form.status, 'Estado') }}
+                        {{ form_widget(form.status) }}
+                        {{ form_label(form.link_Pagina, 'Pagina personal') }}
+                        {{ form_widget(form.link_Pagina) }}
+                        {{ form_label(form.foto, 'Foto') }}
+                        {{ form_widget(form.foto) }}
+                        {{ form_errors(form.foto) }}
+                        {{ form_label(form.alum_Descripcion, 'Descripcion del Alumno') }}
+                        {{ form_widget(form.alum_Descripcion) }}
+                        {{ form_label(form.idOcupacion, 'Tipo de miembro') }}
+                        {{ form_widget(form.idOcupacion) }}
+                        <br>
+                        <input type="submit" value="Save" >
+                         <br>
+                    {{ form_end(form) }}
+                </fieldset>
 
 			    <ul class="record_actions">
 			    	<li>

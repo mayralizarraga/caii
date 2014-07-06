@@ -19,16 +19,39 @@
             </div>
             <!-- block -->
             
-			    <h1>Editar Miembro</h1>
-    			{{ form(edit_form) }}
-        		<ul class="record_actions">
-			    	<li>
-			        	<a href="{{ path('miembro_backend') }}">Back to the list</a>
-			    	</li>
-			    	<li>{{ form(delete_form) }}</li>-
-				</ul>
+			    
+               <fieldset>
+                    <legend><h1>Editar Miembro</h1></legend>
+                    {{ form_start(form, { 'action': path('miembro_edit', { 'id': entity.id }), 'method': 'PUT' }) }} 
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre) }}<br>
+                        {{ form_label(form.apellidoP, 'Apellido Paterno') }}
+                        {{ form_widget(form.apellidoP) }}<br>
+                        {{ form_label(form.apellidoM, 'Apellido Materno') }}
+                        {{ form_widget(form.apellidoM) }}<br>
+                        {{ form_label(form.status, 'Estado') }}
+                        {{ form_widget(form.status) }}<br>
+                        {{ form_label(form.link_Pagina, 'Pagina personal') }}
+                        {{ form_widget(form.link_Pagina) }}<br>
+                        {{ form_label(form.foto, 'Foto') }}
+                          {% if entity.fotoURL %} 
+                              <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}" alt="" alt="" height="60" width="60" />
+                          {% else %}   
+                               <img src="{{ asset('uploads/images/miembros/unknown-person.gif') }}" alt="" height="60" width="60" />
+                          {% endif %} <br>
+                        {{ form_widget(form.foto) }}
+                        {{ form_errors(form.foto) }}<br>
+                        {{ form_label(form.alum_Descripcion, 'Descripcion del Alumno') }}
+                        {{ form_widget(form.alum_Descripcion) }}<br>
+                        {{ form_label(form.idOcupacion, 'Tipo de miembro') }}
+                        {{ form_widget(form.idOcupacion) }}
+                        <br>
+                        <input type="submit" value="Save" >
+                         <br>
+                    {{ form_end(form) }}
+                </fieldset>
 			
 		</div>	
     
-</ul>
+
 {% endblock %}

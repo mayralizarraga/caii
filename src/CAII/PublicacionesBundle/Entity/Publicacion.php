@@ -93,23 +93,23 @@ class Publicacion
     private $congreso;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="issn", type="integer", length=11, nullable=true)
+     * @ORM\Column(name="issn", type="string", length=50, nullable=true)
      */
     private $issn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="capitulo", type="string", length=80, nullable=true)
+     * @ORM\Column(name="capitulo", type="string", length=250, nullable=true)
      */
     private $capitulo;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="isbn", type="integer", length=11, nullable=true)
+     * @ORM\Column(name="isbn", type="string", length=50, nullable=true)
      */
     private $isbn;
 
@@ -401,7 +401,7 @@ class Publicacion
     /**
      * Set issn
      *
-     * @param integer $issn
+     * @param string $issn
      * @return Publicacion
      */
     public function setIssn($issn)
@@ -414,7 +414,7 @@ class Publicacion
     /**
      * Get issn
      *
-     * @return integer 
+     * @return string 
      */
     public function getIssn()
     {
@@ -447,7 +447,7 @@ class Publicacion
     /**
      * Set isbn
      *
-     * @param integer $isbn
+     * @param string $isbn
      * @return Publicacion
      */
     public function setIsbn($isbn)
@@ -460,7 +460,7 @@ class Publicacion
     /**
      * Get isbn
      *
-     * @return integer 
+     * @return string 
      */
     public function getIsbn()
     {
@@ -562,10 +562,10 @@ class Publicacion
     /**
      * Set serie
      *
-     * @param \strin $serie
+     * @param \string $serie
      * @return Publicacion
      */
-    public function setSerie(\strin $serie)
+    public function setSerie($serie)
     {
         $this->serie = $serie;
     

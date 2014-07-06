@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+
+
 class MiembroType extends AbstractType
 {
         /**
@@ -20,9 +22,10 @@ class MiembroType extends AbstractType
             ->add('apellidoM')
             ->add('status', 'choice', array('choices' => array('1' => 'Activo', '0' => 'Inactivo')))
             ->add('link_Pagina')
-            ->add('fotoURL')
+            ->add('foto','file',array('required'=>false))
             ->add('alum_Descripcion')
             ->add('idOcupacion')
+            
         ;
     }
     

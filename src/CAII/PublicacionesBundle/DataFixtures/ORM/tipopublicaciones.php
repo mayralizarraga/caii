@@ -10,18 +10,14 @@
 		public function load(ObjectManager $manager)
 		{
 			$tipos = array(
-				
-				
-				
-				array('nombre' => 'Libro' ,'prioridad' => '1','name'=>'Book'),
-				array('nombre' => 'Capítulo de libro','prioridad' => '2','name'=>'Book chapter'),
-				array('nombre' => 'Revista' ,'prioridad' => '3','name'=>'Journal'),
-				array('nombre' => 'Artículo', 'prioridad' => '4','name'=>'Article'),
-				array('nombre' => 'Articulo de conferencia','prioridad' => '5','name'=>'Conference\'s article'),
-				array('nombre' => 'Articulo de congreso','prioridad' => '6','name'=>'Congress\'s article'),
-				array('nombre' => 'Reporte técnico','prioridad' => '7','name'=>'Technical Report'),
-				array('nombre' => 'Tesis','prioridad' => '8','name'=>'Thesis'),
-				
+				array('nombre' => 'Libros' ,'prioridad' => '1','name'=>'Books','referencia'=>'libro'),
+				array('nombre' => 'Capítulos de libros','prioridad' => '2','name'=>'Book chapter','referencia'=>'capLibro'),
+				array('nombre' => 'Revistas' ,'prioridad' => '3','name'=>'Journals','referencia'=>'revista'),
+				array('nombre' => 'Artículos', 'prioridad' => '4','name'=>'Articles','referencia'=>'articulo'),
+				array('nombre' => 'Articulos de conferencias','prioridad' => '5','name'=>'Conference\'s article','referencia'=>'articuloCF'),
+				array('nombre' => 'Articulos de congresos','prioridad' => '6','name'=>'Congress\'s article','referencia'=>'articuloCG'),
+				array('nombre' => 'Reportes técnicos','prioridad' => '7','name'=>'Technical Report','referencia'=>'reporte'),
+				array('nombre' => 'Tesis','prioridad' => '8','name'=>'Thesis','referencia'=>'tesis'),
 				
 			);
 			
@@ -31,7 +27,7 @@
 				$entidad->setPrioridad($tipo['prioridad']);
 				$manager->persist($entidad);
 				$manager->flush();
-				$this->addReference(''.$entidad->getId(), $entidad);
+				$this->addReference($tipo['referencia'], $entidad);
 
 				// Traducir los contenidos de la oferta al inglés
 				$id = $entidad->getId();

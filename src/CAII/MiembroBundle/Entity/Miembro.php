@@ -5,6 +5,8 @@ namespace CAII\MiembroBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Miembro
@@ -26,21 +28,21 @@ class Miembro
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=45)
+     * @ORM\Column(name="nombre", type="string", length=45,nullable=true)
      */
     private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apellidoP", type="string", length=45)
+     * @ORM\Column(name="apellidoP", type="string", length=45,nullable=true)
      */
     private $apellidoP;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apellidoM", type="string", length=45)
+     * @ORM\Column(name="apellidoM", type="string", length=45,nullable=true)
      */
     private $apellidoM;
 
@@ -61,9 +63,17 @@ class Miembro
     /**
      * @var string
      *
-     * @ORM\Column(name="fotoURL", type="string", length=100,nullable=true)
+     * @ORM\Column(name="fotoURL", type="string", length=255,nullable=true)
      */
     private $fotoURL;
+
+
+
+    /**
+     * @Assert\Image(maxSize = "500k")
+     */
+    protected $foto;
+
 
     /**
      * @var string
@@ -232,6 +242,43 @@ class Miembro
     {
         return $this->fotoURL;
     }
+
+
+    public function subirFoto($directorioDestino)
+    {
+        if (null === $this->getFoto()) {
+            return;
+        }
+        
+        $nombreArchivoFoto = uniqid('miembro-').'-1.'.$this->getFoto()->guessExtension();
+
+        $this->getFoto()->move($directorioDestino, $nombreArchivoFoto);
+
+        $this->setFotoURL($nombreArchivoFoto);
+    }
+
+    /**
+     * Set foto.
+     *
+     * @param UploadedFile $foto
+     */
+    public function setFoto(UploadedFile $foto = null)
+    {
+        $this->foto = $foto;
+    }
+
+    /**
+     * Get foto.
+     *
+     * @return UploadedFile
+     */
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+
+
 
     /**
      * Set alum_Descripcion

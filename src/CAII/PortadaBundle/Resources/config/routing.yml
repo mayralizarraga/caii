@@ -10,10 +10,3 @@ _portada_homepage:
     pattern:  /
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada_homepage}
 
-noticias:
-    pattern:  /{_locale}/noticias/
-    defaults: { _controller: PortadaBundle:Noticias:index }
-
-_noticias:
-    pattern:  /
-    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: noticias}

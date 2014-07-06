@@ -11,10 +11,11 @@
 		public function load(ObjectManager $manager)
 		{
 			$ocupaciones = array(
-				array('descripcion' => 'Profesores','description' => 'Faculty'),
-				array('descripcion' => 'Alumnos Maestria','description' => 'Master Students'),
-				array('descripcion' => 'Alumnos Doctorado','description' => 'PhD Students'),
-				array('descripcion' => 'Alumnos Licenciatura','description' => 'Bachelor Students'),
+				array('descripcion' => 'Coordinadores','description' => 'Coordinators','referencia'=>'coordinador'),
+				array('descripcion' => 'Profesores','description' => 'Faculty','referencia'=>'profesor'),
+				array('descripcion' => 'Estudiantes de Doctorado','description' => 'PhD Students','referencia'=>'doctorado'),
+				array('descripcion' => 'Estudiantes de Maestria','description' => 'Master Students','referencia'=>'maestria'),
+				array('descripcion' => 'Estudiantes de Licenciatura','description' => 'Bachelor Students','referencia'=>'licenciatura'),
 				
 			);
 			
@@ -23,7 +24,7 @@
 				$entidad->setDescripcion($ocupacion['descripcion']);
 				$manager->persist($entidad);
 				$manager->flush();
-				$this->addReference(''.$entidad->getId(), $entidad);
+				$this->addReference($ocupacion['referencia'], $entidad);
 
 				// Traducir los contenidos al inglés
 				$id = $entidad->getId();

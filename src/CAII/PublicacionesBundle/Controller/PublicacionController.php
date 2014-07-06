@@ -31,12 +31,18 @@ class PublicacionController extends Controller
         $dql = $em->createQueryBuilder();
         
         //Query para tipos de publicacion 
-        $dql->select('TipoPublicacion.nombre')
+        $dql->select('TipoPublicacion.nombre','TipoPublicacion.id')
             ->from('PublicacionesBundle:Publicacion', 'Publicacion')
             ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
             ->orderBy('TipoPublicacion.prioridad', 'ASC')
             ->groupBy('Publicacion.TipoPublicacion');
         $tipos =$dql->getQuery()->getResult();
+
+        //Nombre de los publicaciones
+        $publicaciones = $em->getRepository('PublicacionesBundle:TipoPublicacion')->findAll();
+
+        //Nombre de los publicaciones
+        $publicacionesid = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
 
         //Query para las publicaciones ordenadas por fecha
         $repository = $this->getDoctrine()
@@ -63,6 +69,8 @@ class PublicacionController extends Controller
             'entities' => $entities,
             'tipos' => $tipos,
             'miembros'=>$miembros,
+            'publicaciones'=>$publicaciones,
+            'publicacionesid'=>$publicacionesid,
         );
     }
 

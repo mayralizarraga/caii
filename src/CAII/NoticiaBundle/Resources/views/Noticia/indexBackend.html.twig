@@ -1,0 +1,73 @@
+{% extends '::backend.html.twig' %}
+
+{% block contenido %}
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Noticias</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Noticias</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="table-toolbar">
+                          <div class="btn-group">
+                             <a href="{{path('noticia_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                          </div>
+                        </div>
+                        <div class="mygrid-wrapper-div">  
+                          <table class="table" id="example">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Titulo</th>
+                                    <th>Descripción</th>
+                                    <th>Contenido</th>
+                                    <th>Imagen</th>
+                                    <th>Fecha</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    <td><a href="{{ path('noticia_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <td>{{ entity.titulo }}</td>
+                                    <td>{{ entity.descripcion }}</td>
+                                    <td>{{ entity.contenido }}</td>
+                                    <td> <img src="{{ asset('uploads/images/noticias/' ~ entity.fotoURL) }}" alt="" alt="" height="60" width="60" /></td>
+                                    <td>{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>
+                                    <td>
+                                              <ul>
+                                                  <li>
+                                                        <a href="{{ path('noticia_delete', { 'id': entity.id }) }}">delete</a>
+                                                  </li>
+                                                  <li>
+                                                        <a href="{{ path('noticia_edit', { 'id': entity.id }) }}">edit</a>
+                                                  </li>
+                                              </ul>
+                                    </td>  
+                                </tr>
+                            {% endfor %}
+                           
+                            </tbody>
+                          </table>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+        </div>
+        
+    {% endblock %}
