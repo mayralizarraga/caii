@@ -23,7 +23,7 @@ class Miembro
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+   private $id;
 
     /**
      * @var string

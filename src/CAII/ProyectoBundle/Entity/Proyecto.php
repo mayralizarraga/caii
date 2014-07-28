@@ -26,7 +26,7 @@ class Proyecto
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=200)
+     * @ORM\Column(name="nombre", type="string", length=200, nullable=true)
      */
     private $nombre;
 
@@ -56,7 +56,7 @@ class Proyecto
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", length=11)
+     * @ORM\Column(name="status", type="integer", length=11, nullable=true)
      */
     private $status;
 

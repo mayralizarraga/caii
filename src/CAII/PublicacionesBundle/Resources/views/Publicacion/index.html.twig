@@ -1,9 +1,17 @@
 {% extends '::frontend.html.twig' %}
 
 {% block contenido %}
-<div class="row">
-    <div class="large-12 columns">
-       <!-- <h1>Publicaciones</h1>-->
+<!-- ######################## Header ######################## -->
+        
+        <header>
+              <h1 class="welcome_text">{{ "publicaciones" | trans }}</h1>    
+        </header>
+
+<!-- ######################## Section ######################## -->
+
+   <section class="section_normal">
+   
+      <div class="row"> 
 
         {% for  publicacion in publicaciones %}
             {% for tipo in tipos%}
@@ -30,7 +38,7 @@
                                         {% if entity.capitulo %}, {{ entity.capitulo }}{% endif %}
                                         {% if entity.journal %}, {{ entity.journal }}{% endif %}
                                         {% if entity.volumen %}, vol. {{ entity.volumen }}{% endif %}
-                                        {% if entity.congreso %}, {{ entity.congreso }}{% endif %}
+                                        {% if entity.congreso %}, In proceedings of {{ entity.congreso }}{% endif %}
                                         {% if entity.ciudad %}, {{ entity.ciudad }}{% endif %}
                                         {% if entity.editorial %}, Editorial {{ entity.editorial }}{% endif %}
                                         {% if entity.serie %}No. {{ entity.serie }}{% endif %}
@@ -40,9 +48,9 @@
                                         {% if entity.paginas %}, pp. {{ entity.paginas }}{% endif %}
                                         {% if entity.issn %}, ISSN {{ entity.issn }}{% endif %}
                                         {% if entity.isbn %}, ISBN{{ entity.isbn }}{% endif %}
-                                        {% if entity.doi %}, DOI: {{ entity.doi }}{% endif %}
+                                        {% if entity.doi %}, DOI: <a href="http://dx.doi.org/{{ entity.doi }}">{{ entity.doi }}</a> {% endif %}
                                         {% if entity.enlace %}, {{ entity.enlace }} {% endif %}
-                                        {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %}
+                                     <!--   {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %}-->
                                     
                                     </li>
                                 {% endif %}   
@@ -53,7 +61,7 @@
         {% endfor %}        
     
     </div>
-</div>
+</section>
 
 
 

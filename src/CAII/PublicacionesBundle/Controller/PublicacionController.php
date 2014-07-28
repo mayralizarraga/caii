@@ -60,7 +60,8 @@ class PublicacionController extends Controller
             ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
             ->Join('MiembroPublicacion.idMiembro', 'Miembro')
             ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
-            ->groupBy('MiembroPublicacion.id');
+            ->groupBy('MiembroPublicacion.id')
+            ->orderBy('MiembroPublicacion.id');
 
         $miembros=$dql->getQuery()->getResult();
        

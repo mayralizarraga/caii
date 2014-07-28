@@ -155,6 +155,21 @@ class Publicacion
      */
     private $edicion;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="escuela", type="string", length=250,nullable=true)
+     */
+    private $escuela;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipoTesis", type="string", length=250,nullable=true)
+     */
+    private $tipoTesis;
+
 
     /**
      * Get id
@@ -609,4 +624,56 @@ class Publicacion
     {
         return $this->getTitulo();
     }
+
+    /**
+     * Set escuela
+     *
+     * @param string $escuela
+     * @return Publicacion
+     */
+    public function setEscuela($escuela)
+    {
+        $this->escuela = $escuela;
+    
+        return $this;
+    }
+
+    /**
+     * Get escuela
+     *
+     * @return string 
+     */
+    public function getEscuela()
+    {
+        return $this->escuela;
+    }
+
+
+
+    /**
+     * Set tipoTesis
+     *
+     * @param string $tipoTesis
+     * @return Publicacion
+     */
+    public function setTipoTesis($tipoTesis)
+    {
+        $this->tipoTesis = $tipoTesis;
+    
+        return $this;
+    }
+
+    /**
+     * Get tipoTesis
+     *
+     * @return string 
+     */
+    public function getTipoTesis()
+    {
+        return $this->edicion;
+    }
+
+
+
+   
 }

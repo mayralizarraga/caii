@@ -32,7 +32,7 @@ class MiembroController extends Controller
        // $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
         
         $dql = $em->createQueryBuilder();
-        $dql->select('Miembro.fotoURL , Miembro.id , Miembro.nombre , Miembro.apellidoP , Miembro.apellidoM, Ocupacion.id ocupacion')
+        $dql->select('Miembro.fotoURL ,Miembro.link_Pagina ,Miembro.id , Miembro.nombre , Miembro.apellidoP , Miembro.apellidoM, Ocupacion.id ocupacion')
             ->from('MiembroBundle:Miembro', 'Miembro')
             ->Join('Miembro.idOcupacion', 'Ocupacion')
             ->where('Miembro.status=1');

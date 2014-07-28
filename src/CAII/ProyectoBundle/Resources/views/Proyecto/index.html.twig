@@ -1,13 +1,17 @@
 {% extends '::frontend.html.twig' %}
 
 {% block contenido %}
-<div class="row">
-  <div class="large-12 columns">
+<!-- ######################## Header ######################## -->
+        
+        <header>
+              <h1 class="welcome_text">{{ 'proyectos' | trans }}</h1>    
+        </header>
+        
 
 
 
   
-<!--  <a href="{{ path('noticias') }}" data-reveal-id="myModal">Click Me For A Modal</a>
+ <!-- <a href="{{ path('noticias') }}" data-reveal-id="myModal">Click Me For A Modal</a>
 
 <div id="myModal" class="reveal-modal" data-reveal>
   <h2>Awesome. I have it.</h2>
@@ -15,13 +19,22 @@
   <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
   <a class="close-reveal-modal">&#215;</a>
 </div>-->
-    <h1>{{ 'proyectos' | trans }}</h1>
+
+
+
+
+
+<!-- ######################## Section ######################## -->
+
+   <section class="section_normal">
+   
+      <div class="row"> 
 
     
         {% for entity in entities %}
           	<h2><small> {{ entity.nombre }}</small></h2>
           	<ul class="no-bullet">
-  				<li>{{ 'duracion' | trans }}: {{ entity.fechaInicio|date('d-m-Y') }} - {% if entity.fechaFinal %} {{ entity.fechaFinal|date('d-m-Y') }}{% endif %}</li>
+  				<li>{{ 'duracion' | trans }}: {{ entity.fechaInicio|date('Y') }} - {% if entity.fechaFinal %} {{ entity.fechaFinal|date('Y') }}{% endif %}</li>
   				<li>{{ 'estado' | trans }}: {% if entity.status==1 %}
                          Activo
                       {% else %}
@@ -46,6 +59,6 @@
         
 
         
-  </div>
-</div>
+      </div>
+  </section>
 {% endblock %}

@@ -16,6 +16,9 @@
             </div>
             <!-- block -->
             <div class="block">
+
+
+          
                 <div class="navbar navbar-inner block-header">
                     <div class="muted pull-left">Miembros</div>
                 </div>
@@ -26,21 +29,20 @@
                              <a href="{{path('miembro_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
                           </div>
                         </div>
-                        <div class="mygrid-wrapper-div">  
-                          <table class="table" id="example">
+                        <div class="table-responsive">
+                          <table class="table">
                             <thead>
                               <tr>
                                 <th>ID</th>
                                 <th>Foto</th>
                                 <th>Nombre</th>
-                                <th>Apellido P.</th>
-                                <th>Apellido M.</th>
+                                <th>Apellidos</th>
                                 <th>Estatus</th>
                                 <th>Pagina</th>
                                 <th>Tipo</th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
 
                                   {% for entity in entities %}
                                  
@@ -53,8 +55,7 @@
                                               {% endif %}  
                                           </td>
                                           <td>{{ entity.nombre }}</td>
-                                          <td>{{ entity.apellidoP }}</td> 
-                                          <td>{{ entity.apellidoM }}</td>
+                                          <td>{{ entity.apellidoP }} {{ entity.apellidoM }}</td>
                                           <td>{% if entity.status==1 %}
                                               Activo
                                           {% else %}
@@ -79,7 +80,11 @@
 
                             </tbody>
                           </table>
+                          
                         </div>  
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+                          </div>
                     </div>
                 </div>
             </div>

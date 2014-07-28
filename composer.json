@@ -27,7 +27,8 @@
 	    "doctrine/data-fixtures": "dev-master",
         "stof/doctrine-extensions-bundle": "@dev",
         "gedmo/doctrine-extensions": "dev-master",
-        "gedmo/doctrine-extensions": "2.3.*@dev"
+        "gedmo/doctrine-extensions": "2.3.*@dev",
+        "psliwa/pdf-bundle": "dev-master"
 
 
     },

@@ -56,10 +56,10 @@ class MiembroProyecto
     /**
      * Set idMiembro
      *
-     * @param CAII\ProyectoBundle\Entity\Miembro
+     * @param Miembro
      * @return MiembroProyecto
      */
-    public function setIdMiembro(CAII\ProyectoBundle\Entity\Miembro $idMiembro)
+    public function setIdMiembro($idMiembro)
     {
         $this->idMiembro = $idMiembro;
     
@@ -79,10 +79,10 @@ class MiembroProyecto
     /**
      * Set idProyecto
      *
-     * @param CAII\ProyectoBundle\Entity\Proyecto
+     * @param Proyecto
      * @return MiembroProyecto
      */
-    public function setIdProyecto(CAII\ProyectoBundle\Entity\Proyecto $idProyecto)
+    public function setIdProyecto( $idProyecto)
     {
         $this->idProyecto = $idProyecto;
     

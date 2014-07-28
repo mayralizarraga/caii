@@ -29,7 +29,7 @@
                           </div>
                         </div>
                         <div class="mygrid-wrapper-div">
-                          <table class="table" id="example">
+                          <table class="table">
                             <thead>
                               <tr>
                                 <th>Nombre</th>
@@ -38,9 +38,11 @@
                                 <th>Estatus</th>
                                 <th>Entidad Financiadora</th>
                                 <th>Monto</th>
+                                <th></th>
+                                <th></th>
                               </tr>
                             </thead>
-                            <tbody> 
+                            <tbody id="myTable">
                                 {% for entity in entities %}   
                                   <tr>
                                       <td>{{ entity.nombre }}</td>
@@ -52,7 +54,7 @@
                                             Inactivo
                                           {% endif %}</td>
                                       <td>{{ entity.idEntidad }} </td>
-                                      <td>{{ entity.montoFinanciero}}</td>
+                                      <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>
                                       <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Miembros</a></td>
                                       <td>
                                               <ul>
@@ -70,7 +72,11 @@
           
                             </tbody>
                           </table>
+                          
                         </div>  
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+                          </div>
                     </div>
                 </div>
             </div>

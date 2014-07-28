@@ -1,22 +1,32 @@
 {% extends '::frontend.html.twig' %}
 
 {% block contenido %}
+<!-- ######################## Header ######################## -->
+        
+        <header>
+              <h1 class="welcome_text">{{ 'noticias' | trans }}</h1>    
+        </header>
 
-    <div class="row">
-        <div class="large-12 columns">
-            <h1>{{ 'noticias' | trans }}</h1><br>
+
+
+<!-- ######################## Section ######################## -->
+
+   <section class="section_normal">
+   
+      <div class="row" id="myTable"> 
+      
          
 
         {% for entity in entities %}
-        <article>
+        
             
             <h3><a href="#" data-reveal-id="{{ entity.id }}">{{ entity.titulo }}</a></h3>
-            <h6>{% if entity.fecha %}{{ entity.fecha|localizeddate('long', 'short') }}{% endif %}</h6>
+            <h6>{% if entity.fecha %}{{ entity.fecha|localizeddate('long', 'none') }}{% endif %}</h6>
             <div class="row">
-                <div class="large-3 columns">
+                <div class="three columns">
                     <a href="#" data-reveal-id="{{ entity.id }}"><img src="{{ asset('uploads/images/noticias/' ~ entity.fotoURL) }}" alt="" alt="" height="100%" width="100%" /></a>
                 </div>
-                <div class="large-9 columns">
+               <div class="nine columns">
                 <p>{{ entity.descripcion }}</p>
                 <p><a href="#" data-reveal-id="{{ entity.id }}">Ver más>></a></p>
                 </div>
@@ -40,14 +50,21 @@
             </div>   
 
 
-        </article>   
+          
         <br>
-        <hr /> 
+       
              
         {% endfor %}
        
 
       
-        </div>
-    </div>
+          </div>
+          <div class="row">
+                  <div class="pagination-centered">
+                          <ul class="pagination" id="myPager" ></ul>
+                  </div>
+            </div>
+          </div>
+        
+        </section>
     {% endblock %}
