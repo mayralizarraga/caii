@@ -21,7 +21,7 @@
 				
 
 				//Profesores participantes
-				array('nombre' => 'Francisco','apellidoP' => 'Ibáñez','apellidoM' => 'Suárez','status' => '1','link_Pagina' => '',
+				array('nombre' => 'Francisco','apellidoP' => 'Ibáñez','apellidoM' => 'Salas','status' => '1','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'profesor','referencia'=>'m2'),
 				array('nombre' => 'Claudia','apellidoP' => 'Martínez','apellidoM' => 'Castillo','status' => '1','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'profesor','referencia'=>'m46'),

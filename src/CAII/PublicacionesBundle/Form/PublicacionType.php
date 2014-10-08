@@ -18,6 +18,7 @@ class PublicacionType extends AbstractType
             ->add('doi')
             ->add('paginas')
             ->add('titulo')
+            ->add('tituloLibro')
             ->add('fecha')
             ->add('enlace')
             ->add('tipo_Reporte')
@@ -32,6 +33,7 @@ class PublicacionType extends AbstractType
             ->add('editorial')
             ->add('serie')
             ->add('edicion')
+            ->add('escuela')
             ->add('TipoPublicacion')
         ;
     }

@@ -1,31 +1,79 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>Slide list</h1>
+{% block contenido %}
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Slide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- block -->
+            <div class="block">
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Rutaimagen</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('slide_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.rutaImagen }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('slide_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
+          
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Slide</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="table-toolbar">
+                          <div class="btn-group">
+                             <a href="{{path('slide_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th>Imagen</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for entity in entities %}
+                                    <tr>
+                                        
+                                        <td>{% if entity.Rutaimagen %} 
+                                                <img src="{{ asset('uploads/images/slide/' ~ entity.Rutaimagen) }}" alt="" alt="" height="25%" width="25%" />
+                                            {% endif %} 
+                                        <td>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('slide_delete', { 'id': entity.id }) }}">delete</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('slide_edit', { 'id': entity.id }) }}">edit</a>
+                                            </li>
+                                        </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                          
+                        </div>  
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+        </div>
+         
+    
     {% endblock %}
+
+
+
+

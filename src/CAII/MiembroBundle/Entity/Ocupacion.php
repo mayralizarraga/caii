@@ -33,6 +33,16 @@ class Ocupacion implements Translatable
 
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="prioridad", type="integer", length=11, nullable=true)
+     * 
+     * 
+     */
+    private $prioridad;
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -63,6 +73,30 @@ class Ocupacion implements Translatable
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+
+    /**
+     * Set prioridad
+     *
+     * @param integer $prioridad
+     * @return Ocupacion
+     */
+    public function setPrioridad($prioridad)
+    {
+        $this->prioridad = $prioridad;
+    
+        return $this;
+    }
+
+    /**
+     * Get prioridad
+     *
+     * @return integer 
+     */
+    public function getPrioridad()
+    {
+        return $this->prioridad;
     }
 
 

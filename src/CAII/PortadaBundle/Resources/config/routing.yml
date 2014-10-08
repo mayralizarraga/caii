@@ -10,3 +10,34 @@ _portada_homepage:
     pattern:  /
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada_homepage}
 
+slide_new:
+    pattern:  /admin/slide/new
+    defaults: { _controller: PortadaBundle:Slide:new }
+
+slide_edit:
+    pattern:  /admin/slide/edit/{id}
+    defaults: { _controller: PortadaBundle:Slide:edit }
+
+slide_show:
+    pattern:  /admin/slide/show/{id}
+    defaults: { _controller: PortadaBundle:Slide:show }
+
+slide_create:
+    pattern:  /admin/slide/create/
+    defaults: { _controller: PortadaBundle:Slide:create }
+
+slide_update:
+    pattern:  /admin/slide/update/{id}
+    defaults: { _controller: PortadaBundle:Slide:update }
+
+slide_delete:
+    pattern:  /admin/slide/delete/{id}
+    defaults: { _controller: PortadaBundle:Slide:delete }
+
+slide_backend:
+    pattern:  /admin/slide
+    defaults: { _controller: PortadaBundle:Slide:index }
+
+_slide_backend:
+    pattern: /admin/slide/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: slide_backend}

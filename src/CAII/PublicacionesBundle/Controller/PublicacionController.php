@@ -8,7 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CAII\PublicacionesBundle\Entity\Publicacion;
-use CAII\PublicacionesBundle\Form\PublicacionType;
+use CAII\PublicacionesBundle\Form\PublicacionLibroType;
+use CAII\PublicacionesBundle\Form\PublicacionCapituloType;
+use CAII\PublicacionesBundle\Form\PublicacionTesisType;
+use CAII\PublicacionesBundle\Form\PublicacionInternacionalType;
+use CAII\PublicacionesBundle\Form\PublicacionNacionalType;
+use CAII\PublicacionesBundle\Form\PublicacionRevistaType;
+use CAII\PublicacionesBundle\Form\PublicacionReporteType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Publicacion controller.
@@ -143,22 +150,67 @@ class PublicacionController extends Controller
     }
 
     /**
-     * Displays a form to create a new Publicacion entity.
+     * Lists all Miembro entities.
      *
-     * @Route("/new", name="Publicacion_new")
+     * @Route("/", name="Publicacion_new")
      * @Method("GET")
-     * @Template()
+     * @Template("PublicacionesBundle:Publicacion:newLibro.html.twig")
      */
-    public function newAction()
+    public function newLibroAction($tipo)
     {
         $entity = new Publicacion();
-        $form   = $this->createCreateForm($entity);
+        // $form   = $this->createCreateForm($entity);
+        switch ($tipo){
+            case "Libro":
+                $form   = $this->createForm(new PublicacionLibroType($this->getDoctrine()->getManager()), $entity);
+                break;
+            case "Capitulo":
+                $form   = $this->createForm(new PublicacionCapituloType($this->getDoctrine()->getManager()), $entity);
+                break; 
+            case "Revista":
+                $form   = $this->createForm(new PublicacionRevistaType($this->getDoctrine()->getManager()), $entity);
+                break; 
+            case "Internacional":
+                $form   = $this->createForm(new PublicacionInternacionalType($this->getDoctrine()->getManager()), $entity);
+                break; 
+            case "Nacional":
+                $form   = $this->createForm(new PublicacionNacionalType($this->getDoctrine()->getManager()), $entity);
+                break; 
+            case "Reporte":
+                $form   = $this->createForm(new PublicacionReporteType($this->getDoctrine()->getManager()), $entity);
+                break; 
+            case "Tesis":
+                $form   = $this->createForm(new PublicacionTesisType($this->getDoctrine()->getManager()), $entity);
+                break; 
 
-        return array(
+        }
+        
+
+
+        $form->handleRequest($this->getRequest());
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('Publicacion_backend', array('id' => $entity->getId())));
+        }
+
+        $view="PublicacionesBundle:Publicacion:new".$tipo.".html.twig";
+        $content = $this->renderView($view,
+        array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ));
+
+    return new Response($content);
+
+
+        
     }
+
+    
 
     /**
      * Finds and displays a Publicacion entity.
@@ -192,7 +244,7 @@ class PublicacionController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
+    public function editAction($tipo,$id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -202,14 +254,53 @@ class PublicacionController extends Controller
             throw $this->createNotFoundException('Unable to find Publicacion entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        switch ($tipo){
+            case "Libro":
+                $formType = new PublicacionLibroType();
+                break;
+            case "Capitulo":
+                $formType = new PublicacionCapituloType();
+                break; 
+            case "Revista":
+                $formType = new PublicacionRevistaType();
+                break; 
+            case "Internacional":
+                $formType = new PublicacionInternacionalType();
+                break; 
+            case "Nacional":
+                $formType = new PublicacionNacionalType();
+                break; 
+            case "Reporte":
+                $formType = new PublicacionReporteType();
+                break; 
+            case "Tesis":
+                $formType = new PublicacionTesisType();
+                break; 
 
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+        }
+
+        
+        $form = $this->createForm($formType, $entity, array(
+            'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->handleRequest($this->getRequest());
+
+       if ($form->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('Publicacion_backend'));
+        }
+
+        
+
+        $view="PublicacionesBundle:Publicacion:edit".$tipo.".html.twig";
+        $content = $this->renderView($view,
+        array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
     }
 
     /**

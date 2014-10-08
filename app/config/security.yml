@@ -4,13 +4,13 @@ security:
 
     firewalls:
         secured_area:
-            pattern:   ^/backend
+            pattern:   ^/admin
             anonymous: ~
             http_basic:
                 realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/backend/*, roles: ROLE_ADMIN }
+        - { path: ^/admin/*, roles: ROLE_ADMIN }
         # Include the following line to also secure the /admin path itself
         # - { path: ^/admin$, roles: ROLE_ADMIN }
 

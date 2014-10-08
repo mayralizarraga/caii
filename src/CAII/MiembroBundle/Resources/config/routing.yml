@@ -3,37 +3,42 @@ miembro:
     defaults: { _controller: MiembroBundle:Miembro:index }
 
 _miembro:
-    pattern: /{_locale}/miembro/
+    pattern: /{_locale}/miembros/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: miembro}
 
 miembro_new:
-    pattern:  /backend/miembro/new
+    pattern:  /admin/miembros/new
     defaults: { _controller: MiembroBundle:Miembro:new }
 
 miembro_edit:
-    pattern:  /backend/miembro/edit/{id}
+    pattern:  /admin/miembros/edit/{id}
     defaults: { _controller: MiembroBundle:Miembro:edit }
 
 miembro_show:
-    pattern:  /backend/miembro/show/{id}
+    pattern:  /admin/miembros/show/{id}
     defaults: { _controller: MiembroBundle:Miembro:show }
 
 miembro_create:
-    pattern:  /backend/miembro/create
+    pattern:  /admin/miembros/create
     defaults: { _controller: MiembroBundle:Miembro:create }
 
 miembro_update:
-    pattern:  /backend/miembro/update/{id}
+    pattern:  /admin/miembros/update/{id}
     defaults: { _controller: MiembroBundle:Miembro:update }
 
 miembro_delete:
-    pattern:  /backend/miembro/delete/{id}
+    pattern:  /admin/miembros/delete/{id}
     defaults: { _controller: MiembroBundle:Miembro:delete}
 
 miembro_backend:
-    pattern:  /backend/miembro
+    pattern:  /admin/miembros
     defaults: { _controller: MiembroBundle:Miembro:indexBackend }
 
+miembro_print:
+    pattern:  /admin/miembros/print
+    defaults: { _controller: MiembroBundle:Miembro:print }
+
 proyecto_miembro_new:
-    pattern:  /backend/proyecto/miembros/new
+    pattern:  /admin/proyecto/miembros/new
     defaults: { _controller: MiembroBundle:MiembroProyecto:new }
+

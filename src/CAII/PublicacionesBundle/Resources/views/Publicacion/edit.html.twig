@@ -1,16 +1,57 @@
 {% extends '::backend.html.twig' %}
 
 {% block contenido -%}
-    <h1>Publicacion edit</h1>
+    <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li>
+                            <a href="{{path('Publicacion_backend')}}">Publicaciones</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Nuevo</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            
+			    
+               <fieldset>
+                    <legend><h1>Editar Miembro</h1></legend>
+                    {{ form_start(form, { 'action': path('miembro_edit', { 'id': entity.id }), 'method': 'PUT' }) }} 
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre) }}<br>
+                        {{ form_label(form.apellidoP, 'Apellido Paterno') }}
+                        {{ form_widget(form.apellidoP) }}<br>
+                        {{ form_label(form.apellidoM, 'Apellido Materno') }}
+                        {{ form_widget(form.apellidoM) }}<br>
+                        {{ form_label(form.status, 'Estado') }}
+                        {{ form_widget(form.status) }}<br>
+                        {{ form_label(form.link_Pagina, 'Pagina personal') }}
+                        {{ form_widget(form.link_Pagina) }}<br>
+                        {{ form_label(form.foto, 'Foto') }}
+                          {% if entity.fotoURL %} 
+                              <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}" alt="" alt="" height="60" width="60" />
+                          {% else %}   
+                               <img src="{{ asset('uploads/images/miembros/unknown-person.gif') }}" alt="" height="60" width="60" />
+                          {% endif %} <br>
+                        {{ form_widget(form.foto) }}
+                        {{ form_errors(form.foto) }}<br>
+                        {{ form_label(form.alum_Descripcion, 'Descripcion del Alumno') }}
+                        {{ form_widget(form.alum_Descripcion) }}<br>
+                        {{ form_label(form.idOcupacion, 'Tipo de miembro') }}
+                        {{ form_widget(form.idOcupacion) }}
+                        <br>
+                        <input type="submit" value="Save" >
+                         <br>
+                    {{ form_end(form) }}
+                </fieldset>
+			
+		</div>	
+    
 
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('Publicacion_backend') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}

@@ -1,67 +1,68 @@
 TipoPublicacion:
-    pattern:  /backend/tipopublicacion
+    pattern:  /admin/tipopublicacion
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:index }
     
 _TipoPublicacion:
-    pattern: /backend/tipopublicacion/
+    pattern: /admin/tipopublicacion/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: tipopublicacion}
 
 TipoPublicacion_new:
-    pattern:  /backend/tipopublicacion/new
+    pattern:  /admin/tipopublicacion/new
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:new }
 
 TipoPublicacion_edit:
-    pattern:  /backend/tipopublicacion/edit/{id}
+    pattern:  /admin/tipopublicacion/edit/{id}
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:edit }
 
 TipoPublicacion_show:
-    pattern:  /backend/tipopublicacion/show/{id}
+    pattern:  /admin/tipopublicacion/show/{id}
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:show }
 
 TipoPublicacion_create:
-    pattern:  /backend/tipopublicacion/create
+    pattern:  /admin/tipopublicacion/create
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:create }
 
 TipoPublicacion_update:
-    pattern:  /backend/tipopublicacion/update/{id}
+    pattern:  /admin/tipopublicacion/update/{id}
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:update }
 
 TipoPublicacion_delete:
-    pattern:  /backend/tipopublicacion/delete/{id}
+    pattern:  /admin/tipopublicacion/delete/{id}
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:delete}
 
 Publicacion:
-    pattern:  /{_locale}/Publicacion
+    pattern:  /{_locale}/publicaciones
     defaults: { _controller: PublicacionesBundle:Publicacion:index }
 
 _Publicacion:
-    pattern: /{_locale}/Publicacion/
+    pattern: /{_locale}/publicaciones/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Publicacion}
 
+
 Publicacion_new:
-    pattern:  /{_locale}/Publicacion/new
-    defaults: { _controller: PublicacionesBundle:Publicacion:new }
+    pattern:  /admin/publicaciones/new/{tipo}
+    defaults: { _controller: PublicacionesBundle:Publicacion:newLibro}
 
 Publicacion_edit:
-    pattern:  /backend/Publicacion/edit/{id}
+    pattern:  /admin/publicaciones/edit/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:edit }
 
 Publicacion_backend:
-    pattern:  /backend/Publicacion
+    pattern:  /admin/publicaciones
     defaults: { _controller: PublicacionesBundle:Publicacion:indexBackend }
 
 Publicacion_show:
-    pattern:  /backend/Publicacion/show/{id}
+    pattern:  /admin/publicaciones/show/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:show }
 
 Publicacion_create:
-    pattern:  /backend/Publicacion/create
+    pattern:  /admin/publicaciones/create
     defaults: { _controller: PublicacionesBundle:Publicacion:create }
 
 Publicacion_update:
-    pattern:  /backend/Publicacion/update/{id}
+    pattern:  /admin/publicaciones/update/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:update }
 
 Publicacion_delete:
-    pattern:  /backend/Publicacion/delete/{id}
+    pattern:  /admin/publicaciones/delete/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:delete}

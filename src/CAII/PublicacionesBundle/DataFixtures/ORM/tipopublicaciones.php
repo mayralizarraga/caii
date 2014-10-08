@@ -14,8 +14,8 @@
 				array('nombre' => 'Capítulos de libros','prioridad' => '2','name'=>'Book chapters','referencia'=>'capLibro'),
 				array('nombre' => 'Revistas' ,'prioridad' => '3','name'=>'Journals','referencia'=>'revista'),
 				array('nombre' => 'Artículos', 'prioridad' => '4','name'=>'Articles','referencia'=>'articulo'),
-				array('nombre' => 'Articulos de conferencias internacionales','prioridad' => '5','name'=>'International conference\'s articles','referencia'=>'articuloCI'),
-				array('nombre' => 'Articulos de congresos nacionales','prioridad' => '6','name'=>'National conference\'s articles','referencia'=>'articuloCN'),
+				array('nombre' => 'Articulos en congresos internacionales','prioridad' => '5','name'=>'International conference\'s articles','referencia'=>'articuloCI'),
+				array('nombre' => 'Articulos en congresos nacionales','prioridad' => '6','name'=>'National conference\'s articles','referencia'=>'articuloCN'),
 				array('nombre' => 'Reportes técnicos','prioridad' => '7','name'=>'Technical Reports','referencia'=>'reporte'),
 				array('nombre' => 'Tesis','prioridad' => '8','name'=>'Thesis','referencia'=>'tesis'),
 				

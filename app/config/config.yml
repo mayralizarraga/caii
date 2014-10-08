@@ -89,6 +89,17 @@ services:
         tags:
             - { name: twig.extension }
 
+#PDF
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltoimage
+        options:    []
+
 #Parametros
 parameters:
     miembros.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/miembros/

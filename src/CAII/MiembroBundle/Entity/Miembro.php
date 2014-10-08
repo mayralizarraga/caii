@@ -77,7 +77,7 @@ class Miembro
 
     /**
      * @var string
-     *
+     * @Gedmo\Translatable
      * @ORM\Column(name="alum_Descripcion", type="text",nullable=true)
      */
     private $alum_Descripcion;
@@ -332,5 +332,14 @@ class Miembro
     public function __toString()
     {
         return $this->getNombre();
+    }
+
+    /**
+    * @Gedmo\Locale
+    */
+    private $locale;
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 }

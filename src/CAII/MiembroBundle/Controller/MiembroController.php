@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CAII\MiembroBundle\Entity\Miembro;
 use CAII\MiembroBundle\Form\MiembroType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Miembro controller.
@@ -70,12 +71,42 @@ class MiembroController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
-        
-       return array(
+
+        return array(
             'entities' => $entities,
             );
     }
 
+    /**
+     * Lists all Miembro entities.
+     *
+     * @Route("/", name="miembro_print")
+     * @Method("GET")
+     * @Template("MiembroBundle:Miembro:print.html.twig")
+     */
+    public function printAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('MiembroBundle:Miembro')->findAll();
+
+        $html = $this->renderView('MiembroBundle:Miembro:print.html.twig', array(
+          'entities' => $entities,
+        ));
+
+        return new Response(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="miembros.pdf"'
+            )
+
+        );
+       
+    }
+
+   
 
 
     /**
@@ -240,6 +271,7 @@ class MiembroController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Miembro entity.
      *

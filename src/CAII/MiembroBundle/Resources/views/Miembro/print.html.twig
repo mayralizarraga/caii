@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estatus</th>
+      <th>Pagina</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+
+        {% for entity in entities %}
+       
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.nombre }} {{ entity.apellidoP }} {{ entity.apellidoM }}</td>
+                <td>{% if entity.status==1 %}
+                    Activo
+                {% else %}
+                    Inactivo
+                {% endif %}</td>
+                <td>{{ entity.linkPagina }}</td>
+                <td>{{ entity.idOcupacion }}</td>
+                  
+                
+            </tr>
+        
+        {% endfor %}
+
+  </tbody>
+</table>

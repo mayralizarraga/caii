@@ -83,6 +83,7 @@
 
 			//--Tesis--
 			$publicaciones6 = array(
+				array('titulo' => 'Sistema para la detección de VRUS en zonas de riesgo empleando redes de sensores','fecha' => '20013-12-01','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Maestría en Ingenieria Electrónica','tipoPublicacion'=>'tesis','referencia'=>'t13'),
 				array('titulo' => 'Análisis comparativo de las tecnologías .Net y mono','fecha' => '2013-01-30','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Maestría en Ingenieria Electrónica','tipoPublicacion'=>'tesis','referencia'=>'t1'),
 				array('titulo' => 'Redes de sensores inalámbricas para el cuidado de pacientes con padecimientos cognitivo-degenerativos','fecha' => '2013-01-30','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Maestría en Ingenieria Electrónica','tipoPublicacion'=>'tesis','referencia'=>'t2'),
 				array('titulo' => 'Integración del protocolo de enrutamiento DABR al simulador de redes de sensores inalámbricas ns-2 en su versión 2.34','fecha' => '2012-09-10','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Ingenieria en Sistemas Computacionales','tipoPublicacion'=>'tesis','referencia'=>'t3'),
@@ -95,6 +96,7 @@
 				array('titulo' => 'Implementación de un sistema de Tiempo-Real con RTLinux','fecha' => '2008-11-01','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Ingenieria en Sistemas Computacionales','tipoPublicacion'=>'tesis','referencia'=>'t10'),
 				array('titulo' => 'Simulación de planificación de tareas de Tiempo-Real','fecha' => '2007-11-01','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Ingenieria en Sistemas Computacionales','tipoPublicacion'=>'tesis','referencia'=>'t11'),
 				array('titulo' => 'Evaluación de protocolos de encaminamiento para redes ad hoc','fecha' => '2007-11-01','institucion'=>'Instituto Tecnológico de Mexicali','tipoTesis'=>'Ingenieria en Sistemas Computacionales','tipoPublicacion'=>'tesis','referencia'=>'t12'),
+
 
 			
 			);

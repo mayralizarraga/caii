@@ -7,29 +7,34 @@ _noticias:
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: noticia}
 
 noticia_new:
-    pattern:  /backend/noticia/new
+    pattern:  /admin/noticias/new
     defaults: { _controller: NoticiaBundle:Noticia:new }
 
 noticia_edit:
-    pattern:  /backend/noticia/edit/{id}
+    pattern:  /admin/noticias/edit/{id}
     defaults: { _controller: NoticiaBundle:Noticia:edit }
 
 noticia_show:
-    pattern:  /backend/noticia/show/{id}
+    pattern:  /admin/noticias/show/{id}
     defaults: { _controller: NoticiaBundle:Noticia:show }
 
 noticia_create:
-    pattern:  /backend/noticia/create
+    pattern:  /admin/noticias/create/
     defaults: { _controller: NoticiaBundle:Noticia:create }
 
 noticia_update:
-    pattern:  /backend/noticia/update/{id}
+    pattern:  /admin/noticias/update/{id}
     defaults: { _controller: NoticiaBundle:Noticia:update }
 
 noticia_delete:
-    pattern:  /backend/noticia/delete/{id}
+    pattern:  /admin/noticias/delete/{id}
     defaults: { _controller: NoticiaBundle:Noticia:delete}
 
 noticia_backend:
-    pattern:  /backend/noticia
+    pattern:  /admin/noticia
     defaults: { _controller: NoticiaBundle:Noticia:indexBackend }
+
+_noticia_backend:
+    pattern: /admin/noticia/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: noticia_backend}
+

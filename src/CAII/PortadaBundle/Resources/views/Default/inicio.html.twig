@@ -6,36 +6,15 @@
       <div class="orbit-container">
       
         <ul class="example-orbit" data-orbit >
-          <li>
-            <img src="{{ asset('bundles/portada/img/slide/IMG_7.jpg') }}" />
-           <!-- <div class="orbit-caption">
-              Caption One.
-            </div>-->
-          </li>
-          <li>
-            <img src="{{ asset('bundles/portada/img/slide/IMG_4.jpg') }}" />
-            <!-- <div class="orbit-caption">
-              Caption Two.
-            </div> -->
-          </li>
-          <li>
-            <img src="{{ asset('bundles/portada/img/slide/IMG_3.jpg') }}" />
-            <!-- <div class="orbit-caption">
-              Caption Three.
-            </div> -->
-          </li>
-          <li>
-            <img src="{{ asset('bundles/portada/img/slide/IMG_6.jpg') }}" />
-            <!-- <div class="orbit-caption">
-              Caption Three.
-            </div> -->
-          </li>
-          <li>
-            <img src="{{ asset('bundles/portada/img/slide/IMG_5.jpg') }}" />
-            <!-- <div class="orbit-caption">
-              Caption Three.
-            </div> -->
-          </li>
+          {% for entity in entities %}
+            <li>
+              <img src="{{ asset('uploads/images/slide/' ~ entity.Rutaimagen) }}" />
+             <!-- <div class="orbit-caption">
+                Caption One.
+              </div>-->
+            </li>
+            
+          {% endfor %}
         </ul>
 
       </div>

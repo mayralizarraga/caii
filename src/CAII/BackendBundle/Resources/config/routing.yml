@@ -1,3 +1,7 @@
 backend:
-    pattern:  /backend/
-    defaults: { _controller: BackendBundle:Default:index }
+    pattern:  /admin/
+    defaults: { _controller: BackendBundle:Default:index}
+
+_backend:
+    pattern: /admin
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: backend}
