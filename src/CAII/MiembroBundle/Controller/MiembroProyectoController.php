@@ -220,24 +220,19 @@ class MiembroProyectoController extends Controller
      * @Route("/{id}", name="miembroproyecto_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction($idp, $idm)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($id);
+            $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($idm);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find MiembroProyecto entity.');
+                throw $this->createNotFoundException('Unable to find Miembro entity.');
             }
 
             $em->remove($entity);
             $em->flush();
-        }
 
-        return $this->redirect($this->generateUrl('miembroproyecto'));
+        return $this->redirect($this->generateUrl('proyecto_miembros', array('id' => $idp)));
     }
 
     /**

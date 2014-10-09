@@ -42,3 +42,7 @@ proyecto_miembro_new:
     pattern:  /admin/proyectos/{id}/miembros/new
     defaults: { _controller: MiembroBundle:MiembroProyecto:new }
 
+proyecto_miembro_delete:
+    pattern:  /admin/proyectos/{idp}/miembros/{idm}/delete
+    defaults: { _controller: MiembroBundle:MiembroProyecto:delete }
+

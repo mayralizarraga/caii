@@ -1,33 +1,43 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Fecha de Inicio</th>
-      <th>Fecha de Terminación</th>
-      <th>Estatus</th>
-      <th>Entidad Financiadora</th>
-      <th>Monto</th>
-      
-    </tr>
-  </thead>
-  <tbody id="myTable">
-      {% for entity in entities %}   
+<html>
+  <head>
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/backend/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <table class="table">
+      <thead>
         <tr>
-            <td>{{ entity.nombre }}</td>
-            <td>{{ entity.fechaInicio|date('d-m-Y') }}</td>
-            <td>{{ entity.fechaFinal|date('d-m-Y') }}</td>
-            <td>{% if entity.status==1 %}
-                  Activo
-                {% else %}
-                  Inactivo
-                {% endif %}</td>
-            <td>{{ entity.idEntidad }} </td>
-            <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>
-            
+          <th>Nombre</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Terminación</th>
+          <th>Estatus</th>
+          <th>Entidad Financiadora</th>
+          <th>Monto</th>
+          
         </tr>
+      </thead>
+      <tbody id="myTable">
+          {% for entity in entities %}   
+            <tr>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.fechaInicio|date('d-m-Y') }}</td>
+                <td>{{ entity.fechaFinal|date('d-m-Y') }}</td>
+                <td>{% if entity.status==1 %}
+                      Activo
+                    {% else %}
+                      Inactivo
+                    {% endif %}</td>
+                <td>{{ entity.idEntidad }} </td>
+                <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>
+                
+            </tr>
 
-      {% endfor %}
+          {% endfor %}
 
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </body>
+</html>
                          

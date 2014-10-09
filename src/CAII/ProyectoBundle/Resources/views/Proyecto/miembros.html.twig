@@ -39,7 +39,9 @@
                               {% for mim in members %}
                                 <tr>
                                   <td>{{ mim.nombreMiembro }} {{ mim.apellidoP }} {{ mim.apellidoM }}</td>
+                                  <td><a href="{{path('proyecto_miembro_delete', { 'idp': mim.idproyecto , 'idm': mim.id })}}">Delete</a></td>
                                 </tr>
+
                               {% endfor %}
                             
                           </tbody>
