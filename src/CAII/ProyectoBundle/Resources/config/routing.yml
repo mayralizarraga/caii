@@ -42,3 +42,7 @@ proyecto_update:
 proyecto_delete:
     pattern:  /admin/proyectos/delete/{id}
     defaults: { _controller: ProyectoBundle:Proyecto:delete}
+
+proyecto_print:
+    pattern:  /admin/proyectos/print
+    defaults: { _controller: ProyectoBundle:Proyecto:print }

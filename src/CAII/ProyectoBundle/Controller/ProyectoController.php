@@ -11,6 +11,7 @@ use CAII\ProyectoBundle\Entity\Proyecto;
 use CAII\ProyectoBundle\Form\ProyectoType;
 use CAII\MiembroBundle\Entity\MiembroProyecto;
 use CAII\MiembroBundle\Form\MiembroProyectoType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Proyecto controller.
@@ -19,6 +20,35 @@ use CAII\MiembroBundle\Form\MiembroProyectoType;
  */
 class ProyectoController extends Controller
 {
+
+    /**
+     * Lists all Miembro entities.
+     *
+     * @Route("/", name="miembro_print")
+     * @Method("GET")
+     * @Template("MiembroBundle:Miembro:print.html.twig")
+     */
+    public function printAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ProyectoBundle:Proyecto')->findAll();
+
+        $html = $this->renderView('ProyectoBundle:Proyecto:print.html.twig', array(
+          'entities' => $entities,
+        ));
+
+        return new Response(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="proyecto.pdf"'
+            )
+
+        );
+       
+    }
 
     /**
      * Lists all Proyecto entities.

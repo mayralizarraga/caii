@@ -16,6 +16,7 @@ class MiembroProyectoType extends AbstractType
     {
         $builder
             ->add('idMiembro')
+            ->add('guardar', 'submit')
           
         ;
     }

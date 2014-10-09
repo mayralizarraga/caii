@@ -88,10 +88,22 @@ class MiembroProyectoController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction($id)
     {
         $entity = new MiembroProyecto();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createForm(new MiembroProyectoType(), $entity);
+
+        $form->handleRequest($this->getRequest());
+         $em = $this->getDoctrine()->getManager();
+
+        if ($form->isValid()) {
+            $entity->setIdProyecto($em->getRepository('ProyectoBundle:Proyecto')->find($id));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('proyecto_miembros', array('id' => $id)));
+        }
 
         return array(
             'entity' => $entity,

@@ -27,6 +27,9 @@
                           <div class="btn-group">
                              <a href="{{path('proyecto_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
                           </div>
+                          <div class="btn-group">
+                             <a href="{{path('proyecto_print')}}"><button class="btn btn-success">Download <i class="icon-download icon-white"></i></button></a>
+                          </div>
                         </div>
                         <div class="mygrid-wrapper-div">
                           <table class="table">
@@ -55,7 +58,7 @@
                                           {% endif %}</td>
                                       <td>{{ entity.idEntidad }} </td>
                                       <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>
-                                      <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Miembros</a></td>
+                                      <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" >Miembros</a></td>
                                       <td>
                                               <ul>
                                                   <li>
@@ -84,7 +87,7 @@
 
          
 
-          <!-- Modal -->
+          <!-- Modal 
           <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -101,7 +104,7 @@
                 
               </div>
             </div>
-          </div>
+          </div>-->
 
         </div>
 {% endblock %}

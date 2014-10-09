@@ -162,7 +162,7 @@ class MiembroController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction($id)
     {
         $entity = new Miembro();
         //$form   = $this->createCreateForm($entity);

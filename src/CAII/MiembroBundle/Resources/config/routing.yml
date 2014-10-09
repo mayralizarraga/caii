@@ -39,6 +39,6 @@ miembro_print:
     defaults: { _controller: MiembroBundle:Miembro:print }
 
 proyecto_miembro_new:
-    pattern:  /admin/proyecto/miembros/new
+    pattern:  /admin/proyectos/{id}/miembros/new
     defaults: { _controller: MiembroBundle:MiembroProyecto:new }
 
