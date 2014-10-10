@@ -99,9 +99,13 @@ class MiembroProyectoController extends Controller
         if ($form->isValid()) {
             $entity->setIdProyecto($em->getRepository('ProyectoBundle:Proyecto')->find($id));
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-
+            $errors = $this->get('validator')->validate($entity);
+            if (count($errors) === 0) {
+                $em->persist($entity);
+                $em->flush();
+            }
+            var_dump($errors);
+            
             return $this->redirect($this->generateUrl('proyecto_miembros', array('id' => $id)));
         }
 

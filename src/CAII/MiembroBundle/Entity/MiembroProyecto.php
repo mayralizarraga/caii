@@ -2,15 +2,23 @@
 
 namespace CAII\MiembroBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * MiembroProyecto
  *
- * @ORM\Table(name="MiembroProyecto")
+ * @ORM\Table(name="MiembroProyecto", uniqueConstraints={
+ *     @ORM\UniqueConstraint(columns={"idMiembro", "idProyecto"})
+ * })
  * @ORM\Entity (repositoryClass="CAII\MiembroBundle\Entity\MiembroProyectoRepository")
+ * @UniqueEntity(
+ *     fields={"idMiembro", "idProyecto"},
+ *     message="This port is already in use on that host."
+ * )
  */
 class MiembroProyecto
 {

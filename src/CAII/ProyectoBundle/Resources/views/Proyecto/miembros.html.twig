@@ -13,7 +13,7 @@
                     <div class="span12">
                         <div class="table-toolbar">
                           <div class="btn-group">
-                             <a href="{{path('proyecto_miembro_new', { 'id': entity.id })}}"><button class="btn btn-success">Add New Member <i class="icon-plus icon-white"></i></button></a>
+                             <a href="{{path('proyecto_miembro_new', { 'id': entity.id })}}"> <!-- data-toggle="modal" data-target=".bs-example-modal-lg" --><button class="btn btn-success">Add New Member <i class="icon-plus icon-white"></i></button></a>
                           </div>
                         </div>
                         <table class="table" id="example">
@@ -51,5 +51,24 @@
                 </div>
             </div>
             <!-- /block -->
+
+             <!-- Modal -->
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Miembros</h4>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <a href="{{ path('proyecto_backend') }}"  class="btn btn-default">Close</a>
+                     
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
         </div>
 {% endblock %}
