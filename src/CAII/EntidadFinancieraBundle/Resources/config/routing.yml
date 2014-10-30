@@ -1,31 +1,31 @@
 EntidadFinanciera:
-    pattern:  /backend/EntidadFinanciera
+    pattern:  /admin/EntidadFinanciera
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:index }
 
 _EntidadFinanciera:
-    pattern: /backend/EntidadFinanciera/
+    pattern: /admin/EntidadFinanciera/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: EntidadFinanciera}
 
 EntidadFinanciera_new:
-    pattern:  /backend/EntidadFinanciera/new
+    pattern:  /admin/EntidadFinanciera/new
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:new }
 
 EntidadFinanciera_edit:
-    pattern:  /backend/EntidadFinanciera/edit/{id}
+    pattern:  /admin/EntidadFinanciera/edit/{id}
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:edit }
 
 EntidadFinanciera_show:
-    pattern:  /backend/EntidadFinanciera/show/{id}
+    pattern:  /admin/EntidadFinanciera/show/{id}
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:show }
 
 EntidadFinanciera_create:
-    pattern:  /backend/EntidadFinanciera/create
+    pattern:  /admin/EntidadFinanciera/create
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:create }
 
 EntidadFinanciera_update:
-    pattern:  /backend/EntidadFinanciera/update/{id}
+    pattern:  /admin/EntidadFinanciera/update/{id}
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:update }
 
 EntidadFinanciera_delete:
-    pattern:  /backend/EntidadFinanciera/delete/{id}
+    pattern:  /admin/EntidadFinanciera/delete/{id}
     defaults: { _controller: EntidadFinancieraBundle:EntidadFinanciadora:delete}

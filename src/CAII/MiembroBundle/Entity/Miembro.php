@@ -331,7 +331,7 @@ class Miembro
 
     public function __toString()
     {
-        return $this->getNombre();
+        return $this->getNombre().' '.$this->getApellidoP().' '.$this->getApellidoM();
     }
 
     /**
