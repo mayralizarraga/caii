@@ -1,0 +1,57 @@
+{% extends '::backend.html.twig' %}
+
+{% block contenido %}
+<!--miembrospublicacion backend Publicacion-->
+
+
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Proyectos</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="table-toolbar">
+                          <div class="btn-group">
+                             <a href="{{path('Publicacion_miembro_new', { 'id': entity.id })}}"> <!-- data-toggle="modal" data-target=".bs-example-modal-lg" --><button class="btn btn-success">Add New Member <i class="icon-plus icon-white"></i></button></a>
+                          </div>
+                        </div>
+                        <table class="table" id="example">
+                          <thead>
+                            <tr>
+                              <th>Publicación</th>
+                            </tr>
+                          </thead>
+                          <tbody> 
+                            <tr>
+                              <td>{{ entity.titulo }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table" id="example">
+                          <thead>
+                            <tr>
+                              <th>Miembro</th>
+                            </tr>
+                          </thead>
+                          <tbody> 
+                            
+                              {% for mim in members %}
+                                <tr>
+                                  <td>{{ mim.nombreMiembro }} {{ mim.apellidoP }} {{ mim.apellidoM }}</td>
+                                  <td><a href="{{path('Publicacion_miembro_delete', { 'idp': mim.idpublicacion , 'idm': mim.id })}}">Delete</a></td>
+                                </tr>
+
+                              {% endfor %}
+                            
+                          </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+
+             
+        </div>
+{% endblock %}

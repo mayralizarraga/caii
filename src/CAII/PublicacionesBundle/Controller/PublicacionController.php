@@ -101,6 +101,41 @@ class PublicacionController extends Controller
         );
     }
 
+    /**
+     * Displays miembros-publicacion.
+     *
+     * @Route("/{id}/miembros", name="publicacion_miembros")
+     * @Method("GET")
+     * @Template("PublicacionesBundle:Publicacion:miembros.html.twig")
+     */
+    public function publicacionMiembrosAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PublicacionesBundle:Publicacion')->find($id);
+
+        $dql = $em->createQueryBuilder();
+ 
+        $dql->select('MiembroPublicacion.id', 
+                     'Miembro.nombre nombreMiembro, Miembro.id idmiembro, Miembro.apellidoP, Miembro.apellidoM', 
+                     'Publicacion.titulo, Publicacion.id idpublicacion')
+            ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
+            ->Join('MiembroPublicacion.idMiembro', 'Miembro')
+            ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
+            ->where('Publicacion.id = :id_MiembroPublicacion' );
+        $dql->setParameter('id_MiembroPublicacion', $id);
+
+        $members = $dql->getQuery()->getResult();
+     
+
+        return array(
+            'entity'      => $entity,
+            'members'   => $members,
+            
+        );
+    }
+
+
 
 
     /**
@@ -360,24 +395,19 @@ class PublicacionController extends Controller
      * @Route("/{id}", name="Publicacion_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction( $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('PublicacionesBundle:Publicacion')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Publicacion entity.');
+                throw $this->createNotFoundException('Unable to find Miembro entity.');
             }
 
             $em->remove($entity);
             $em->flush();
-        }
 
-        return $this->redirect($this->generateUrl('publicacion'));
+        return $this->redirect($this->generateUrl('Publicacion_backend'));
     }
 
     /**

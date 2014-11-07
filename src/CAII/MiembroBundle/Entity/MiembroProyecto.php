@@ -1,5 +1,17 @@
 <?php
 
+
+/*VALIDADION DE LOS CAMPOS
+ * @ORM\Table(name="MiembroProyecto", uniqueConstraints={
+ *     @ORM\UniqueConstraint(columns={"idMiembro", "idProyecto"})
+ * })
+
+ * @UniqueEntity(
+ *     fields={"idMiembro", "idProyecto"},
+ *     message="This port is already in use on that host."
+ * )
+*/
+
 namespace CAII\MiembroBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -11,13 +23,11 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * MiembroProyecto
  *
- * @ORM\Table(name="MiembroProyecto", uniqueConstraints={
- *     @ORM\UniqueConstraint(columns={"idMiembro", "idProyecto"})
- * })
  * @ORM\Entity (repositoryClass="CAII\MiembroBundle\Entity\MiembroProyectoRepository")
  * @UniqueEntity(
  *     fields={"idMiembro", "idProyecto"},
- *     message="This port is already in use on that host."
+ *     errorPath="idMiembro",
+ *     message="El usuario ya se encuentra asignado a este proyecto."
  * )
  */
 class MiembroProyecto
@@ -36,7 +46,7 @@ class MiembroProyecto
      *   
      * 
      * @ORM\ManyToOne(targetEntity="CAII\MiembroBundle\Entity\Miembro")
-     * @ORM\JoinColumn(name="idMiembro", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idMiembro", referencedColumnName="id",onDelete="CASCADE")
      * 
      */
     private $idMiembro;
@@ -45,7 +55,7 @@ class MiembroProyecto
      * @var integer
      * 
      * @ORM\ManyToOne(targetEntity="CAII\ProyectoBundle\Entity\Proyecto")
-     * @ORM\JoinColumn(name="idProyecto", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idProyecto", referencedColumnName="id",onDelete="CASCADE")
      * 
      */
     private $idProyecto;

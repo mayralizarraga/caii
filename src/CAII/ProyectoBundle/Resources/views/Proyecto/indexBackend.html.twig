@@ -32,32 +32,30 @@
                           </div>
                         </div>
                         <div class="mygrid-wrapper-div">
-                          <table class="table">
+                          <table class="table" style="width:95%">
                             <thead>
                               <tr>
                                 <th>Nombre</th>
                                 <th>Fecha de Inicio</th>
                                 <th>Fecha de Terminación</th>
                                 <th>Estatus</th>
-                                <th>Entidad Financiadora</th>
-                                <th>Monto</th>
                                 <th></th>
-                                <th></th>
+                                <th>Acction</th>
                               </tr>
                             </thead>
-                            <tbody id="myTable">
+                            <tbody id="myTable" >
                                 {% for entity in entities %}   
                                   <tr>
                                       <td>{{ entity.nombre }}</td>
-                                      <td>{{ entity.fechaInicio|date('d-m-Y') }}</td>
-                                      <td>{{ entity.fechaFinal|date('d-m-Y') }}</td>
+                                      <td  nowrap>{{ entity.fechaInicio|date('d-m-Y') }}</td>
+                                      <td  nowrap>{{ entity.fechaFinal|date('d-m-Y') }}</td>
                                       <td>{% if entity.status==1 %}
                                             Activo
                                           {% else %}
                                             Inactivo
                                           {% endif %}</td>
-                                      <td>{{ entity.idEntidad }} </td>
-                                      <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>
+                                     <!-- <td>{{ entity.idEntidad }} </td>
+                                      <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>-->
                                       <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" >Miembros</a></td>
                                       <td>
                                               <ul>
@@ -68,7 +66,7 @@
                                                         <a href="{{ path('proyecto_edit', { 'id': entity.id }) }}">edit</a>
                                                   </li>
                                               </ul>
-                                          </td> 
+                                      </td> 
                                   </tr>
               
                                 {% endfor %}

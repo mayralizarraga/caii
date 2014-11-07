@@ -7,21 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use CAII\MiembroBundle\Entity\MiembroProyecto;
-use CAII\MiembroBundle\Form\MiembroProyectoType;
+use CAII\MiembroBundle\Entity\MiembroPublicacion;
+use CAII\MiembroBundle\Form\MiembroPublicacionType;
 
 /**
- * MiembroProyecto controller.
+ * MiembroPublicacion controller.
  *
- * @Route("/miembroproyecto")
+ * @Route("/miembropublicacion")
  */
-class MiembroProyectoController extends Controller
+class MiembroPublicacionController extends Controller
 {
 
     /**
-     * Lists all MiembroProyecto entities.
+     * Lists all MiembroPublicacion entities.
      *
-     * @Route("/", name="miembroproyecto")
+     * @Route("/", name="miembropublicacion")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class MiembroProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MiembroBundle:MiembroProyecto')->findAll();
+        $entities = $em->getRepository('MiembroBundle:MiembroPublicacion')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new MiembroProyecto entity.
+     * Creates a new MiembroPublicacion entity.
      *
-     * @Route("/", name="miembroproyecto_create")
+     * @Route("/", name="miembropublicacion_create")
      * @Method("POST")
-     * @Template("MiembroBundle:MiembroProyecto:new.html.twig")
+     * @Template("MiembroBundle:MiembroPublicacion:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new MiembroProyecto();
+        $entity = new MiembroPublicacion();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ class MiembroProyectoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('miembroproyecto_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('miembropublicacion_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class MiembroProyectoController extends Controller
     }
 
     /**
-    * Creates a form to create a MiembroProyecto entity.
-    *
-    * @param MiembroProyecto $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(MiembroProyecto $entity)
+     * Creates a form to create a MiembroPublicacion entity.
+     *
+     * @param MiembroPublicacion $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(MiembroPublicacion $entity)
     {
-        $form = $this->createForm(new MiembroProyectoType(), $entity, array(
-            'action' => $this->generateUrl('miembroproyecto_create'),
+        $form = $this->createForm(new MiembroPublicacionType(), $entity, array(
+            'action' => $this->generateUrl('miembropublicacion_create'),
             'method' => 'POST',
         ));
 
@@ -82,22 +82,23 @@ class MiembroProyectoController extends Controller
     }
 
     /**
-     * Displays a form to create a new MiembroProyecto entity.
+     * Displays a form to create a new MiembroPublicacion entity.
      *
-     * @Route("/new", name="miembroproyecto_new")
+     * @Route("/new", name="miembropublicacion_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction($id)
     {
-        $entity = new MiembroProyecto();
-        $form   = $this->createForm(new MiembroProyectoType(), $entity);
+        $entity = new MiembroPublicacion();
+        $form   = $this->createForm(new MiembroPublicacionType(),$entity);
+
 
         $form->handleRequest($this->getRequest());
         $em = $this->getDoctrine()->getManager();
 
         if ($form->isValid()) {
-            $entity->setIdProyecto($em->getRepository('ProyectoBundle:Proyecto')->find($id));
+            $entity->setIdPublicacion($em->getRepository('PublicacionesBundle:Publicacion')->find($id));
             $em = $this->getDoctrine()->getManager();
             $errors = $this->get('validator')->validate($entity);
             if (count($errors) === 0) {
@@ -107,8 +108,12 @@ class MiembroProyectoController extends Controller
             //Imprime los errores en pantalla
             //var_dump($errors);
             
-            return $this->redirect($this->generateUrl('proyecto_miembros', array('id' => $id)));
+            return $this->redirect($this->generateUrl('Publicacion_miembros', array('id' => $id)));
         }
+
+
+
+
 
         return array(
             'entity' => $entity,
@@ -117,9 +122,9 @@ class MiembroProyectoController extends Controller
     }
 
     /**
-     * Finds and displays a MiembroProyecto entity.
+     * Finds and displays a MiembroPublicacion entity.
      *
-     * @Route("/{id}", name="miembroproyecto_show")
+     * @Route("/{id}", name="miembropublicacion_show")
      * @Method("GET")
      * @Template()
      */
@@ -127,10 +132,10 @@ class MiembroProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($id);
+        $entity = $em->getRepository('MiembroBundle:MiembroPublicacion')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find MiembroProyecto entity.');
+            throw $this->createNotFoundException('Unable to find MiembroPublicacion entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -142,9 +147,9 @@ class MiembroProyectoController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing MiembroProyecto entity.
+     * Displays a form to edit an existing MiembroPublicacion entity.
      *
-     * @Route("/{id}/edit", name="miembroproyecto_edit")
+     * @Route("/{id}/edit", name="miembropublicacion_edit")
      * @Method("GET")
      * @Template()
      */
@@ -152,10 +157,10 @@ class MiembroProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($id);
+        $entity = $em->getRepository('MiembroBundle:MiembroPublicacion')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find MiembroProyecto entity.');
+            throw $this->createNotFoundException('Unable to find MiembroPublicacion entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -169,16 +174,16 @@ class MiembroProyectoController extends Controller
     }
 
     /**
-    * Creates a form to edit a MiembroProyecto entity.
+    * Creates a form to edit a MiembroPublicacion entity.
     *
-    * @param MiembroProyecto $entity The entity
+    * @param MiembroPublicacion $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(MiembroProyecto $entity)
+    private function createEditForm(MiembroPublicacion $entity)
     {
-        $form = $this->createForm(new MiembroProyectoType(), $entity, array(
-            'action' => $this->generateUrl('miembroproyecto_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new MiembroPublicacionType(), $entity, array(
+            'action' => $this->generateUrl('miembropublicacion_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -187,20 +192,20 @@ class MiembroProyectoController extends Controller
         return $form;
     }
     /**
-     * Edits an existing MiembroProyecto entity.
+     * Edits an existing MiembroPublicacion entity.
      *
-     * @Route("/{id}", name="miembroproyecto_update")
+     * @Route("/{id}", name="miembropublicacion_update")
      * @Method("PUT")
-     * @Template("MiembroBundle:MiembroProyecto:edit.html.twig")
+     * @Template("MiembroBundle:MiembroPublicacion:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($id);
+        $entity = $em->getRepository('MiembroBundle:MiembroPublicacion')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find MiembroProyecto entity.');
+            throw $this->createNotFoundException('Unable to find MiembroPublicacion entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -210,7 +215,7 @@ class MiembroProyectoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('miembroproyecto_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('miembropublicacion_edit', array('id' => $id)));
         }
 
         return array(
@@ -220,15 +225,15 @@ class MiembroProyectoController extends Controller
         );
     }
     /**
-     * Deletes a MiembroProyecto entity.
+     * Deletes a MiembroPublicacion entity.
      *
-     * @Route("/{id}", name="miembroproyecto_delete")
+     * @Route("/{id}", name="miembropublicacion_delete")
      * @Method("DELETE")
      */
     public function deleteAction($idp, $idm)
     {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('MiembroBundle:MiembroProyecto')->find($idm);
+        $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('MiembroBundle:MiembroPublicacion')->find($idm);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Miembro entity.');
@@ -237,11 +242,11 @@ class MiembroProyectoController extends Controller
             $em->remove($entity);
             $em->flush();
 
-        return $this->redirect($this->generateUrl('proyecto_miembros', array('id' => $idp)));
+        return $this->redirect($this->generateUrl('Publicacion_miembros', array('id' => $idp)));
     }
 
     /**
-     * Creates a form to delete a MiembroProyecto entity by id.
+     * Creates a form to delete a MiembroPublicacion entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -250,7 +255,7 @@ class MiembroProyectoController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('miembroproyecto_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('miembropublicacion_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

@@ -1,0 +1,46 @@
+{% extends '::backend.html.twig' %}
+
+{% block contenido %}
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Nuevo miembro en publicaciones</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+
+
+          
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left"></div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <h1>Nuevo alumno</h1>
+                        <br><br>
+
+				   		 {{ form(form) }}
+
+				        <ul class="record_actions">
+						    <li>
+						        <a href="{{ path('Publicacion_backend') }}">
+						            Back to the list
+						        </a>
+						    </li>
+						</ul>
+
+					 </div>
+                </div>
+            </div>
+            <!-- /block -->
+        </div>
+
+{% endblock %}

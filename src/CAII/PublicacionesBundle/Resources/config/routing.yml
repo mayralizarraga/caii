@@ -66,3 +66,19 @@ Publicacion_update:
 Publicacion_delete:
     pattern:  /admin/publicaciones/delete/{id}
     defaults: { _controller: PublicacionesBundle:Publicacion:delete}
+
+Publicacion_print:
+    pattern:  /admin/publicaciones/print
+    defaults: { _controller: MiembroBundle:Miembro:print }
+
+Publicacion_miembro_new:
+    pattern:  /admin/publicaciones/{id}/miembros/new
+    defaults: { _controller: MiembroBundle:MiembroPublicacion:new }
+
+Publicacion_miembro_delete:
+    pattern:  /admin/publicaciones/{idp}/miembros/{idm}/delete
+    defaults: { _controller: MiembroBundle:MiembroPublicacion:delete }
+
+Publicacion_miembros:
+    pattern:  /admin/publicaciones/miembros/{id}
+    defaults: { _controller: PublicacionesBundle:Publicacion:publicacionMiembros }

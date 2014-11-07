@@ -3,7 +3,7 @@
 namespace CAII\MiembroBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"idMiembro", "idPublicacion"},
+ *     errorPath="idMiembro",
+ *     message="El usuario ya se encuentra asignado a este publicacion."
+ * )
  */
 class MiembroPublicacion
 {
@@ -27,7 +32,7 @@ class MiembroPublicacion
      * @var integer
      *
      * @ORM\ManyToOne(targetEntity="CAII\MiembroBundle\Entity\Miembro")
-     * @ORM\JoinColumn(name="idMiembro", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idMiembro", referencedColumnName="id",onDelete="CASCADE")
      */
     private $idMiembro;
 
@@ -35,7 +40,7 @@ class MiembroPublicacion
      * @var integer
      *
      * @ORM\ManyToOne(targetEntity="CAII\PublicacionesBundle\Entity\Publicacion")
-     * @ORM\JoinColumn(name="idPublicacion", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idPublicacion", referencedColumnName="id",onDelete="CASCADE")
      */
     private $idPublicacion;
 
@@ -51,7 +56,7 @@ class MiembroPublicacion
      * @var integer
      *
      * @ORM\ManyToOne(targetEntity="CAII\ProyectoBundle\Entity\Proyecto")
-     * @ORM\JoinColumn(name="idProyecto", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idProyecto", referencedColumnName="id",onDelete="CASCADE")
      */
     private $idProyecto;
 

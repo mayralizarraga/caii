@@ -33,55 +33,27 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Titulo</th>
-                                        <th>Doi</th>
-                                        <th>Paginas</th>
-                                        <th>Fecha</th>
-                                        <th>Enlace</th>
-                                        <th>Tipo de reporte</th>
-                                        <th>Ciudad</th>
-                                        <th>Congreso</th>
-                                        <th>Issn</th>
-                                        <th>Capitulo</th>
-                                        <th>Isbn</th>
-                                        <th>Mostrar</th>
-                                        <th>Journal</th>
-                                        <th>Volumen</th>
-                                        <th>Editorial</th>
-                                        <th>Serie</th>
-                                        <th>Edicion</th>
+                                        <th>Fecha de Publicación</th>
                                         <th>Tipo de publicación</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
                                 {% for entity in entities %}
                                     <tr>
-                                        <td><a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                        <td><a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">Ver detalles</a></td>
                                         <td>{{ entity.titulo }}</td>
-                                        <td>{{ entity.doi }}</td>
-                                        <td>{{ entity.paginas }}</td>
-                                        <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
-                                        <td>{{ entity.enlace }}</td>
-                                        <td>{{ entity.tipoReporte }}</td>
-                                        <td>{{ entity.ciudad }}</td>
-                                        <td>{{ entity.congreso }}</td>
-                                        <td>{{ entity.issn }}</td>
-                                        <td>{{ entity.capitulo }}</td>
-                                        <td>{{ entity.isbn }}</td>
-                                        <td>{{ entity.mostrar }}</td>
-                                        <td>{{ entity.journal }}</td>
-                                        <td>{{ entity.volumen }}</td>
-                                        <td>{{ entity.editorial }}</td>
-                                        <td>{{ entity.serie }}</td>
-                                        <td>{{ entity.edicion }}</td>
+                                        <td nowrap>{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>
                                         <td>{{ entity.TipoPublicacion }}</td>
+                                        <td><a href="{{ path('Publicacion_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" >Miembros</a></td>
                                         <td>
                                         <ul>
                                             <li>
-                                                <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">show</a>
+                                                <a href="{{ path('Publicacion_delete', { 'id': entity.id }) }}">Delete</a>
                                             </li>
                                             <li>
-                                                <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">edit</a>
+                                              <!--  <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">edit</a>-->
                                             </li>
                                         </ul>
                                         </td>
@@ -104,9 +76,10 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"></span></button>
-                    <h4 class="modal-title" id="myModalLabel">Tipo de publicación</h4>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
                   </div>
                   <div class="modal-body">
+                    <h1>Tipo de Publicaciones</h1>
                     <ul class="list-group">
                       <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Libro' }) }}">Libro</a></li>
                       <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Capitulo' }) }}">Cápitulo de libro</a></li>
