@@ -36,7 +36,7 @@
                           <table class="table">
                             <thead>
                               <tr>
-                                <th>ID</th>
+                                <th></th>
                                 <th>Foto</th>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
@@ -50,7 +50,7 @@
                                   {% for entity in entities %}
                                  
                                       <tr>
-                                          <td>{{ entity.id }}</td>
+                                          <td><a href="{{ path('miembro_show', { 'id': entity.id }) }}">Ver detalles</a></td>
                                           <td>{% if entity.fotoURL %} 
                                                   <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}" alt="" alt="" height="42" width="42" />
                                               {% else %}   

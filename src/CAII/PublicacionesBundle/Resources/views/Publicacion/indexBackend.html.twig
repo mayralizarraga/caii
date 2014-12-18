@@ -31,7 +31,7 @@
                                 <thead>
                         
                                     <tr>
-                                        <th>Id</th>
+                                        <th></th>
                                         <th>Titulo</th>
                                         <th>Fecha de Publicación</th>
                                         <th>Tipo de publicación</th>
@@ -53,7 +53,7 @@
                                                 <a href="{{ path('Publicacion_delete', { 'id': entity.id }) }}">Delete</a>
                                             </li>
                                             <li>
-                                              <!--  <a href="{{ path('Publicacion_show', { 'id': entity.id }) }}">edit</a>-->
+                                              <a href="{{ path('Publicacion_edit', { 'id':entity.id,'tipo': entity.TipoPublicacion }) }}">Edit</a>
                                             </li>
                                         </ul>
                                         </td>

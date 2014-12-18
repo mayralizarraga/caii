@@ -40,11 +40,11 @@ _Publicacion:
 
 
 Publicacion_new:
-    pattern:  /admin/publicaciones/new/{tipo}
+    pattern:  /admin/publicaciones/new//{tipo}
     defaults: { _controller: PublicacionesBundle:Publicacion:newLibro}
 
 Publicacion_edit:
-    pattern:  /admin/publicaciones/edit/{id}
+    pattern:  /admin/publicaciones/edit/{id}/{tipo}
     defaults: { _controller: PublicacionesBundle:Publicacion:edit }
 
 Publicacion_backend:

@@ -275,9 +275,9 @@ class PublicacionController extends Controller
     /**
      * Displays a form to edit an existing Publicacion entity.
      *
-     * @Route("/{id}/edit", name="Publicacion_edit")
+     * @Route("/edit/{id}/{tipo}", name="Publicacion_edit")
      * @Method("GET")
-     * @Template()
+     * @Template("PublicacionesBundle:Publicacion:editLibro.html.twig")
      */
     public function editAction($tipo,$id)
     {
@@ -290,35 +290,60 @@ class PublicacionController extends Controller
         }
 
         switch ($tipo){
-            case "Libro":
-                $formType = new PublicacionLibroType();
+            case "Libros":
+                $temp="Libro";
+                $form   = $this->createForm(new PublicacionLibroType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'method' => 'PUT',
+                ));
                 break;
-            case "Capitulo":
-                $formType = new PublicacionCapituloType();
+            case "Capítulos de libros":
+                $temp="Capitulo";
+                $form   = $this->createForm(new PublicacionCapituloType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'method' => 'PUT',
+                ));
                 break; 
-            case "Revista":
-                $formType = new PublicacionRevistaType();
+            case "Revistas":
+                $temp="Revista";
+                $form   = $this->createForm(new PublicacionRevistaType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
+                    'method' => 'PUT',
+                ));
                 break; 
-            case "Internacional":
-                $formType = new PublicacionInternacionalType();
+            case "Articulos en congresos internacionales":
+                $temp="Internacional";
+                $form   = $this->createForm(new PublicacionInternacionalType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
+                    'method' => 'PUT',
+                ));
                 break; 
-            case "Nacional":
-                $formType = new PublicacionNacionalType();
+            case "Articulos en congresos nacionales":
+                $temp="Nacional";
+                $form   = $this->createForm(new PublicacionNacionalType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'method' => 'PUT',
+                ));
                 break; 
-            case "Reporte":
-                $formType = new PublicacionReporteType();
+            case "Reportes técnicos":
+                $temp="Reporte";
+                $form   = $this->createForm(new PublicacionReporteType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
+                    'method' => 'PUT',
+                ));
                 break; 
             case "Tesis":
-                $formType = new PublicacionTesisType();
+                $temp="Tesis";
+                $form   = $this->createForm(new PublicacionTesisType($this->getDoctrine()->getManager()), $entity,array(
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
+                    'method' => 'PUT',
+                ));
                 break; 
 
         }
 
         
-        $form = $this->createForm($formType, $entity, array(
-            'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId())),
-            'method' => 'PUT',
-        ));
+        
 
         $form->handleRequest($this->getRequest());
 
@@ -330,12 +355,14 @@ class PublicacionController extends Controller
 
         
 
-        $view="PublicacionesBundle:Publicacion:edit".$tipo.".html.twig";
+        $view="PublicacionesBundle:Publicacion:edit".$temp.".html.twig";
         $content = $this->renderView($view,
         array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+
+    return new Response($content);
     }
 
     /**
