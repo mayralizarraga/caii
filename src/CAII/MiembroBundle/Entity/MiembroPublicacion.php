@@ -123,7 +123,7 @@ class MiembroPublicacion
      * @param CAII\PublicacionesBundle\Entity\TipoPublicacion
      * @return MiembroPublicacion
      */
-    public function setIdTipo(CAII\PublicacionesBundle\Entity\TipoPublicacion $idTipo)
+    public function setIdTipo( $idTipo)
     {
         $this->idTipo = $idTipo;
     
