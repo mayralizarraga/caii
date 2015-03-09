@@ -26,11 +26,9 @@ class PublicacionRevistaType extends AbstractType
             ->add('doi')
             ->add('volumen')
             ->add('serie')
+            ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'property' => 'nombre',
-                     'disabled'=> true,
-                     'read_only' => true,
                      'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 3)
                 ))
         ;

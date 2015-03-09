@@ -26,11 +26,9 @@ class PublicacionInternacionalType extends AbstractType
             ->add('congreso')
             ->add('ciudad')
             ->add('issn')
+            ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'property' => 'nombre',
-                     'disabled'=> true,
-                     'read_only' => true,
                      'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 5)
                 ))
         ;

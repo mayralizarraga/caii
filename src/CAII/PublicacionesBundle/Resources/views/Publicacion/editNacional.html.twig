@@ -22,7 +22,7 @@
 			    
                <fieldset>
                     <legend><h1>Editar publicación -  Articulos congresos nacionales</h1></legend>
-                    {{ form_start(form, { 'action': path('Publicacion_edit', { 'tipo': 'Nacional' ,'id': entity.id }), 'method': 'PUT' }) }}
+                    {{ form_start(form, { 'action': path('Publicacion_edit', { 'tipo': 'Articulos en congresos nacionales' ,'id': entity.id }), 'method': 'PUT' }) }}
                         {{ form_label(form.titulo, 'Titulo del Capitulo') }}
                         {{ form_widget(form.titulo) }}<br>
                         {{ form_label(form.congreso, 'Congreso') }}
@@ -40,8 +40,12 @@
                         {{ form_widget(form.issn) }}<br>
                         {{ form_label(form.isbn, 'ISBN') }}
                         {{ form_widget(form.isbn) }}<br>
-                        {{ form_label(form.TipoPublicacion, 'Tipo de publicacion') }}
-                        {{ form_widget(form.TipoPublicacion) }}<br>
+                        { {{ form_label(form.file, 'Subir archivo') }}
+                        {% if entity.path %} 
+                              <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}">Ver >></a>
+                          {% endif %} <br>
+                        {{ form_widget(form.file) }}<br>
+                        <p hidden>{{ form_widget(form.TipoPublicacion) }}<br></p>
                         
                         <br>
                         <input type="submit" value="Save" >

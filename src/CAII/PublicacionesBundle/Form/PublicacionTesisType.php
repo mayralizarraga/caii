@@ -24,11 +24,9 @@ class PublicacionTesisType extends AbstractType
             ->add('fecha')
             ->add('escuela')
             ->add('tipoTesis')
+            ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'property' => 'nombre',
-                     'disabled'=> true,
-                     'read_only' => true,
                      'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 8)
                 ))
         ;

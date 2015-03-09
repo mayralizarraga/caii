@@ -34,7 +34,7 @@
                                             {% endif %}
                                         {% endfor%}
                                         {% if entity.titulo %}"{{ entity.titulo }}" {% endif %}
-                                        {% if entity.tituloLibro %}, {{ entity.tituloLibro }}</cite>{% endif %}
+                                        {% if entity.tituloLibro %}, {{ entity.tituloLibro }}{% endif %}</cite>
                                         {% if entity.capitulo %}, {{ entity.capitulo }}{% endif %}
                                         {% if entity.journal %}, {{ entity.journal }}{% endif %}
                                         {% if entity.volumen %}, vol. {{ entity.volumen }}{% endif %}
@@ -49,7 +49,7 @@
                                         {% if entity.issn %}, ISSN {{ entity.issn }}{% endif %}
                                         {% if entity.isbn %}, ISBN{{ entity.isbn }}{% endif %}
                                         {% if entity.doi %}, DOI: <a href="http://dx.doi.org/{{ entity.doi }}">{{ entity.doi }}</a> {% endif %}
-                                        {% if entity.enlace %}, {{ entity.enlace }} {% endif %}
+                                        {% if entity.path %}, <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}"> , Download</a> {% endif %}
                                      <!--   {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %}-->
                                     
                                     </li>

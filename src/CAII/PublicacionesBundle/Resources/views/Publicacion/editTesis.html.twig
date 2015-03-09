@@ -32,8 +32,12 @@
                         {{ form_widget(form.fecha) }}<br>
                         {{ form_label(form.tipoTesis, 'Tipo de tesis') }}
                         {{ form_widget(form.tipoTesis) }}<br>
-                        {{ form_label(form.TipoPublicacion, 'Tipo de publicacion') }}
-                        {{ form_widget(form.TipoPublicacion) }}<br>
+                         {{ form_label(form.file, 'Subir archivo') }}
+                         {% if entity.path %} 
+                              <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}">Ver >></a>
+                          {% endif %} <br>
+                        {{ form_widget(form.file) }}<br>
+                        <p hidden>{{ form_widget(form.TipoPublicacion) }}<br></p>
                         
                         <br>
                         <input type="submit" value="Save" >

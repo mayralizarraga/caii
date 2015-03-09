@@ -44,8 +44,9 @@
                         {{ form_widget(form.serie) }}<br>
                         {{ form_label(form.volumen, 'Volumen') }}
                         {{ form_widget(form.volumen) }}<br>
-                        {{ form_label(form.TipoPublicacion, 'Tipo de publicacion') }}
-                        {{ form_widget(form.TipoPublicacion) }}<br>
+                        {{ form_label(form.file, 'Subir archivo') }}
+                        {{ form_widget(form.file) }}<br>
+                        <p hidden>{{ form_widget(form.TipoPublicacion) }}<br></p>
                         
                         <br>
                         <input type="submit" value="Save" >

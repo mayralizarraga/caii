@@ -28,11 +28,9 @@ class PublicacionLibroType extends AbstractType
             ->add('editorial')
             ->add('serie')
             ->add('edicion')
+            ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'property' => 'nombre',
-                     'disabled'=> true,
-                     'read_only' => true,
                      'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 1)
                 ))
             ;

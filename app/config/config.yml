@@ -105,3 +105,4 @@ parameters:
     miembros.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/miembros/
     noticia.directorio.imagenes:  %kernel.root_dir%/../web/uploads/images/noticias/
     slide.directorio.imagenes:  %kernel.root_dir%/../web/uploads/images/slide/
+    documents.directorio.imagenes:  %kernel.root_dir%/../web/uploads/documents/

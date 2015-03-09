@@ -16,6 +16,8 @@ use CAII\PublicacionesBundle\Form\PublicacionNacionalType;
 use CAII\PublicacionesBundle\Form\PublicacionRevistaType;
 use CAII\PublicacionesBundle\Form\PublicacionReporteType;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
  * Publicacion controller.
@@ -100,6 +102,46 @@ class PublicacionController extends Controller
             
         );
     }
+
+
+    public function tiposAction()
+    {
+        return $this->render('PublicacionesBundle:Publicacion:tipos.html.twig');
+    }
+
+
+    /**
+     * Serve a file
+     *
+     * @Route("/download/{filename}", name="download_file", requirements={"filename": ".+"})
+     */
+    public function downloadFileAction($filename)
+    {
+        /**
+         * $basePath can be either exposed (typically inside web/)
+         * or "internal"
+         */
+        $basePath = $this->container->getParameter('documents.directorio.imagenes');
+
+        $filePath = $basePath.'/'.$filename;
+
+        // check if file exists
+        if (!file_exists($filePath)) {
+            throw $this->createNotFoundException();
+        }
+
+        // prepare BinaryFileResponse
+        $response = new BinaryFileResponse($filePath);
+        $response->trustXSendfileTypeHeader();
+        $response->setContentDisposition(
+            ResponseHeaderBag::DISPOSITION_INLINE,
+            $filename,
+            iconv('UTF-8', 'ASCII//TRANSLIT', $filename)
+        );
+
+        return $response;
+    }
+
 
     /**
      * Displays miembros-publicacion.
@@ -293,14 +335,14 @@ class PublicacionController extends Controller
             case "Libros":
                 $temp="Libro";
                 $form   = $this->createForm(new PublicacionLibroType($this->getDoctrine()->getManager()), $entity,array(
-                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
                     'method' => 'PUT',
                 ));
                 break;
             case "Capítulos de libros":
                 $temp="Capitulo";
                 $form   = $this->createForm(new PublicacionCapituloType($this->getDoctrine()->getManager()), $entity,array(
-                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
                     'method' => 'PUT',
                 ));
                 break; 
@@ -321,7 +363,7 @@ class PublicacionController extends Controller
             case "Articulos en congresos nacionales":
                 $temp="Nacional";
                 $form   = $this->createForm(new PublicacionNacionalType($this->getDoctrine()->getManager()), $entity,array(
-                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $temp)),
+                    'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),
                     'method' => 'PUT',
                 ));
                 break; 
@@ -345,7 +387,7 @@ class PublicacionController extends Controller
         
         
 
-        $form->handleRequest($this->getRequest());
+       $form->handleRequest($this->getRequest());
 
        if ($form->isValid()) {
             $em->flush();

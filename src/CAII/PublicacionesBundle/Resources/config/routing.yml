@@ -30,6 +30,10 @@ TipoPublicacion_delete:
     pattern:  /admin/tipopublicacion/delete/{id}
     defaults: { _controller: PublicacionesBundle:TipoPublicacion:delete}
 
+Tipos:
+    pattern:  /admin/publicaciones/tipos
+    defaults: { _controller: PublicacionesBundle:Publicacion:tipos }
+
 Publicacion:
     pattern:  /{_locale}/publicaciones
     defaults: { _controller: PublicacionesBundle:Publicacion:index }
@@ -40,8 +44,12 @@ _Publicacion:
 
 
 Publicacion_new:
-    pattern:  /admin/publicaciones/new//{tipo}
+    pattern:  /admin/publicaciones/new/{tipo}
     defaults: { _controller: PublicacionesBundle:Publicacion:newLibro}
+
+Publicacion_download:
+    pattern:  /download/{filename}
+    defaults: { _controller: PublicacionesBundle:Publicacion:downloadFile}
 
 Publicacion_edit:
     pattern:  /admin/publicaciones/edit/{id}/{tipo}
