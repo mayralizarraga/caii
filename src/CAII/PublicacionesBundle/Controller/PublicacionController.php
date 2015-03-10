@@ -346,7 +346,7 @@ class PublicacionController extends Controller
                     'method' => 'PUT',
                 ));
                 break; 
-            case "Revistas":
+            case "Artículos en revistas":
                 $temp="Revista";
                 $form   = $this->createForm(new PublicacionRevistaType($this->getDoctrine()->getManager()), $entity,array(
                     'action' => $this->generateUrl('Publicacion_edit', array('id' => $entity->getId(),'tipo' => $tipo)),

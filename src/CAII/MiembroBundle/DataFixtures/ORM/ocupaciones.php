@@ -11,7 +11,7 @@
 		public function load(ObjectManager $manager)
 		{
 			$ocupaciones = array(
-				array('descripcion' => 'Coordinadores','description' => 'Coordinators','referencia'=>'coordinador','prioridad' => '1'),
+				array('descripcion' => 'Coordinador','description' => 'Coordinator','referencia'=>'coordinador','prioridad' => '1'),
 				array('descripcion' => 'Profesores','description' => 'Faculty','referencia'=>'profesor','prioridad' => '2'),
 				array('descripcion' => 'Estudiantes de Doctorado','description' => 'PhD Students','referencia'=>'doctorado','prioridad' => '3'),
 				array('descripcion' => 'Estudiantes de Maestria','description' => 'Master Students','referencia'=>'maestria','prioridad' => '4'),

@@ -12,7 +12,7 @@
 			$tipos = array(
 				array('nombre' => 'Libros' ,'prioridad' => '1','name'=>'Books','referencia'=>'libro'),
 				array('nombre' => 'Capítulos de libros','prioridad' => '2','name'=>'Book chapters','referencia'=>'capLibro'),
-				array('nombre' => 'Revistas' ,'prioridad' => '3','name'=>'Journals','referencia'=>'revista'),
+				array('nombre' => 'Artículos en revistas' ,'prioridad' => '3','name'=>'Journals','referencia'=>'revista'),
 				array('nombre' => 'Artículos', 'prioridad' => '4','name'=>'Articles','referencia'=>'articulo'),
 				array('nombre' => 'Articulos en congresos internacionales','prioridad' => '5','name'=>'International conference\'s articles','referencia'=>'articuloCI'),
 				array('nombre' => 'Articulos en congresos nacionales','prioridad' => '6','name'=>'National conference\'s articles','referencia'=>'articuloCN'),

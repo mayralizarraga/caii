@@ -47,7 +47,7 @@
                                         {% if entity.fecha %}, {{ entity.fecha|date('F Y', "America/Tijuana") }}{% endif %}
                                         {% if entity.paginas %}, pp. {{ entity.paginas }}{% endif %}
                                         {% if entity.issn %}, ISSN {{ entity.issn }}{% endif %}
-                                        {% if entity.isbn %}, ISBN{{ entity.isbn }}{% endif %}
+                                        {% if entity.isbn %}, ISBN {{ entity.isbn }}{% endif %}
                                         {% if entity.doi %}, DOI: <a href="http://dx.doi.org/{{ entity.doi }}">{{ entity.doi }}</a> {% endif %}
                                         {% if entity.path %}, <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}"> , Download</a> {% endif %}
                                      <!--   {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %}-->
