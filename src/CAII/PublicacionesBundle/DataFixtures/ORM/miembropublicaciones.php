@@ -131,6 +131,26 @@
 				array('miembro' => 'm43','publicacion'=>'a23'),
 				array('miembro' => 'm44','publicacion'=>'a23'),
 
+				array('miembro' => 'm4','publicacion'=>'a32'),
+				array('miembro' => 'm1','publicacion'=>'a32'),
+				array('miembro' => 'm27','publicacion'=>'a32'),
+
+				array('miembro' => 'm49','publicacion'=>'a33'),
+				array('miembro' => 'm1','publicacion'=>'a33'),
+				array('miembro' => 'm99','publicacion'=>'a33'),
+
+				array('miembro' => 'm48','publicacion'=>'a34'),
+				array('miembro' => 'm1','publicacion'=>'a34'),
+				array('miembro' => 'm99','publicacion'=>'a34'),
+
+				array('miembro' => 'm49','publicacion'=>'a35'),
+				array('miembro' => 'm1','publicacion'=>'a35'),
+				array('miembro' => 'm99','publicacion'=>'a35'),
+
+				array('miembro' => 'm50','publicacion'=>'a36'),
+				array('miembro' => 'm1','publicacion'=>'a36'),
+				array('miembro' => 'm99','publicacion'=>'a36'),
+
 
 
 				//CONGRESO NACIONAL
@@ -174,6 +194,25 @@
 				array('miembro' => 'm15','publicacion'=>'a31'),
 				array('miembro' => 'm2','publicacion'=>'a31'),
 				array('miembro' => 'm1','publicacion'=>'a31'),
+
+				array('miembro' => 'm48','publicacion'=>'a37'),
+				array('miembro' => 'm1','publicacion'=>'a37'),
+				array('miembro' => 'm99','publicacion'=>'a37'),
+
+				array('miembro' => 'm23','publicacion'=>'a38'),
+				array('miembro' => 'm52','publicacion'=>'a38'),
+				array('miembro' => 'm1','publicacion'=>'a38'),
+				array('miembro' => 'm99','publicacion'=>'a38'),
+
+				array('miembro' => 'm50','publicacion'=>'a39'),
+				array('miembro' => 'm1','publicacion'=>'a39'),
+				array('miembro' => 'm99','publicacion'=>'a39'),
+
+
+				array('miembro' => 'm51','publicacion'=>'a40'),
+				array('miembro' => 'm1','publicacion'=>'a40'),
+				
+
 
 
 			);

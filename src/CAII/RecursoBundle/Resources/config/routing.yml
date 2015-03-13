@@ -1,0 +1,40 @@
+recurso:
+    pattern:  /{_locale}/recursos
+    defaults: { _controller: RecursoBundle:Recurso:index }
+
+_recurso:
+    pattern: /{_locale}/recursos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Recurso}
+
+recurso_backend:
+    pattern:  /admin/recursos
+    defaults: { _controller: RecursoBundle:Recurso:indexBackend}
+
+recurso_new:
+    pattern:  /admin/recursos/new
+    defaults: { _controller: RecursoBundle:Recurso:new }
+
+recurso_edit:
+    pattern:  /admin/recursos/edit/{id}
+    defaults: { _controller: RecursoBundle:Recurso:edit }
+
+
+recurso_show:
+    pattern:  /admin/recursos/show/{id}
+    defaults: { _controller: RecursoBundle:Recurso:show }
+
+recurso_create:
+    pattern:  /admin/recursos/create
+    defaults: { _controller: RecursoBundle:Recurso:create }
+
+recurso_update:
+    pattern:  /admin/recursos/update/{id}
+    defaults: { _controller: RecursoBundle:Recurso:update }
+
+recurso_delete:
+    pattern:  /admin/recursos/delete/{id}
+    defaults: { _controller: RecursoBundle:Recurso:delete}
+
+recurso_print:
+    pattern:  /admin/recursos/print
+    defaults: { _controller: RecursoBundle:Recurso:print }

@@ -1,3 +1,7 @@
+recurso:
+    resource: "@RecursoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 noticia:
     resource: "@NoticiaBundle/Resources/config/routing.yml"
     prefix:   /

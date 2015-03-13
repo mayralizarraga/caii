@@ -1,0 +1,7 @@
+parameters:
+#    recurso.example.class: CAII\RecursoBundle\Example
+
+services:
+#    recurso.example:
+#        class: %recurso.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

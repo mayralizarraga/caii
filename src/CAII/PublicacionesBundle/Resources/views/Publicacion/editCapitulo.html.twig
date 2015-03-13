@@ -23,7 +23,6 @@
                <fieldset>
                     <legend><h1>Editar publicación -  Capítulo de Libro</h1></legend>
                     {{ form_start(form, { 'action': path('Publicacion_edit', { 'tipo': 'Capítulos de libros' ,'id': entity.id }), 'method': 'PUT' }) }}
-                    {{ form_start(form, { 'action': path('miembro_edit', { 
                         {{ form_label(form.tituloLibro, 'Titulo del Libro') }}
                         {{ form_widget(form.tituloLibro) }}<br>
                         {{ form_label(form.titulo, 'Titulo del Capitulo') }}

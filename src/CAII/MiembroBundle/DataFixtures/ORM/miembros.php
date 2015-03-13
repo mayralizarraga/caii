@@ -87,9 +87,9 @@
 					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m23'),
 				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'sealtyelcastillo.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m24'),
-				array('nombre' => 'Ari Geovany','apellidoP' => 'Villavicencio','apellidoM' => 'Espinoza','status' => '1','link_Pagina' => '',
+				array('nombre' => 'Ari Geovany','apellidoP' => 'Villavicencio','apellidoM' => 'Espinoza','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m25'),
-				array('nombre' => 'David Ambroth','apellidoP' => 'López','apellidoM' => 'Nogales','status' => '1','link_Pagina' => '',
+				array('nombre' => 'David Ambroth','apellidoP' => 'López','apellidoM' => 'Nogales','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m26'),
 				array('nombre' => 'Oscar Daniel','apellidoP' => 'Ozaine','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m33'),
@@ -97,6 +97,9 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m45'),
 				array('nombre' => 'Obed','apellidoP' => 'Mares','apellidoM' => 'Valenzuela','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m47'),
+				array('nombre' => 'Alfonso','apellidoP' => 'Medina','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m50'),
+				
 
 
 				
@@ -140,6 +143,14 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m44'),
 				array('nombre' => 'Tomas','apellidoP' => 'Navarro','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m98'),
+				array('nombre' => 'Carlos','apellidoP' => 'Estrada','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m48'),
+				array('nombre' => 'Roberto','apellidoP' => 'Padilla','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m49'),
+				array('nombre' => 'Arturo','apellidoP' => 'Rangel','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m51'),
+				array('nombre' => 'Martin','apellidoP' => 'Lara','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m52'),
 
 
 			);	

@@ -30,6 +30,10 @@
 				<source>estado</source>
 				<target>State</target>
 			</trans-unit>
+			<trans-unit id="8">
+				<source>recursos</source>
+				<target>Resources</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
