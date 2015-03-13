@@ -70,33 +70,6 @@
                 </div>
              </div>
 
-             <!-- Modal -->
-          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"></span></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
-                  </div>
-                  <div class="modal-body">
-                    <h1>Tipo de Publicaciones</h1>
-                    <ul class="list-group">
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Libro' }) }}">Libro</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Capitulo' }) }}">Cápitulo de libro</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Revista' }) }}">Revistas</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Internacional' }) }}">Artículos en congreso internacionales</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Nacional' }) }}">Artículos en congreso nacionales</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Reporte' }) }}">Reportes técnicos</a></li>
-                      <li class="list-group-item"><a href="{{ path('Publicacion_new', { 'tipo': 'Tesis' }) }}">Tesis</a></li>
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-
+             
         </div>
 {% endblock %}

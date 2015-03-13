@@ -53,7 +53,7 @@
 				array('miembro' => 'm3','publicacion'=>'a7'),
 
 				array('miembro' => 'm21','publicacion'=>'a8'),
-				array('miembro' => 'm12','publicacion'=>'a8'),
+				array('miembro' => 'm13','publicacion'=>'a8'),
 				array('miembro' => 'm1','publicacion'=>'a8'),
 				array('miembro' => 'm2','publicacion'=>'a8'),
 
