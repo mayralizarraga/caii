@@ -151,6 +151,10 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m51'),
 				array('nombre' => 'Martin','apellidoP' => 'Lara','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m52'),
+				array('nombre' => 'Leopoldo N.','apellidoP' => 'Gaxiola','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m53'),
+				array('nombre' => 'Juan J.','apellidoP' => 'Tapia','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m54'),
 
 
 			);	

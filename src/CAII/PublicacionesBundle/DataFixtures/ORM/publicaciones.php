@@ -118,6 +118,7 @@
 				array('issn' => '1870-4069','doi' => '','paginas' => '73-80','titulo'=>'Red de Sensores Inálambrica para el Cuidado de Pacientes con Padecimientos Cognitivo-Degenerativos','tituloLibro' => 'Research in Computer Sciences','fecha' => '2012-09-01 00:01:00','volumen' => '57','serie' => '','tipoPublicacion'=>'revista','referencia'=>'r4'),
 				array('issn' => '2212-0173','doi' => '10.1016/j.protcy.2012.03.008','paginas' => '69-79','titulo'=>'Wireless Sensor Networks and Fusion Information Methods for Forest Fire Detection','tituloLibro' => 'Procedia Technology','fecha' => '2012-05-01 00:01:00','volumen' => '3','serie' => '','tipoPublicacion'=>'revista','referencia'=>'r5'),
 				array('issn' => '1870-4069','doi' => '','paginas' => '97-114','titulo'=>'First Experiences with BlueZ','tituloLibro' => 'Research in Computer Science','fecha' => '2008-11-02 00:01:00','volumen' => '39','serie' => '','tipoPublicacion'=>'revista','referencia'=>'r6'),
+				array('issn' => '0302-9743','doi' => '10.1007/978-3-319-12568-8_112','paginas' => '925-932','titulo'=>'Robust Face Tracking with Locally-Adaptive Correlation Filtering','tituloLibro' => 'Lecture Notes in Computer Sciences','fecha' => '2014-11-01 00:01:00','volumen' => '8827','serie' => '','tipoPublicacion'=>'revista','referencia'=>'r7'),
 			
 			);
 

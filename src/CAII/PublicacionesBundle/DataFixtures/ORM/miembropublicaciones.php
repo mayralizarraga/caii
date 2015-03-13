@@ -290,6 +290,12 @@
 				array('miembro' => 'm17','publicacion'=>'r6'),
 				array('miembro' => 'm1','publicacion'=>'r6'),
 				array('miembro' => 'm30','publicacion'=>'r6'),
+
+				array('miembro' => 'm53','publicacion'=>'r7'),
+				array('miembro' => 'm35','publicacion'=>'r7'),
+				array('miembro' => 'm54','publicacion'=>'r7'),
+				array('miembro' => 'm1','publicacion'=>'r7'),
+				array('miembro' => 'm41','publicacion'=>'r7'),
 				
 
 
