@@ -213,7 +213,7 @@ class Publicacion
         if (null !== $this->getFile()) {
             // haz lo que quieras para generar un nombre único
             $filename = sha1(uniqid(mt_rand(), true));
-            $this->path = $filename.$this->getFile()->getClientOriginalName();
+            $this->path = $this->getFile()->getClientOriginalName();
         }
     }
 
@@ -280,6 +280,12 @@ class Publicacion
         return 'uploads/documents';
     }
 
+    public function setPath($path)
+    {
+        $this->path = $path;
+    
+        return $this;
+    }
 
 
     

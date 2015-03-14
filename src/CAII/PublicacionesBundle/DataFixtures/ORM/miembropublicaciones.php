@@ -211,6 +211,11 @@
 
 				array('miembro' => 'm51','publicacion'=>'a40'),
 				array('miembro' => 'm1','publicacion'=>'a40'),
+
+				array('miembro' => 'm36','publicacion'=>'a41'),
+				array('miembro' => 'm37','publicacion'=>'a41'),
+				array('miembro' => 'm38','publicacion'=>'a41'),
+				array('miembro' => 'm1','publicacion'=>'a41'),
 				
 
 
@@ -252,6 +257,7 @@
 				array('miembro' => 'm16','publicacion'=>'t11'),
 				array('miembro' => 'm19','publicacion'=>'t12'),
 				array('miembro' => 'm4','publicacion'=>'t13'),
+				array('miembro' => 'm13','publicacion'=>'t14'),
 
 				
 				
