@@ -280,6 +280,8 @@ class Publicacion
         return 'uploads/documents';
     }
 
+    
+
     public function setPath($path)
     {
         $this->path = $path;

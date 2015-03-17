@@ -34,6 +34,23 @@
 				<source>recursos</source>
 				<target>Recursos</target>
 			</trans-unit>
+
+			<trans-unit id="9">
+				<source>descripcion</source>
+				<target>
+				El Cuerpo Académico Informática Industrial (CAII) es un grupo de investigación adscrito departamento de Sistemas y Computación del Instituto Tecnológico de Mexicali. Desde su fundación, en el año 2007, ha contado principalmente con la participación de profesores y estudiantes del departamento de Sistemas y Computación, pero ha mantenido intensa colaboración con profesores y estudiantes de otros departamentos, así como de otras universidades y centros de investigación de México y el mundo.
+
+				Las áreas de interés del CAII son diversas, entre las que destacan las relacionadas con la búsqueda de soluciones para sistemas de tiempo-real y de cómputo móvil. Las línea de investigación son:
+
+				1. Computación ubicua
+				2. Sistemas de tiempo-real
+				3. Integración de sistemas heterogéneos
+
+
+
+
+				</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

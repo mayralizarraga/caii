@@ -34,6 +34,20 @@
 				<source>recursos</source>
 				<target>Resources</target>
 			</trans-unit>
+			<trans-unit id="9">
+				<source>descripcion</source>
+				<target>
+					The “Cuerpo Académico Informática Industrial (CAII)” is a research group from the Computer Systems Department at the Insitituto Tecnológico de Mexicali. It was established in 2007, and throughout its history faculty and students from the same department have integrated it. In addition, it has intensely collaborated with researchers from several universities in Mexico, and from all around the world. 
+
+					The research interests of the Computer Systems Department are mainly focused in proposing solutions for real-time and mobile computer systems. More specifically, on the following research topics: 
+
+					1. Ubiquitous computing
+					2. Real-time systems
+					3. Integration of heterogeneous systems
+
+
+				</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
