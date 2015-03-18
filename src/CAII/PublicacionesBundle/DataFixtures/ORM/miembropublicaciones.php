@@ -31,17 +31,17 @@
 				array('miembro' => 'm30','publicacion'=>'a3'),
 
 				array('miembro' => 'm32','publicacion'=>'a4'),
-				array('miembro' => 'm98','publicacion'=>'a4'),
 				array('miembro' => 'm30','publicacion'=>'a4'),
 				array('miembro' => 'm1','publicacion'=>'a4'),
 				array('miembro' => 'm29','publicacion'=>'a4'),
 				array('miembro' => 'm31','publicacion'=>'a4'),
 
-				array('miembro' => 'm31','publicacion'=>'a5'),
+				array('miembro' => 'm32','publicacion'=>'a5'),
+				array('miembro' => 'm98','publicacion'=>'a4'),
 				array('miembro' => 'm30','publicacion'=>'a5'),
 				array('miembro' => 'm1','publicacion'=>'a5'),
 				array('miembro' => 'm29','publicacion'=>'a5'),
-				array('miembro' => 'm32','publicacion'=>'a5'),
+				array('miembro' => 'm31','publicacion'=>'a5'),
 
 				array('miembro' => 'm1','publicacion'=>'a6'),
 				array('miembro' => 'm34','publicacion'=>'a6'),
@@ -62,27 +62,23 @@
 				array('miembro' => 'm35','publicacion'=>'a9'),
 				array('miembro' => 'm2','publicacion'=>'a9'),
 				
-				array('miembro' => 'm31','publicacion'=>'a10'),
+				array('miembro' => 'm32','publicacion'=>'a10'),
 				array('miembro' => 'm30','publicacion'=>'a10'),
 				array('miembro' => 'm1','publicacion'=>'a10'),
 				array('miembro' => 'm29','publicacion'=>'a10'),
-				array('miembro' => 'm32','publicacion'=>'a10'),
+				array('miembro' => 'm31','publicacion'=>'a10'),
 				
-				array('miembro' => 'm31','publicacion'=>'a11'),
+				array('miembro' => 'm32','publicacion'=>'a11'),
 				array('miembro' => 'm30','publicacion'=>'a11'),
 				array('miembro' => 'm1','publicacion'=>'a11'),
 				array('miembro' => 'm29','publicacion'=>'a11'),
-				array('miembro' => 'm32','publicacion'=>'a11'),
+				array('miembro' => 'm31','publicacion'=>'a11'),
 
-				array('miembro' => 'm36','publicacion'=>'a12'),
-				array('miembro' => 'm37','publicacion'=>'a12'),
-				array('miembro' => 'm38','publicacion'=>'a12'),
-				array('miembro' => 'm1','publicacion'=>'a12'),
 				
 				array('miembro' => 'm32','publicacion'=>'a13'),
 				array('miembro' => 'm30','publicacion'=>'a13'),
 				array('miembro' => 'm29','publicacion'=>'a13'),
-				array('miembro' => 'm32','publicacion'=>'a13'),
+				array('miembro' => 'm31','publicacion'=>'a13'),
 				array('miembro' => 'm1','publicacion'=>'a13'),
 
 				array('miembro' => 'm17','publicacion'=>'a14'),
@@ -112,64 +108,64 @@
 				array('miembro' => 'm30','publicacion'=>'a18'),
 
 				array('miembro' => 'm1','publicacion'=>'a19'),
-				array('miembro' => 'm16','publicacion'=>'a19'),
 				array('miembro' => 'm15','publicacion'=>'a19'),
+				array('miembro' => 'm16','publicacion'=>'a19'),
 
 				array('miembro' => 'm1','publicacion'=>'a20'),
-				array('miembro' => 'm43','publicacion'=>'a20'),
 				array('miembro' => 'm44','publicacion'=>'a20'),
+				array('miembro' => 'm43','publicacion'=>'a20'),
+				
 
 				array('miembro' => 'm1','publicacion'=>'a21'),
-				array('miembro' => 'm43','publicacion'=>'a21'),
 				array('miembro' => 'm44','publicacion'=>'a21'),
+				array('miembro' => 'm43','publicacion'=>'a21'),
+				
 
 				array('miembro' => 'm1','publicacion'=>'a22'),
-				array('miembro' => 'm43','publicacion'=>'a22'),
 				array('miembro' => 'm44','publicacion'=>'a22'),
+				array('miembro' => 'm43','publicacion'=>'a22'),
+				
 
 				array('miembro' => 'm1','publicacion'=>'a23'),
-				array('miembro' => 'm43','publicacion'=>'a23'),
 				array('miembro' => 'm44','publicacion'=>'a23'),
+				array('miembro' => 'm43','publicacion'=>'a23'),
+				array('miembro' => 'm55','publicacion'=>'a23'),
+				
 
 				array('miembro' => 'm4','publicacion'=>'a32'),
 				array('miembro' => 'm1','publicacion'=>'a32'),
 				array('miembro' => 'm27','publicacion'=>'a32'),
 
 				array('miembro' => 'm49','publicacion'=>'a33'),
-				array('miembro' => 'm1','publicacion'=>'a33'),
 				array('miembro' => 'm99','publicacion'=>'a33'),
+				array('miembro' => 'm1','publicacion'=>'a33'),
+				
 
 				array('miembro' => 'm48','publicacion'=>'a34'),
-				array('miembro' => 'm1','publicacion'=>'a34'),
 				array('miembro' => 'm99','publicacion'=>'a34'),
+				array('miembro' => 'm1','publicacion'=>'a34'),
 
-				array('miembro' => 'm49','publicacion'=>'a35'),
-				array('miembro' => 'm1','publicacion'=>'a35'),
-				array('miembro' => 'm99','publicacion'=>'a35'),
-
-				array('miembro' => 'm50','publicacion'=>'a36'),
-				array('miembro' => 'm1','publicacion'=>'a36'),
-				array('miembro' => 'm99','publicacion'=>'a36'),
-
+				
 
 
 				//CONGRESO NACIONAL
 				array('miembro' => 'm23','publicacion'=>'a24'),
-				array('miembro' => 'm1','publicacion'=>'a24'),
 				array('miembro' => 'm45','publicacion'=>'a24'),
+				array('miembro' => 'm1','publicacion'=>'a24'),
 				array('miembro' => 'm40','publicacion'=>'a24'),
 
 				array('miembro' => 'm22','publicacion'=>'a25'),
 				array('miembro' => 'm24','publicacion'=>'a25'),
-				array('miembro' => 'm21','publicacion'=>'a25'),
+				array('miembro' => 'm1','publicacion'=>'a25'),
 				array('miembro' => 'm3','publicacion'=>'a25'),
 				array('miembro' => 'm46','publicacion'=>'a25'),
 
 				array('miembro' => 'm47','publicacion'=>'a26'),
 				array('miembro' => 'm25','publicacion'=>'a26'),
-				array('miembro' => 'm1','publicacion'=>'a26'),
-				array('miembro' => 'm2','publicacion'=>'a26'),
 				array('miembro' => 'm10','publicacion'=>'a26'),
+				array('miembro' => 'm2','publicacion'=>'a26'),
+				array('miembro' => 'm1','publicacion'=>'a26'),
+				
 
 				array('miembro' => 'm13','publicacion'=>'a27'),
 				array('miembro' => 'm21','publicacion'=>'a27'),
@@ -181,6 +177,7 @@
 				array('miembro' => 'm5','publicacion'=>'a28'),
 				array('miembro' => 'm1','publicacion'=>'a28'),
 				array('miembro' => 'm3','publicacion'=>'a28'),
+				array('miembro' => 'm56','publicacion'=>'a28'),
 
 				array('miembro' => 'm19','publicacion'=>'a29'),
 				array('miembro' => 'm1','publicacion'=>'a29'),
@@ -199,14 +196,17 @@
 				array('miembro' => 'm1','publicacion'=>'a37'),
 				array('miembro' => 'm99','publicacion'=>'a37'),
 
-				array('miembro' => 'm23','publicacion'=>'a38'),
 				array('miembro' => 'm52','publicacion'=>'a38'),
-				array('miembro' => 'm1','publicacion'=>'a38'),
+				array('miembro' => 'm23','publicacion'=>'a38'),
 				array('miembro' => 'm99','publicacion'=>'a38'),
+				array('miembro' => 'm1','publicacion'=>'a38'),
+				
 
+				array('miembro' => 'm57','publicacion'=>'a39'),
 				array('miembro' => 'm50','publicacion'=>'a39'),
-				array('miembro' => 'm1','publicacion'=>'a39'),
+				array('miembro' => 'm58','publicacion'=>'a39'),
 				array('miembro' => 'm99','publicacion'=>'a39'),
+				array('miembro' => 'm1','publicacion'=>'a39'),
 
 
 				array('miembro' => 'm51','publicacion'=>'a40'),
@@ -258,6 +258,7 @@
 				array('miembro' => 'm19','publicacion'=>'t12'),
 				array('miembro' => 'm4','publicacion'=>'t13'),
 				array('miembro' => 'm13','publicacion'=>'t14'),
+				array('miembro' => 'm8','publicacion'=>'t15'),
 
 				
 				
@@ -293,6 +294,7 @@
 				array('miembro' => 'm13','publicacion'=>'r5'),
 				array('miembro' => 'm27','publicacion'=>'r5'),
 				
+				array('miembro' => 'm39','publicacion'=>'r6'),
 				array('miembro' => 'm17','publicacion'=>'r6'),
 				array('miembro' => 'm1','publicacion'=>'r6'),
 				array('miembro' => 'm30','publicacion'=>'r6'),

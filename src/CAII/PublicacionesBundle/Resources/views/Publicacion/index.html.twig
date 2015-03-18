@@ -47,15 +47,15 @@
                                         {% if entity.ciudad %}, {{ entity.ciudad }}{% endif %}
                                         {% if entity.editorial %}, Editorial {{ entity.editorial }}{% endif %}
                                         {% if entity.serie %}No. {{ entity.serie }}{% endif %}
-                                        {% if entity.edicion %}, Edicion. {{ entity.edicion }}{% endif %}
+                                        {% if entity.edicion %}, Edición. {{ entity.edicion }}{% endif %}
                                         {% if entity.tipoReporte %}, {{ entity.tipoReporte }}{% endif %}
                                         {% if entity.fecha %}, {{ entity.fecha|date('F Y', "America/Tijuana") }}{% endif %}
                                         {% if entity.paginas %}, pp. {{ entity.paginas }}{% endif %}
                                         {% if entity.issn %}, ISSN {{ entity.issn }}{% endif %}
                                         {% if entity.isbn %}, ISBN {{ entity.isbn }}{% endif %}
                                         {% if entity.doi %}, DOI: <a href="http://dx.doi.org/{{ entity.doi }}">{{ entity.doi }}</a> {% endif %}
-                                        {% if entity.path %}, <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}"></a> {% endif %}
-                                     <!--   {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %}-->
+                                        {% if entity.tipoTesis %}, {{ entity.tipoTesis }}{% endif %}
+                                        <!--   {% if entity.mostrar %}, {{ entity.mostrar }} {% endif %} -->
                                     
                                     </li>
                                 {% endif %}   
