@@ -29,7 +29,7 @@ class PublicacionNacionalType extends AbstractType
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 6)
+                     'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 7)
                 ))
         ;
     }

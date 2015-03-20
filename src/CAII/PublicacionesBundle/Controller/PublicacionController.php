@@ -250,6 +250,9 @@ class PublicacionController extends Controller
             case "Internacional":
                 $form   = $this->createForm(new PublicacionInternacionalType($this->getDoctrine()->getManager()), $entity);
                 break; 
+            case "Poster":
+                $form   = $this->createForm(new PublicacionPosterType($this->getDoctrine()->getManager()), $entity);
+                break;     
             case "Nacional":
                 $form   = $this->createForm(new PublicacionNacionalType($this->getDoctrine()->getManager()), $entity);
                 break; 

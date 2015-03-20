@@ -6,13 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PublicacionTesisType extends AbstractType
+class PublicacionPosterType extends AbstractType
 {
-
     public function __construct($em) {
         $this->em = $em;
     }
-
         /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -22,12 +20,16 @@ class PublicacionTesisType extends AbstractType
         $builder
             ->add('titulo')
             ->add('fecha')
-            ->add('escuela')
-            ->add('tipoTesis')
+            ->add('isbn')
+            ->add('paginas')
+            ->add('doi')
+            ->add('congreso')
+            ->add('ciudad')
+            ->add('issn')
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
-                     'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 9)
+                     'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 6)
                 ))
         ;
     }

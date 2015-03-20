@@ -15,9 +15,10 @@
 				array('nombre' => 'Artículos en revistas' ,'prioridad' => '3','name'=>'Journals','referencia'=>'revista'),
 				array('nombre' => 'Artículos', 'prioridad' => '4','name'=>'Articles','referencia'=>'articulo'),
 				array('nombre' => 'Articulos en congresos internacionales','prioridad' => '5','name'=>'International conference\'s articles','referencia'=>'articuloCI'),
-				array('nombre' => 'Articulos en congresos nacionales','prioridad' => '6','name'=>'National conference\'s articles','referencia'=>'articuloCN'),
-				array('nombre' => 'Reportes técnicos','prioridad' => '7','name'=>'Technical Reports','referencia'=>'reporte'),
-				array('nombre' => 'Tesis','prioridad' => '8','name'=>'Thesis','referencia'=>'tesis'),
+				array('nombre' => 'Sesión de carteles','prioridad' => '6','name'=>'Poster session','referencia'=>'poster'),
+				array('nombre' => 'Articulos en congresos nacionales','prioridad' => '7','name'=>'National conference\'s articles','referencia'=>'articuloCN'),
+				array('nombre' => 'Reportes técnicos','prioridad' => '8','name'=>'Technical Reports','referencia'=>'reporte'),
+				array('nombre' => 'Tesis','prioridad' => '9','name'=>'Thesis','referencia'=>'tesis'),
 				
 			);
 			

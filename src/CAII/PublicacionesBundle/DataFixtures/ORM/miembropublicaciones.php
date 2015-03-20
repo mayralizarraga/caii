@@ -147,6 +147,19 @@
 
 				
 
+				//SESION DE POSTER
+				array('miembro' => 'm49','publicacion'=>'a35'),
+				array('miembro' => 'm1','publicacion'=>'a35'),
+				array('miembro' => 'm99','publicacion'=>'a35'),
+
+				array('miembro' => 'm50','publicacion'=>'a36'),
+				array('miembro' => 'm1','publicacion'=>'a36'),
+				array('miembro' => 'm99','publicacion'=>'a36'),
+
+
+
+
+
 
 				//CONGRESO NACIONAL
 				array('miembro' => 'm23','publicacion'=>'a24'),
