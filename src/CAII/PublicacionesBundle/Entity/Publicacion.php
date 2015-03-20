@@ -173,6 +173,13 @@ class Publicacion
      */
     private $tipoTesis;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="idiomaIngles", type="boolean",options={"default": false})
+     */
+    private $idiomaIngles;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -803,6 +810,32 @@ class Publicacion
     public function getTipoTesis()
     {
         return $this->edicion;
+    }
+
+
+
+
+    /**
+     * Set idiomaIngles
+     *
+     * @param boolean $idiomaIngles
+     * @return Publicacion
+     */
+    public function setIdiomaIngles($idiomaIngles)
+    {
+        $this->idiomaIngles = $idiomaIngles;
+    
+        return $this;
+    }
+
+    /**
+     * Get idiomaIngles
+     *
+     * @return boolean 
+     */
+    public function getIdiomaIngles()
+    {
+        return $this->idiomaIngles;
     }
 
 

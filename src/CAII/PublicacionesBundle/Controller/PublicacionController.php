@@ -34,48 +34,94 @@ class PublicacionController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $dql = $em->createQueryBuilder();
+
+        $localeLang = $request->attributes->get('_locale', $request->getLocale());
         
-        //Query para tipos de publicacion 
-        $dql->select('TipoPublicacion.nombre','TipoPublicacion.id')
-            ->from('PublicacionesBundle:Publicacion', 'Publicacion')
-            ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
-            ->orderBy('TipoPublicacion.prioridad', 'ASC')
-            ->groupBy('Publicacion.TipoPublicacion');
-        $tipos =$dql->getQuery()->getResult();
+        if($localeLang=='es')
+        {
+            //Query para tipos de publicacion 
+            $dql->select('TipoPublicacion.nombre','TipoPublicacion.id')
+                ->from('PublicacionesBundle:Publicacion', 'Publicacion')
+                ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
+                ->orderBy('TipoPublicacion.prioridad', 'ASC')
+                ->groupBy('Publicacion.TipoPublicacion');
+            $tipos =$dql->getQuery()->getResult();
 
-        //Nombre de los publicaciones
-        $publicaciones = $em->getRepository('PublicacionesBundle:TipoPublicacion')->findAll();
+            //Nombre de los publicaciones
+            $publicaciones = $em->getRepository('PublicacionesBundle:TipoPublicacion')->findAll();
 
-        //Nombre de los publicaciones
-        $publicacionesid = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
+            //Nombre de los publicaciones
+            $publicacionesid = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
 
-        //Query para las publicaciones ordenadas por fecha
-        $repository = $this->getDoctrine()
-                    ->getRepository('PublicacionesBundle:Publicacion');
-        $dql = $repository->createQueryBuilder('p')
-                ->select('p')
-                ->orderBy('p.fecha', 'DESC');
-        $entities =$dql->getQuery()->getResult();
-                
+            //Query para las publicaciones ordenadas por fecha
+            $repository = $this->getDoctrine()
+                        ->getRepository('PublicacionesBundle:Publicacion');
+            $dql = $repository->createQueryBuilder('p')
+                    ->select('p')
+                    ->orderBy('p.fecha', 'DESC');
+            $entities =$dql->getQuery()->getResult();
+                    
 
-        //Query miembros-publicacion
-        $dql->select('MiembroPublicacion.id i', 
-                     'Miembro.nombre nombreMiembro, Miembro.apellidoP', 
-                     'Publicacion.id idpublicacion')
-            ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
-            ->Join('MiembroPublicacion.idMiembro', 'Miembro')
-            ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
-            ->groupBy('MiembroPublicacion.id')
-            ->orderBy('MiembroPublicacion.id');
+            //Query miembros-publicacion
+            $dql->select('MiembroPublicacion.id i', 
+                         'Miembro.nombre nombreMiembro, Miembro.apellidoP', 
+                         'Publicacion.id idpublicacion')
+                ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
+                ->Join('MiembroPublicacion.idMiembro', 'Miembro')
+                ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
+                ->groupBy('MiembroPublicacion.id')
+                ->orderBy('MiembroPublicacion.id');
 
-        $miembros=$dql->getQuery()->getResult();
-       
+            $miembros=$dql->getQuery()->getResult();
+        }
+        else{
+
+            //Query para tipos de publicacion 
+            $dql->select('TipoPublicacion.nombre','TipoPublicacion.id')
+                ->from('PublicacionesBundle:Publicacion', 'Publicacion')
+                ->Join('Publicacion.TipoPublicacion', 'TipoPublicacion')
+                ->Where('Publicacion.idiomaIngles = 1')
+                ->orderBy('TipoPublicacion.prioridad', 'ASC')
+                ->groupBy('Publicacion.TipoPublicacion');
+            $tipos =$dql->getQuery()->getResult();
+
+            //Nombre de los publicaciones
+            $publicaciones = $em->getRepository('PublicacionesBundle:TipoPublicacion')->findAll();
+
+            //Nombre de los publicaciones
+            $publicacionesid = $em->getRepository('PublicacionesBundle:Publicacion')->findAll();
+
+            //Query para las publicaciones ordenadas por fecha
+            $repository = $this->getDoctrine()
+                        ->getRepository('PublicacionesBundle:Publicacion');
+            $dql = $repository->createQueryBuilder('p')
+                    ->select('p')
+                    ->where('p.idiomaIngles=1')
+                    ->orderBy('p.fecha', 'DESC');
+            $entities =$dql->getQuery()->getResult();
+                    
+
+            //Query miembros-publicacion
+            $dql->select('MiembroPublicacion.id i', 
+                         'Miembro.nombre nombreMiembro, Miembro.apellidoP', 
+                         'Publicacion.id idpublicacion')
+                ->from('MiembroBundle:MiembroPublicacion', 'MiembroPublicacion')
+                ->Join('MiembroPublicacion.idMiembro', 'Miembro')
+                ->Join('MiembroPublicacion.idPublicacion', 'Publicacion')
+                ->groupBy('MiembroPublicacion.id')
+                ->orderBy('MiembroPublicacion.id');
+
+            $miembros=$dql->getQuery()->getResult();
+
+
+        }
 
         return array(
+         
             'entities' => $entities,
             'tipos' => $tipos,
             'miembros'=>$miembros,
