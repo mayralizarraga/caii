@@ -51,6 +51,16 @@
 
 				</target>
 			</trans-unit>
+
+			<trans-unit id="10">
+				<source>idioma</source>
+				<target>Lenguaje</target>
+			</trans-unit>
+
+			<trans-unit id="11">
+				<source>descarga</source>
+				<target>Descargar</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

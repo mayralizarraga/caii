@@ -34,6 +34,7 @@ class PublicacionType extends AbstractType
             ->add('serie')
             ->add('edicion')
             ->add('escuela')
+            ->add('idiomaIngles')
             ->add('TipoPublicacion')
         ;
     }

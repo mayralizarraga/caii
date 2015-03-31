@@ -40,7 +40,9 @@
                         {{ form_widget(form.issn) }}<br>
                         {{ form_label(form.isbn, 'ISBN') }}
                         {{ form_widget(form.isbn) }}<br>
-                        { {{ form_label(form.file, 'Subir archivo') }}
+                        {{ form_label(form.idiomaIngles, 'Publicación en ingles') }}
+                        {{ form_widget(form.idiomaIngles) }}<br>
+                        {{ form_label(form.file, 'Subir archivo') }}
                         {% if entity.path %} 
                               <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}">Ver >></a>
                           {% endif %} <br>

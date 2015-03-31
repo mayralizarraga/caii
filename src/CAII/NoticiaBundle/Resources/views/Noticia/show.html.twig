@@ -1,48 +1,50 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>Noticia</h1>
+{% block contenido -%}
+        <div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li>
+                            <a href="{{path('noticia_backend')}}">Noticias</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Ver noticia</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">Noticias</div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        
+                        
+                        <h4>Titulo</h4>
+                        <p>{{ entity.titulo }}<p><br>
+                        <h6>{% if entity.fecha %}{{ entity.fecha|localizeddate('long', 'short') }}{% endif %}</h6>
+                    
+                 
+                        <h4>Contenido</h4>
+                        {% if entity.fotoURL %}<img src="{{ asset('uploads/images/noticias/' ~ entity.fotoURL) }}" alt="" alt="" height="30%" width="30%" align="left" style="padding:15px;"/>{% endif %}
+                  
+                
+                        <p align="justify">{{ entity.contenido | raw }}</p>
+              
+                    </div>    
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Titulo</th>
-                <td>{{ entity.titulo }}</td>
-            </tr>
-            <tr>
-                <th>Descripcion</th>
-                <td>{{ entity.descripcion }}</td>
-            </tr>
-            <tr>
-                <th>Contenido</th>
-                <td>{{ entity.contenido }}</td>
-            </tr>
-            <tr>
-                <th>Fotourl</th>
-                <td>{{ entity.fotoURL }}</td>
-            </tr>
-            <tr>
-                <th>Fecha</th>
-                <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('noticia') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('noticia_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+            </div>    
+
+
+        </div>    
+
+        
 {% endblock %}

@@ -27,6 +27,7 @@ class PublicacionArticuloType extends AbstractType
             ->add('ciudad')
             ->add('issn')
             ->add('file')
+            ->add('idiomaIngles')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',
                      'data' => $this->em->getReference("PublicacionesBundle:TipoPublicacion", 4)

@@ -9,6 +9,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CAII\RecursoBundle\Entity\Recurso;
 use CAII\RecursoBundle\Form\RecursoType;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
  * Recurso controller.
@@ -35,6 +38,60 @@ class RecursoController extends Controller
             'entities' => $entities,
         );
     }
+
+    /**
+     * Serve a file
+     *
+     * @Route("/descarga/recurso/{filename}", name="download_file", requirements={"filename": ".+"})
+     */
+    public function downloadFileAction($filename)
+    {
+        /**
+         * $basePath can be either exposed (typically inside web/)
+         * or "internal"
+         */
+        $basePath = $this->container->getParameter('resource.directorio');
+
+        $filePath = $basePath.'/'.$filename;
+
+        // check if file exists
+        if (!file_exists($filePath)) {
+            throw $this->createNotFoundException();
+        }
+
+        // prepare BinaryFileResponse
+        $response = new BinaryFileResponse($filePath);
+        $response->trustXSendfileTypeHeader();
+        $response->setContentDisposition(
+            ResponseHeaderBag::DISPOSITION_INLINE,
+            $filename,
+            iconv('UTF-8', 'ASCII//TRANSLIT', $filename)
+        );
+
+        return $response;
+    }
+
+
+
+    /**
+     * Lists all Recurso entities in backend.
+     *
+     * @Route("/", name="recurso_backend")
+     * @Method("GET")
+     * @Template("RecursoBundle:Recurso:indexBackend.html.twig")
+     */
+    public function indexBackendAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('RecursoBundle:Recurso')->findAll();
+
+        return array(
+            'entities' => $entities,
+        );
+    }
+
+
     /**
      * Creates a new Recurso entity.
      *
@@ -51,6 +108,18 @@ class RecursoController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $em->flush();
+
+            $id = $entidad->getId();
+            $idioma = $manager->find('RecursoBundle:Ocupacion', $id);
+            if ($idioma->getIdioma()=='Español') {
+                $idioma->setIdioma('Spanish');
+                   
+            }else{
+                $idioma->setIdioma('English');
+            }
+            $idioma->setTranslatableLocale('en');
+            $em->persist($idioma);
             $em->flush();
 
             return $this->redirect($this->generateUrl('recurso_show', array('id' => $entity->getId())));
@@ -91,7 +160,18 @@ class RecursoController extends Controller
     public function newAction()
     {
         $entity = new Recurso();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createForm(new RecursoType(), $entity);
+
+        $form->handleRequest($this->getRequest());
+
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('recurso_backend', array('id' => $entity->getId())));
+        }
 
         return array(
             'entity' => $entity,
@@ -141,13 +221,21 @@ class RecursoController extends Controller
             throw $this->createNotFoundException('Unable to find Recurso entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $form = $this->createForm(new RecursoType(), $entity, array(
+            'action' => $this->generateUrl('recurso_edit', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->handleRequest($this->getRequest());
+
+        if ($form->isValid()) {
+            $em->flush();
+            return $this->redirect($this->generateUrl('recurso_backend'));
+        }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'entity' => $entity, 
+            'form' => $form->createView()
         );
     }
 
@@ -210,11 +298,7 @@ class RecursoController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('RecursoBundle:Recurso')->find($id);
 
             if (!$entity) {
@@ -223,9 +307,8 @@ class RecursoController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
 
-        return $this->redirect($this->generateUrl('recurso'));
+        return $this->redirect($this->generateUrl('recurso_backend'));
     }
 
     /**

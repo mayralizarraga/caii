@@ -26,6 +26,7 @@ class PublicacionReporteType extends AbstractType
             ->add('doi')
             ->add('volumen')
             ->add('serie')
+            ->add('idiomaIngles')
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',

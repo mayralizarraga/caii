@@ -13,8 +13,16 @@
    <section class="section_normal">
    
       <div class="row"> 
-
-    
+      		{% for entity in entities %}
+          <dl>
+            <dt><h3>{{entity.nombre}}<h3></dt>
+            <dd>{{entity.descripcion}}</dd>
+            <dd><strong>{{ 'idioma' | trans }}:</strong> {{entity.idioma}}</dd>
+            <dd><a href="{{ path('recurso_download' ,{ 'filename':entity.path, }) }}">{{ 'descarga' | trans }}</a></dd>
+          </dl><br>
+      			
+      			
+    		{% endfor%}
               
 
         

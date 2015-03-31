@@ -30,7 +30,7 @@
                           <table class="table" id="example">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th></th>
                                     <th>Titulo</th>
                                     <th>Descripción</th>
                                     <th>Fecha</th>
@@ -40,7 +40,7 @@
                             <tbody>
                             {% for entity in entities %}
                                 <tr>
-                                    <td><a href="{{ path('noticia_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <td><a href="{{ path('noticia_show', { 'id': entity.id }) }}">Ver detalles>></a></td>
                                     <td>{{ entity.titulo }}</td>
                                     <td>{{ entity.descripcion }}</td>
                                     <td>{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>

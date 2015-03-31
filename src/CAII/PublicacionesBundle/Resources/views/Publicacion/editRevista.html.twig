@@ -40,6 +40,8 @@
                         {{ form_widget(form.serie) }}<br>
                         {{ form_label(form.volumen, 'Volumen') }}
                         {{ form_widget(form.volumen) }}<br>
+                        {{ form_label(form.idiomaIngles, 'Publicación en ingles') }}
+                        {{ form_widget(form.idiomaIngles) }}<br>
                         {{ form_label(form.file, 'Subir archivo') }}
                         {% if entity.path %} 
                               <a href="{{ path('Publicacion_download', { 'filename':entity.path, }) }}">Ver >></a>

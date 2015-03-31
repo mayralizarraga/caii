@@ -24,6 +24,7 @@ class PublicacionTesisType extends AbstractType
             ->add('fecha')
             ->add('escuela')
             ->add('tipoTesis')
+            ->add('idiomaIngles')
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',

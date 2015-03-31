@@ -28,7 +28,8 @@
         "stof/doctrine-extensions-bundle": "@dev",
         "gedmo/doctrine-extensions": "dev-master",
         "gedmo/doctrine-extensions": "2.3.*@dev",
-        "knplabs/knp-snappy-bundle": "dev-master"
+        "knplabs/knp-snappy-bundle": "dev-master",
+        "stephanecollot/datetimepicker-bundle": "dev-master"
 
 
     },

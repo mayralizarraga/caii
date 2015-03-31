@@ -20,7 +20,7 @@
             <!-- block -->
             
 			    
-               <fieldset>
+               <div>
                     <legend><h1>Nueva publicación -  Tesis</h1></legend>
                     {{ form_start(form, { 'action': path('Publicacion_new', { 'tipo': 'Tesis' }), 'method': 'POST' }) }} 
                         {{ form_label(form.titulo, 'Titulo') }}
@@ -32,6 +32,8 @@
                         {{ form_widget(form.fecha) }}<br>
                         {{ form_label(form.tipoTesis, 'Tipo de tesis') }}
                         {{ form_widget(form.tipoTesis) }}<br>
+                        {{ form_label(form.idiomaIngles, 'Publicación en ingles') }}
+                        {{ form_widget(form.idiomaIngles) }}<br>
                         {{ form_label(form.file, 'Subir archivo') }}
                         {{ form_widget(form.file) }}<br>
                         <p hidden>{{ form_widget(form.TipoPublicacion) }}<br></p>
@@ -40,7 +42,7 @@
                         <input type="submit" value="Save" >
                          <br>
                     {{ form_end(form) }}
-                </fieldset>
+                </div>
 			
 		</div>	
     

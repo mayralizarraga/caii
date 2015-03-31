@@ -176,7 +176,7 @@ class Publicacion
     /**
      * @var boolean
      *
-     * @ORM\Column(name="idiomaIngles", type="boolean",options={"default": false})
+     * @ORM\Column(name="idiomaIngles", type="boolean",options={"default": false}, nullable=true)
      */
     private $idiomaIngles;
 

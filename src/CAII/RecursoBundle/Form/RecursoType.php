@@ -15,7 +15,16 @@ class RecursoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
+            ->add('translations', 'a2lix_translations');
+            /*->add('nombre')
+            ->add('file')
+            ->add('descripcion')
+            ->add('idioma', 'choice', array(
+                    'choices'   => array(
+                        'Español'   => 'Español',
+                        'Inglés' => 'Inglés',
+                        
+                    )))*/
         ;
     }
     

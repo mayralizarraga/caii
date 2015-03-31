@@ -4,11 +4,15 @@ recurso:
 
 _recurso:
     pattern: /{_locale}/recursos/
-    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: Recurso}
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: recurso}
 
 recurso_backend:
-    pattern:  /admin/recursos
+    pattern:  /admin/recurso
     defaults: { _controller: RecursoBundle:Recurso:indexBackend}
+
+_recurso_backend:
+    pattern: /admin/recurso/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: recurso_backend}
 
 recurso_new:
     pattern:  /admin/recursos/new
@@ -38,3 +42,7 @@ recurso_delete:
 recurso_print:
     pattern:  /admin/recursos/print
     defaults: { _controller: RecursoBundle:Recurso:print }
+
+recurso_download:
+    pattern:  /descarga/recurso/{filename}
+    defaults: { _controller: RecursoBundle:Recurso:downloadFile}

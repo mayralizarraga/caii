@@ -30,6 +30,7 @@ class PublicacionCapituloType extends AbstractType
             ->add('editorial')
             ->add('serie')
             ->add('edicion')
+            ->add('idiomaIngles')
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',

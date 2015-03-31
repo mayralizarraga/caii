@@ -26,6 +26,7 @@ class PublicacionNacionalType extends AbstractType
             ->add('congreso')
             ->add('ciudad')
             ->add('issn')
+            ->add('idiomaIngles')
             ->add('file')
             ->add('TipoPublicacion','entity', array(
                      'class' => 'PublicacionesBundle:TipoPublicacion',

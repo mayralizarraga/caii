@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new CAII\NoticiaBundle\NoticiaBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new CAII\RecursoBundle\RecursoBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
