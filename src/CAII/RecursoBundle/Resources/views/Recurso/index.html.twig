@@ -15,7 +15,7 @@
       <div class="row"> 
       		{% for entity in entities %}
           <dl>
-            <dt><h3>{{entity.nombre}}<h3></dt>
+            <dd><h2><small>{{entity.nombre}}</small></h2></dd>
             <dd>{{entity.descripcion}}</dd>
             <dd><strong>{{ 'idioma' | trans }}:</strong> {{entity.idioma}}</dd>
             <dd><a href="{{ path('recurso_download' ,{ 'filename':entity.path, }) }}">{{ 'descarga' | trans }}</a></dd>
