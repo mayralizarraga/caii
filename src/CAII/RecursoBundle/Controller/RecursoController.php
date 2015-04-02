@@ -110,17 +110,7 @@ class RecursoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            $id = $entidad->getId();
-            $idioma = $manager->find('RecursoBundle:Ocupacion', $id);
-            if ($idioma->getIdioma()=='Español') {
-                $idioma->setIdioma('Spanish');
-                   
-            }else{
-                $idioma->setIdioma('English');
-            }
-            $idioma->setTranslatableLocale('en');
-            $em->persist($idioma);
-            $em->flush();
+            
 
             return $this->redirect($this->generateUrl('recurso_show', array('id' => $entity->getId())));
         }
@@ -168,6 +158,17 @@ class RecursoController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $em->flush();
+
+            $idioma = $entity;
+            if ($idioma->getIdioma()=='Español') {
+                $idioma->setIdioma('Spanish');
+                   
+            }else{
+                $idioma->setIdioma('English');
+            }
+            $idioma->setTranslatableLocale('en');
+            $em->persist($idioma);
             $em->flush();
 
             return $this->redirect($this->generateUrl('recurso_backend', array('id' => $entity->getId())));
@@ -229,6 +230,17 @@ class RecursoController extends Controller
         $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
+            $em->flush();
+    
+            $idioma = $entity;
+            if ($idioma->getIdioma()=='Español') {
+                $idioma->setIdioma('Spanish');
+                   
+            }else{
+                $idioma->setIdioma('English');
+            }
+            $idioma->setTranslatableLocale('en');
+            $em->persist($idioma);
             $em->flush();
             return $this->redirect($this->generateUrl('recurso_backend'));
         }
