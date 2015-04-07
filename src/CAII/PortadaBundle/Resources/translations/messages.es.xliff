@@ -24,7 +24,7 @@
 			</trans-unit>
 			<trans-unit id="6">
 				<source>duracion</source>
-				<target>Duración</target>
+				<target>Periodo</target>
 			</trans-unit>
 			<trans-unit id="7">
 				<source>estado</source>
@@ -60,6 +60,22 @@
 			<trans-unit id="11">
 				<source>descarga</source>
 				<target>Descargar</target>
+			</trans-unit>
+			<trans-unit id="12">
+				<source>entidadFinanciadora</source>
+				<target>Entidad Financiadora</target>
+			</trans-unit>
+			<trans-unit id="13">
+				<source>noProyecto</source>
+				<target>Número de Proyecto</target>
+			</trans-unit>
+			<trans-unit id="14">
+				<source>director</source>
+				<target>Director</target>
+			</trans-unit>
+			<trans-unit id="15">
+				<source>participantes</source>
+				<target>Participantes</target>
 			</trans-unit>
 		</body>
 	</file>

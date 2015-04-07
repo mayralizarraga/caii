@@ -18,22 +18,28 @@
         {% for entity in entities %}
           	<h2><small> {{ entity.nombre }}</small></h2>
           	<ul class="no-bullet">
-  				<li>{{ 'duracion' | trans }}: {{ entity.fechaInicio|date('Y') }} - {% if entity.fechaFinal %} {{ entity.fechaFinal|date('Y') }}{% endif %}</li>
-  				<li>{{ 'estado' | trans }}: {% if entity.status==1 %}
-                         Activo
-                      {% else %}
-                         Inactivo
-                      {% endif %} </li>
-          <li>{{ 'miembros' | trans }}:</li>
-          <li>
-          <ul>
-          {% for mim in mims %}
-            {% if mim.idproyecto==entity.id %}
-              <li>{{ mim.nombreMiembro }} {{ mim.apellidoP }} {{ mim.apellidoM }}</li>
-            {% endif %}
-          {% endfor %}
-          </ul>
-          </li>
+        				<li>{% if entity.idEntidad %}<em>{{ 'entidadFinanciadora' | trans }}:</em> {{ entity.idEntidad }}{% endif %}</li>
+                <li>{% if entity.numeroProyecto %}<em>{{ 'noProyecto' | trans }}:</em> {{ entity.numeroProyecto }}{% endif %}</li>
+                <li><em>{{ 'duracion' | trans }}:</em> {{ entity.fechaInicio|date('Y') }} {% if entity.fechaFinal %} - {{ entity.fechaFinal|date('Y') }}{% endif %}</li>
+        				<!--
+                ************* ESTADO DEL PROYECTO ******************
+                <li>{{ 'estado' | trans }}: {% if entity.status==1 %}
+                               Activo
+                            {% else %}
+                               Inactivo
+                            {% endif %} </li>
+                -->
+                <li>{% if entity.director %}<em>{{ 'director' | trans }}:</em> {{ entity.director }}{% endif %}</li>
+                <li><em>{{ 'participantes' | trans }}:</em></li>
+                <li>
+                    <ul>
+                      {% for mim in mims %}
+                        {% if mim.idproyecto==entity.id %}
+                          <li>{{ mim.nombreMiembro }} {{ mim.apellidoP }} {{ mim.apellidoM }}</li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                </li>
 
   			</ul>	
           	

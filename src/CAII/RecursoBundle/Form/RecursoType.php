@@ -1,11 +1,8 @@
 <?php
-
 namespace CAII\RecursoBundle\Form;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
 class RecursoType extends AbstractType
 {
         /**
@@ -15,6 +12,7 @@ class RecursoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            
             ->add('nombre')
             ->add('file')
             ->add('descripcion')
@@ -36,7 +34,6 @@ class RecursoType extends AbstractType
             'data_class' => 'CAII\RecursoBundle\Entity\Recurso'
         ));
     }
-
     /**
      * @return string
      */

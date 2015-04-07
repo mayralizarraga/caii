@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Proyecto")
  * @ORM\Entity
  */
-class Proyecto
+class Proyecto implements Translatable
 {
     /**
      * @var integer
@@ -26,18 +26,18 @@ class Proyecto
     /**
      * @var string
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="nombre", type="string", length=200, nullable=true)
      */
     private $nombre;
 
+
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="CAII\EntidadFinancieraBundle\Entity\EntidadFinanciadora")
-     * @ORM\JoinColumn(name="id_Entidad", referencedColumnName="id")
-     * 
-     */
-    private $id_Entidad;
+     * @ORM\Column(name="idEntidad", type="string", length=200, nullable=true)
+    */
+    private $idEntidad;
 
     /**
      * @var \DateTime
@@ -61,11 +61,27 @@ class Proyecto
     private $status;
 
     /**
+     * @var String
+     *
+     * @ORM\Column(name="numeroProyecto", type="string", length=20, nullable=true)
+     */
+    private $numeroProyecto;
+
+    /**
      * @var float
      *
      * @ORM\Column(name="monto_Financiero", type="float", nullable=true)
      */
     private $monto_Financiero;
+
+    /**
+     * @var integer
+     * 
+     * @ORM\ManyToOne(targetEntity="CAII\MiembroBundle\Entity\Miembro")
+     * @ORM\JoinColumn(name="director", referencedColumnName="id")
+     * 
+     */
+    private $director;
 
 
     /**
@@ -102,26 +118,26 @@ class Proyecto
     }
 
     /**
-     * Set id_Entidad
+     * Set idEntidad
      *
-     * @param CAII\EntidadFinancieraBundle\Entity\EntidadFinanciadora
-     * @return id_Entidad
+     * @param String
+     * @return idEntidad
      */
     public function setIdEntidad($idEntidad)
     {
-        $this->id_Entidad = $idEntidad;
+        $this->idEntidad = $idEntidad;
     
         return $this;
     }
 
     /**
-     * Get id_Entidad
+     * Get idEntidad
      *
-     * @return CAII\EntidadFinancieraBundle\Entity\EntidadFinanciadora
+     * @return Proyecto
      */
     public function getIdEntidad()
     {
-        return $this->id_Entidad;
+        return $this->idEntidad;
     }
 
     /**
@@ -193,6 +209,29 @@ class Proyecto
         return $this->status;
     }
 
+     /**
+     * Set numeroProyecto
+     *
+     * @param string $numeroProyecto
+     * @return Proyecto
+     */
+    public function setNumeroProyecto($numeroProyecto)
+    {
+        $this->numeroProyecto = $numeroProyecto;
+    
+        return $this;
+    }
+
+    /**
+     * Get numeroProyecto
+     *
+     * @return Proyecto 
+     */
+    public function getNumeroProyecto()
+    {
+        return $this->numeroProyecto;
+    }
+
     /**
      * Set monto_Financiero
      *
@@ -216,9 +255,44 @@ class Proyecto
         return $this->monto_Financiero;
     }
 
+     /**
+     * Set director
+     *
+     * @param CAII\MiembroBundle\Entity\Miembro
+     * @return director
+     */
+    public function setDirector($director)
+    {
+        $this->director = $director;
+    
+        return $this;
+    }
+
+    /**
+     * Get director
+     *
+     * @return CAII\MiembroBundle\Entity\Miembro
+     */
+    public function getDirector()
+    {
+        return $this->director;
+    }
+
+
 
     public function __toString()
     {
         return $this->getNombre();
     }
+
+    /**
+    * @Gedmo\Locale
+    */
+    private $locale;
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
+    }
+
+    
 }
