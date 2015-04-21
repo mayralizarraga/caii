@@ -29,11 +29,42 @@ class NoticiaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('NoticiaBundle:Noticia')->findAll();
+        //$entities = $em->getRepository('NoticiaBundle:Noticia')->findAll();
+
+        //Query para noticias ordenadas por fecha
+        $repository = $this->getDoctrine()
+                    ->getRepository('NoticiaBundle:Noticia');
+        $dql = $repository->createQueryBuilder('p')
+                ->select('p')
+                ->where('p.fecha >= :fechaC')
+                ->orderBy('p.fecha', 'DESC');
+        $dql->setParameter('fechaC', (new \DateTime())->format('Y-m-d'));
+        $entities =$dql->getQuery()->getResult();
+
 
         return array(
             'entities' => $entities,
         );
+    }
+
+    /**
+     * Eliminar las noticias viejas
+     *
+     * @Route("/", name="noticia")
+     * @Method("GET")
+     * @Template()
+     */
+    public function deleteNoticiasViejasAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $dql = $em->createQueryBuilder();
+        $dql -> delete('NoticiaBundle:Noticia', 'p');
+        $dql -> where('p.fecha < :fechaC');
+        $dql->setParameter('fechaC', (new \DateTime())->format('Y-m-d'));
+        $entities =$dql->getQuery()->getResult();
+
+        return $this->redirect($this->generateUrl('noticia_backend'));
     }
 
 

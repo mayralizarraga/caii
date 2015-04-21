@@ -22,7 +22,10 @@ class PublicacionLibroType extends AbstractType
             ->add('doi')
             ->add('paginas')
             ->add('tituloLibro')
-            ->add('fecha')
+            ->add('fecha','date', array( 'years' => range(date('Y') - 25, date('Y') + 20),
+                                                'required'=> false,
+                                                'empty_value'  => '',
+                ))
             ->add('isbn')
             ->add('volumen')
             ->add('editorial')

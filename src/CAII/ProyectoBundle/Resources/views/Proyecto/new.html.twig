@@ -1,15 +1,55 @@
 {% extends '::backend.html.twig' %}
 
 {% block contenido -%}
-    <h1>Proyecto creation</h1>
+		<div class="row-fluid">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="breadcrumb">
+                        <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
+                        <li>
+                            <a href="{{path('backend')}}">Dashboard</a> <span class="divider">/</span>  
+                        </li>
+                        <li>
+                            <a href="{{path('proyecto_backend')}}">Proyectos</a> <span class="divider">/</span>  
+                        </li>
+                        <li class="active">Nuevo</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- block -->
+            
+			   
+			   <fieldset>
+                    <legend><h1>Nuevo Proyecto</h1></legend>
+                    {{ form_start(form, { 'action': path('proyecto_new'), 'method': 'POST' }) }} 
+                        {{ form_label(form.nombre, 'Título de Proyecto') }}
+                        {{ form_widget(form.nombre) }}
+                        {{ form_label(form.numeroProyecto, 'Número de Proyecto') }}
+                        {{ form_widget(form.numeroProyecto) }}
+                        {{ form_label(form.idEntidad, 'Entidad Financiadora') }}
+                        {{ form_widget(form.idEntidad) }}
+                        {{ form_label(form.director, 'Director de proyecto') }}
+                        {{ form_widget(form.director) }}
+                        {{ form_label(form.status, 'Estado') }}
+                        {{ form_widget(form.status) }}
+                        {{ form_label(form.fecha_Inicio, 'Fecha de Inicio') }}
+                        {{ form_widget(form.fecha_Inicio) }}
+                        {{ form_label(form.fecha_Final, 'Fecha de Terminación') }}
+                        {{ form_widget(form.fecha_Final) }}
+                        {{ form_label(form.monto_Financiero, 'Monto Financiero') }}
+                        {{ form_widget(form.monto_Financiero) }}
+                        <br>
+                        <input type="submit" value="Save" >
+                         <br>
+                    {{ form_end(form) }}
+                </fieldset>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('proyecto') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+			    <ul class="record_actions">
+			    	<li>
+			        	<a href="{{ path('proyecto_backend') }}">Back to the list</a>
+			    	</li>
+				</ul>
+			
+		</div>		
 {% endblock %}

@@ -24,6 +24,9 @@
                         <div class="table-toolbar">
                           <div class="btn-group">
                              <a href="{{path('noticia_new')}}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                          </div>   
+                          <div class="btn-group">  
+                             <a href="{{path('noticia_delete_viejas')}}"><button class="btn btn-danger">Delete All News <i class="icon-remove icon-white"></i></button></a>
                           </div>
                         </div>
                         <div class="mygrid-wrapper-div">  
@@ -43,16 +46,14 @@
                                     <td><a href="{{ path('noticia_show', { 'id': entity.id }) }}">Ver detalles>></a></td>
                                     <td>{{ entity.titulo }}</td>
                                     <td>{{ entity.descripcion }}</td>
-                                    <td>{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>
-                                    <td>
-                                              <ul>
-                                                  <li>
-                                                        <a href="{{ path('noticia_delete', { 'id': entity.id }) }}">delete</a>
-                                                  </li>
-                                                  <li>
-                                                        <a href="{{ path('noticia_edit', { 'id': entity.id }) }}">edit</a>
-                                                  </li>
-                                              </ul>
+                                    <td nowrap>{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>
+                                    <td nowrap>
+                                            <div class="btn-group">
+                                                <a href="{{ path('noticia_delete', { 'id': entity.id }) }}"><button class="btn btn-danger">Delete <i class="icon-remove icon-white"></i></button></a>
+                                            </div>
+                                            <div class="btn-group">
+                                                <a href="{{ path('noticia_edit', { 'id': entity.id }) }}"><button class="btn btn-info">Edit <i class="icon-edit icon-white"></i></button></a>
+                                            </div>
                                     </td>  
                                 </tr>
                             {% endfor %}

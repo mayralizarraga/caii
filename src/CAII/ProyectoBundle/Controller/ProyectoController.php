@@ -152,7 +152,18 @@ class ProyectoController extends Controller
     public function newAction()
     {
         $entity = new Proyecto();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createForm(new ProyectoType(), $entity);
+
+        $form->handleRequest($this->getRequest());
+
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('proyecto_backend', array('id' => $entity->getId())));
+        }
 
         return array(
             'entity' => $entity,
@@ -211,14 +222,23 @@ class ProyectoController extends Controller
             throw $this->createNotFoundException('Unable to find Proyecto entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $form = $this->createForm(new ProyectoType(), $entity, array(
+            'action' => $this->generateUrl('proyecto_edit', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->handleRequest($this->getRequest());
+
+       if ($form->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('proyecto_backend'));
+        }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+            'entity' => $entity, 
+            'form' => $form->createView()
+        );  
     }
 
 

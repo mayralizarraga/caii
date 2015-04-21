@@ -30,6 +30,10 @@ noticia_delete:
     pattern:  /admin/noticias/delete/{id}
     defaults: { _controller: NoticiaBundle:Noticia:delete}
 
+noticia_delete_viejas:
+    pattern:  /admin/noticias/viejas
+    defaults: { _controller: NoticiaBundle:Noticia:deleteNoticiasViejas}
+
 noticia_backend:
     pattern:  /admin/noticia
     defaults: { _controller: NoticiaBundle:Noticia:indexBackend }

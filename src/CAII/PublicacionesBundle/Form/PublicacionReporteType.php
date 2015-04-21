@@ -20,7 +20,10 @@ class PublicacionReporteType extends AbstractType
         $builder
             ->add('titulo')
             ->add('tituloLibro')
-            ->add('fecha')
+            ->add('fecha','date', array( 'years' => range(date('Y') - 25, date('Y') + 20),
+                                                'required'=> false,
+                                                'empty_value'  => '',
+                ))
             ->add('issn')
             ->add('paginas')
             ->add('doi')

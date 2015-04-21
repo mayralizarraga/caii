@@ -40,15 +40,15 @@
                                 <th>Fecha de Terminación</th>
                                 <th>Estatus</th>
                                 <th></th>
-                                <th>Acction</th>
+                                <th></th>
                               </tr>
                             </thead>
                             <tbody id="myTable" >
                                 {% for entity in entities %}   
                                   <tr>
                                       <td>{{ entity.nombre }}</td>
-                                      <td  nowrap>{{ entity.fechaInicio|date('d-m-Y') }}</td>
-                                      <td  nowrap>{{ entity.fechaFinal|date('d-m-Y') }}</td>
+                                      <td  nowrap>{% if entity.fechaInicio %}{{ entity.fechaInicio|date('d-m-Y') }}{% endif%}</td>
+                                      <td  nowrap>{% if entity.fechaFinal %}{{ entity.fechaFinal|date('d-m-Y') }}{% endif%}</td>
                                       <td>{% if entity.status==1 %}
                                             Activo
                                           {% else %}
@@ -57,15 +57,13 @@
                                      <!-- <td>{{ entity.idEntidad }} </td>
                                       <td>{{ entity.montoFinanciero|number_format(2, '.', ',') }}</td>-->
                                       <td><a href="{{ path('proyecto_miembros', { 'id': entity.id }) }}" class="btn btn-primary btn-lg" >Miembros</a></td>
-                                      <td>
-                                              <ul>
-                                                  <li>
-                                                        <a href="{{ path('proyecto_delete', { 'id': entity.id }) }}">delete</a>
-                                                  </li>
-                                                  <li>
-                                                        <a href="{{ path('proyecto_edit', { 'id': entity.id }) }}">edit</a>
-                                                  </li>
-                                              </ul>
+                                      <td nowrap>
+                                            <div class="btn-group">
+                                                <a href="{{ path('proyecto_delete', { 'id': entity.id }) }}"><button class="btn btn-danger">Delete <i class="icon-remove icon-white"></i></button></a>
+                                            </div>
+                                            <div class="btn-group">
+                                                <a href="{{ path('proyecto_edit', { 'id': entity.id }) }}"><button class="btn btn-info">Edit <i class="icon-edit icon-white"></i></button></a>
+                                            </div>
                                       </td> 
                                   </tr>
               

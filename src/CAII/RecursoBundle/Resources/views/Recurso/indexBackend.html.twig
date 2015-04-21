@@ -43,15 +43,13 @@
                                     <td>{{ entity.nombre }}</td>
                                     <td>{{ entity.descripcion }}</td>
                                     <td>{{ entity.idioma }}</td>
-                                    <td>
-                                              <ul>
-                                                  <li>
-                                                        <a href="{{ path('recurso_delete', { 'id': entity.id }) }}">delete</a>
-                                                  </li>
-                                                  <li>
-                                                        <a href="{{ path('recurso_edit', { 'id': entity.id }) }}">edit</a>
-                                                  </li>
-                                              </ul>
+                                    <td nowrap>
+                                        <div class="btn-group">
+                                            <a href="{{ path('recurso_delete', { 'id': entity.id }) }}"><button class="btn btn-danger">Delete <i class="icon-remove icon-white"></i></button></a>
+                                        </div>
+                                        <div class="btn-group">          
+                                            <a href="{{ path('recurso_edit', { 'id': entity.id }) }}"><button class="btn btn-info">Edit <i class="icon-edit icon-white"></i></button></a>
+                                        </div>          
                                     </td>  
                                 </tr>
                             {% endfor %}

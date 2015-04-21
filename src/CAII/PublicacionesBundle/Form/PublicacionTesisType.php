@@ -21,7 +21,10 @@ class PublicacionTesisType extends AbstractType
     {
         $builder
             ->add('titulo')
-            ->add('fecha')
+            ->add('fecha','date', array( 'years' => range(date('Y') - 25, date('Y') + 20),
+                                                'required'=> false,
+                                                'empty_value'  => '',
+                ))
             ->add('escuela')
             ->add('tipoTesis')
             ->add('idiomaIngles')

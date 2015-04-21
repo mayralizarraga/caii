@@ -66,15 +66,13 @@
                                           {% endif %}</td>
                                           <td>{{ entity.linkPagina }}</td>
                                           <td>{{ entity.idOcupacion }}</td>
-                                          <td>
-                                              <ul>
-                                                  <li>
-                                                        <a href="{{ path('miembro_delete', { 'id': entity.id }) }}">delete</a>
-                                                  </li>
-                                                  <li>
-                                                        <a href="{{ path('miembro_edit', { 'id': entity.id }) }}">edit</a>
-                                                  </li>
-                                              </ul>
+                                          <td nowrap>
+                                              <div class="btn-group">
+                                                <a href="{{ path('miembro_delete', { 'id': entity.id }) }}"><button class="btn btn-danger">Delete <i class="icon-remove icon-white"></i></button></a>
+                                              </div>
+                                              <div class="btn-group">
+                                                  <a href="{{ path('miembro_edit', { 'id': entity.id }) }}"><button class="btn btn-info">Edit <i class="icon-edit icon-white"></i></button></a>
+                                              </div>
                                           </td>    
                                           
                                       </tr>
