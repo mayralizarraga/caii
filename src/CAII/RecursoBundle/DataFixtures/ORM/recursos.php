@@ -17,7 +17,7 @@
 						'name'=>'Arduino Uno interactive tutorial',
 						'idioma'=>'Español',
 						'languaje'=>'Spanish',
-						'path'=>'ARDUINO.zip'),
+						'path'=>'ManualdeArduino.zip'),
 				array(	'descripcion' => 'En este tutorial se describen las características mas importantes de la placa Raspberry Pi, y se explican algunas ejemplos de su uso.',
 						'description' => 'In this tutorial, the main features of Raspberry Pi are discussed, and some examples of its use are explained.',
 						'nombre'=>'Tutorial de Raspberry Pi',

@@ -13,9 +13,29 @@ class RecursoType extends AbstractType
     {
         $builder
             
-            ->add('nombre')
+            ->add('nombre',null, array(
+                       'attr' => array('style' => 'width: 50%')
+                      ))
             ->add('file')
-            ->add('descripcion')
+            ->add('descripcion', 'ckeditor', array(
+'config' => array(
+'toolbar' => array(
+),
+'uiColor' => '#ffffff',
+'resize_enabled' => false,
+'removePlugins' => 'elementspath',
+'height' => '60px',
+'width' => '100%',
+'extraPlugins' => 'wordcount',
+'wordcount' => array(
+'showWordCount' => false,
+'showCharCount' => true,
+'countHTML' => false,
+'charLimit' => 50,
+'countSpacesAsChars' => true,
+)
+),
+))
             ->add('idioma', 'choice', array(
                     'choices'   => array(
                         'Español'   => 'Español',
