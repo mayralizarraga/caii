@@ -30,7 +30,6 @@
         "gedmo/doctrine-extensions": "2.3.*@dev",
         "knplabs/knp-snappy-bundle": "dev-master",
         "stephanecollot/datetimepicker-bundle": "dev-master",
-        "egeloen/ckeditor-bundle": "~2.0",
         "a2lix/translation-form-bundle": "~2.0@dev"
 
 

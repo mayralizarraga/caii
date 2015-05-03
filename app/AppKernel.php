@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new CAII\NoticiaBundle\NoticiaBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new CAII\RecursoBundle\RecursoBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             
         );
 
