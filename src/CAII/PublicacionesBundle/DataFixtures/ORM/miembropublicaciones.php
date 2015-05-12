@@ -145,6 +145,16 @@
 				array('miembro' => 'm99','publicacion'=>'a34'),
 				array('miembro' => 'm1','publicacion'=>'a34'),
 
+				array('miembro' => 'm7','publicacion'=>'a42'),
+				array('miembro' => 'm1','publicacion'=>'a42'),
+				array('miembro' => 'm99','publicacion'=>'a42'),
+				array('miembro' => 'm46','publicacion'=>'a42'),
+
+				array('miembro' => 'm6','publicacion'=>'a43'),
+				array('miembro' => 'm1','publicacion'=>'a43'),
+				array('miembro' => 'm3','publicacion'=>'a43'),
+				array('miembro' => 'm99','publicacion'=>'a43'),
+
 				
 
 				//SESION DE POSTER
