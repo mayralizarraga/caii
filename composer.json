@@ -19,9 +19,6 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-        "knplabs/knp-paginator-bundle": "dev-master",
-        "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-menu": "2.0.*@dev",
         "craue/formflow-bundle": "dev-master",
 	    "doctrine/doctrine-fixtures-bundle": "dev-master",
 	    "doctrine/data-fixtures": "dev-master",
@@ -30,7 +27,8 @@
         "gedmo/doctrine-extensions": "2.3.*@dev",
         "knplabs/knp-snappy-bundle": "dev-master",
         "stephanecollot/datetimepicker-bundle": "dev-master",
-        "a2lix/translation-form-bundle": "~2.0@dev"
+        "a2lix/translation-form-bundle": "~2.0@dev",
+        "Trsteel/ckeditor-bundle": "~1.6"
 
 
     },
