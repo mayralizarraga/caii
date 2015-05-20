@@ -86,7 +86,7 @@
 				array('nombre' => 'Andrés','apellidoP' => 'Buelna','apellidoM' => 'Benítez','status' => '1','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m23'),
 				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => '',
-					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m24'),
+					'fotoURL' => 'sealtyelcastillo.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m24'),
 				array('nombre' => 'Ari Geovany','apellidoP' => 'Villavicencio','apellidoM' => 'Espinoza','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m25'),
 				array('nombre' => 'David Ambroth','apellidoP' => 'López','apellidoM' => 'Nogales','status' => '0','link_Pagina' => '',
