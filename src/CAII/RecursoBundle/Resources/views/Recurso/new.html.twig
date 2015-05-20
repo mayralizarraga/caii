@@ -22,24 +22,16 @@
 			   <fieldset>
                     <legend><h1>Recurso Nuevo</h1></legend>
                     {{ form_start(form, { 'action': path('recurso_new'), 'method': 'POST' }) }} 
-                    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                        <li class="active"><a href="#es" data-toggle="tab">Espanol</a></li>
-                        <li><a href="#en" data-toggle="tab">English</a></li>
-                        
-                    </ul>
-
-                    <div id="my-tab-content" class="tab-content">
-                        <div class="tab-pane active" id="es">
-                            {{ form_label(form.nombre, 'Nombre') }}
-                            {{ form_widget(form.nombre) }}
-                            {{ form_label(form.descripcion, 'Descripción') }}
-                            {{ form_widget(form.descripcion) }}
-                        </div>
-                        <div class="tab-pane" id="en">
-                            <h1>En construccion</h1>
-                        </div> 
-                    </div>
-                        
+                    
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre) }}
+                        {{ form_label(form.descripcion, 'Descripción') }}
+                        {{ form_widget(form.descripcion) }}
+                        {{ form_label(form.file, 'Archivo') }}
+                        {{ form_widget(form.file) }}
+                        {{ form_label(form.idioma, 'Idioma') }}
+                        {{ form_widget(form.idioma) }}
+                     
                       
                     
                         
