@@ -17,7 +17,7 @@
 						'name'=>'Arduino Uno interactive tutorial',
 						'idioma'=>'Español',
 						'languaje'=>'Spanish',
-						'path'=>'ManualdeArduino.zip'),
+						'path'=>'ManualArduino.zip'),
 				array(	'descripcion' => 'En este tutorial se describen las características mas importantes de la placa Raspberry Pi, y se explican algunas ejemplos de su uso.',
 						'description' => 'In this tutorial, the main features of Raspberry Pi are discussed, and some examples of its use are explained.',
 						'nombre'=>'Tutorial de Raspberry Pi',
@@ -25,7 +25,15 @@
 						'idioma'=>'Español',
 						'languaje'=>'Spanish',
 						'path'=>'Manual_Raspberryv11.pdf'),
+				array(	'descripcion' => '',
+						'description' => '',
+						'nombre'=>'Guía de Electrónica Analógica',
+						'name'=>'Analog Electronics Guide',
+						'idioma'=>'Español',
+						'languaje'=>'Spanish',
+						'path'=>'ManualDeElectronica.pdf'),
 				
+
 			);
 			
 			foreach ($recursos as $recurso) {
