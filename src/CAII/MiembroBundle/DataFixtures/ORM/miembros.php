@@ -74,12 +74,12 @@
 				
 
 
-				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => '',
+				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '0','link_Pagina' => '',
 					'fotoURL' => 'Sealtyel.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m24'),
 				array('nombre' => 'Mayra Leticia','apellidoP' => 'Lizárraga','apellidoM' => 'Camberos','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m22'),
 				array('nombre' => 'Andrés','apellidoP' => 'Buelna','apellidoM' => 'Benítez','status' => '1','link_Pagina' => '',
-					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m23'),
+					'fotoURL' => 'andres buelna.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m23'),
 				
 
 
@@ -114,6 +114,8 @@
 
 				array('nombre' => 'Brenda Lilia','apellidoP' => 'Castro','apellidoM' => 'Coronado','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'Brenda.png','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m60'),
+				array('nombre' => 'Esther','apellidoP' => 'Machado','apellidoM' => '','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'EstherMachado.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m61'),
 				
 				
 
