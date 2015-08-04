@@ -25,30 +25,29 @@
 
                         {% if entity.ocupacion==ocupacion.id%}
                    
-
                             <!-- member box -->
-                            <div class='box photo col2'>
+                            <div class='box photo col2' style="height: 305px">
+
                                 <a href="{{ entity.link_Pagina }}">
                                     {% if entity.fotoURL %} 
-                                        <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}"/>
+                                        <img src="{{ asset('uploads/images/miembros/' ~ entity.fotoURL) }}" style="max-height: 240px"/>
                                     {% else %}   
-                                        <img src="{{ asset('uploads/images/miembros/unknown-person.gif') }}" height="190px" width="190px"/>
+                                        <img src="{{ asset('uploads/images/miembros/unknown-person.gif') }}"/>
                                     {% endif %}
                                 </a>
-                                <p style='text-align:center'>
+                                <div style='display: block;vertical-align: bottom;'>
+                                <p style='text-align:center;vertical-align: bottom;'>
                                     {{ entity.nombre }} <br> {{ entity.apellidoP }} {{ entity.apellidoM }}
                                 </p>
-                                
-                                
+                            </div>
+                                      
                             </div> 
                         {% endif %}
                     
                     {% endfor %}
-
                    
                 </div>
                
-            <!-- end Masonry container -->
             </div>
         {% endfor %}
       
@@ -59,21 +58,21 @@
 
     <!-- Masonry for galleries -->
         <script src="'@PortadaBundle/Resources/public/js/masonry.js'" type="text/javascript"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"/>
         <script type="text/javascript">
-//<![CDATA[
-      jQuery.noConflict()(function($){  
-        var $container = $('#container');
-        $container.imagesLoaded( function(){
-          $container.masonry({
-            itemSelector : '.box',
-                        isFitWidth: true,
-                        isAnimated: true
-          });
-        });
-      });
-  //]]>
-  </script>
-        <!-- END Masonry -->
-    {% endblock %}
+            //<![CDATA[
+                  jQuery.noConflict()(function($){  
+                    var $container = $('#container');
+                    $container.imagesLoaded( function(){
+                      $container.masonry({
+                        itemSelector : '.box',
+                                    isFitWidth: true,
+                                    isAnimated: true,
+                                    isResizable: false
+                      });
+                    });
+                  });
+              //]]>
+        </script>
+    <!-- END Masonry -->
+{% endblock %}

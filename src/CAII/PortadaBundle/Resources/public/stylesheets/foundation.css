@@ -1042,7 +1042,8 @@ div.progress.round .meter { -webkit-border-radius: 1000px; -moz-border-radius: 1
 .lt-ie9 .top-bar ul li.has-dropdown > ul li { padding-right: 0; }
 
 /* Mobile Styles */
-@media only screen and (max-width: 940px) { .top-bar { margin-bottom: 0; overflow: hidden; /* Override contain to grid stuff for breakpoint */ /* Setting up the sliding area */ /* When the Small Nav is Showing */ }
+@media only screen and (max-width: 940px) { 
+  .top-bar { margin-bottom: 0; overflow: hidden; /* Override contain to grid stuff for breakpoint */ /* Setting up the sliding area */ /* When the Small Nav is Showing */ }
   .top-bar .js-generated { display: block; }
   .top-bar.contain-to-grid { margin: 0 auto; width: auto; }
   .top-bar.contain-to-grid:before, .top-bar.contain-to-grid:after { display: none; }
@@ -1054,9 +1055,10 @@ div.progress.round .meter { -webkit-border-radius: 1000px; -moz-border-radius: 1
   .top-bar ul li.active, .top-bar ul li:hover { background: #151515; }
   .top-bar ul li.name { background: black; }
   .top-bar ul li.name h1 { line-height: 1; }
-  .top-bar ul li.toggle-topbar { cursor: pointer; display: block; height: 45px; position: absolute; right: 0; top: 0; width: 50%; }
+
+  .top-bar ul li.toggle-topbar { cursor: pointer; display: block; height: 45px; position: absolute; right: 0; margin-top:-45px;margin-right: 0; width: 50%; }
   .top-bar ul li.toggle-topbar a { content: ""; display: block; width: 0; height: 0; border: solid 8px; border-color: white transparent transparent transparent; padding: 0; position: absolute; top: 50%; right: 22.5px; margin-top: -4px; }
-  .top-bar ul li.toggle-topbar:hover { background: black; }
+  .top-bar ul li.toggle-topbar:hover { background: none; }
   .top-bar ul li.toggle-topbar a { padding: 0 !important; }
   .top-bar ul li.divider { border-bottom: solid 1px rgba(255, 255, 255, 0.2); border-top: solid 1px black; clear: both; height: 1px !important; margin: 8px 0 !important; width: 100%; }
   .top-bar ul li.search { padding: 0 22.5px; }

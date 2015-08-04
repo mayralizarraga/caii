@@ -24,7 +24,7 @@
 				array('nombre' => 'Francisco','apellidoP' => 'Ibáñez','apellidoM' => 'Salas','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'pacois.png','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m2'),
 				array('nombre' => 'Claudia','apellidoP' => 'Martínez','apellidoM' => 'Castillo','status' => '1','link_Pagina' => '',
-					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m46'),
+					'fotoURL' => 'Claudia Martinez.jpg','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m46'),
 				array('nombre' => 'Verónica','apellidoP' => 'Quintero','apellidoM' => 'Rosas','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'vero.jpg','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m99'),
 				array('nombre' => 'Heber Samuel','apellidoP' => 'Hernández','apellidoM' => 'Tabares','status' => '0','link_Pagina' => '',
@@ -34,12 +34,6 @@
 
 
 				//Estudiantes de posgrado
-				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => '',
-					'fotoURL' => 'Sealtyel.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m24'),
-				array('nombre' => 'Mayra Leticia','apellidoP' => 'Lizárraga','apellidoM' => 'Camberos','status' => '1','link_Pagina' => '',
-					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m22'),
-				array('nombre' => 'Andrés','apellidoP' => 'Buelna','apellidoM' => 'Benítez','status' => '1','link_Pagina' => '',
-					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m23'),
 				
 
 
@@ -79,6 +73,17 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m34'),
 				
 
+
+				array('nombre' => 'Sealtyel','apellidoP' => 'Castillo','apellidoM' => 'Medina','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'Sealtyel.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m24'),
+				array('nombre' => 'Mayra Leticia','apellidoP' => 'Lizárraga','apellidoM' => 'Camberos','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m22'),
+				array('nombre' => 'Andrés','apellidoP' => 'Buelna','apellidoM' => 'Benítez','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'andresbuelna.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m23'),
+				
+
+
+
 				//Profesores
 				array('nombre' => 'Vidblaín','apellidoP' => 'Amaro','apellidoM' => 'Ortega','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'investigador','referencia'=>'m20'),
@@ -106,6 +111,9 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m47'),
 				array('nombre' => 'Alfonso','apellidoP' => 'Medina','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m50'),
+
+				array('nombre' => 'Brenda Lilia','apellidoP' => 'Castro','apellidoM' => 'Coronado','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'Brenda.png','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m60'),
 				
 				
 

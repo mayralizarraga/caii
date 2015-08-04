@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="{{ asset('bundles/portada/stylesheets/main.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/stylesheets/app.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/orbit.css') }}">
+  <link rel="stylesheet" href="{{ asset('bundles/portada/css/normalize.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/ligature.css') }}">
 
  
@@ -33,11 +34,6 @@
                
              
      %}
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
 <script src="{{ asset_url }}" type="text/javascript"></script>
 
 
@@ -56,7 +52,6 @@ $(document).foundation({
     bullets: false
   }
 });
-
      $.fn.pageMe = function(opts){
     var $this = this,
         defaults = {
@@ -81,7 +76,6 @@ $(document).foundation({
     
     var numItems = children.size();
     var numPages = Math.ceil(numItems/perPage);
-
     pager.data("curr",0);
     
     if (settings.showPrevNext){
@@ -158,15 +152,11 @@ $(document).foundation({
     
     }
 };
-
 $(document).ready(function(){
     
   $('#myTable').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:4});
     
 });
-
-
-
 </script>
 
 {% block funcionesjs %}{% endblock %}
@@ -179,10 +169,10 @@ $(document).ready(function(){
 <nav>
     <!-- header_nav-->
      <div class="twelve columns">
-     <div class="row">
+     <div class="row mobile-one">
         <img src="{{ asset('bundles/portada/img/banner_gray_nac.png') }}"/>
      </div>
-     <div class="row">
+     <div class="row mobile-one">
       
         <ul id="menu-header" class="nav-bar horizontal">
         
@@ -240,6 +230,3 @@ $(document).ready(function(){
    
   </footer>
 {% endblock %}
-
-
-
