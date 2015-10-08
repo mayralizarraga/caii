@@ -116,6 +116,8 @@
 					'fotoURL' => 'Brenda.png','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m60'),
 				array('nombre' => 'Esther','apellidoP' => 'Machado','apellidoM' => '','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'EstherMachado.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m61'),
+				array('nombre' => 'Alejandra','apellidoP' => 'Flores','apellidoM' => 'Buruel','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'alejandra.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m62'),
 				
 				
 

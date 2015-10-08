@@ -42,7 +42,7 @@
                     <div class="row">
                  
                         {% if entity.fotoURL %}                 
-                            <img src="{{ asset('uploads/images/noticias/' ~ entity.fotoURL) }}" alt="" alt="" height="30%" width="30%" align="left" style="padding:15px;"/>
+                            <img src="{{ asset('uploads/images/noticias/' ~ entity.fotoURL) }}" alt="" alt="" height="100%" width="100%" align="left" style="padding:15px;"/>
                         {% endif %}
                 
                         <p align="justify">{{ entity.contenido | raw }}</p>
