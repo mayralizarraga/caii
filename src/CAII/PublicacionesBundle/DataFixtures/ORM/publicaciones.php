@@ -43,7 +43,7 @@
 				array('titulo' => 'Mecanismos de invocación de métodos remotos en Android','isbn'=>'','paginas'=>'15-21','doi'=>'','mostrar'=>'','congreso'=>'3er Congreso Internacional de Ciencias Computacionales (CICOMP 2010)','fecha'=>'2010-11-01', 'ciudad'=>'Ensenada, BC, México','issn'=>'','tipoPublicacion'=>'articuloCI','referencia'=>'a41','path'=>'watkinson10mecanismos.pdf','idioma'=>'0'),
 				array('titulo' => 'Evaluación de Protocolos de Comunicación Para Redes de Sensores Inalámbricas de Tiempo-Real','isbn'=>'978-607-95534-8-7','paginas'=>'20–25','doi'=>'','mostrar'=>'','congreso'=>'Memorias del II Congreso Internacional de Robótica y Computación (CIRC 2015)','fecha'=>'2015-04-01', 'ciudad'=>'Cabo San Lucas, BCS, México','issn'=>'','tipoPublicacion'=>'articuloCI','referencia'=>'a42','path'=>'jimenez14evaluacion.pdf','idioma'=>'0'),
 				array('titulo' => 'Evaluación de Protocolos de Encaminamiento Para Redes Vehiculares Ad hoc','isbn'=>'978-607-95534-8-7','paginas'=>'26–31','doi'=>'','mostrar'=>'','congreso'=>'Memorias del II Congreso Internacional de Robótica y Computación (CIRC 2015)','fecha'=>'2015-04-01', 'ciudad'=>'Cabo San Lucas, BCS, México','issn'=>'','tipoPublicacion'=>'articuloCI','referencia'=>'a43','path'=>'ibarra14evaluacion.pdf','idioma'=>'0'),
-
+				array('titulo' => 'A Falls Detection Systems for the Elderly Based on a WSN','isbn'=>'978-1-4799-8282-0','paginas'=>'1–6','doi'=>'','mostrar'=>'','congreso'=>'21st IEEE International Symposium on Technology and Society','fecha'=>'2015-11-01', 'ciudad'=>'Dublin, Ireland','issn'=>'','tipoPublicacion'=>'articuloCI','referencia'=>'a44','path'=>'','idioma'=>'1'),
 
 
 				//CONGRESO NACIONAL
