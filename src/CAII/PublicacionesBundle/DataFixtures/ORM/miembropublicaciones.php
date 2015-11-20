@@ -154,6 +154,10 @@
 				array('miembro' => 'm1','publicacion'=>'a43'),
 				array('miembro' => 'm3','publicacion'=>'a43'),
 				array('miembro' => 'm99','publicacion'=>'a43'),
+				
+				array('miembro' => 'm1','publicacion'=>'a44'),
+				array('miembro' => 'm9','publicacion'=>'a44'),
+				array('miembro' => 'm61','publicacion'=>'a44'),
 
 				
 
