@@ -186,7 +186,7 @@
 				array('nombre' => 'Rafael Iván','apellidoP' => 'Ayala','apellidoM' => 'Figueroa','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m59'),
 				array('nombre' => 'Luis','apellidoP' => 'Martinez','apellidoM' => '','status' => '0','link_Pagina' => '',
-					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m61'),
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m65'),
 
 
 
