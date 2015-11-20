@@ -157,7 +157,7 @@
 				
 				array('miembro' => 'm1','publicacion'=>'a44'),
 				array('miembro' => 'm9','publicacion'=>'a44'),
-				array('miembro' => 'm61','publicacion'=>'a44'),
+				array('miembro' => 'm65','publicacion'=>'a44'),
 
 				
 
