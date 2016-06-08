@@ -118,7 +118,8 @@
 					'fotoURL' => 'EstherMachado.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m61'),
 				array('nombre' => 'Alejandra','apellidoP' => 'Flores','apellidoM' => 'Buruel','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'alejandra.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m62'),
-				
+				array('nombre' => 'Marco Alejandro','apellidoP' => 'Cornejo','apellidoM' => 'Bracamontes','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'marco.png','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m63'),
 				
 
 
