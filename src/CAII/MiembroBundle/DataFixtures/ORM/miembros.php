@@ -80,7 +80,8 @@
 					'fotoURL' => 'mayralizarraga.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m22'),
 				array('nombre' => 'Andrés','apellidoP' => 'Buelna','apellidoM' => 'Benítez','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'andres buelna.jpg','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m23'),
-				
+				array('nombre' => 'Hector Eduardo','apellidoP' => 'Villareal','apellidoM' => 'Rodriguez','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m64'),
 
 
 
@@ -118,6 +119,16 @@
 					'fotoURL' => 'EstherMachado.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m61'),
 				array('nombre' => 'Alejandra','apellidoP' => 'Flores','apellidoM' => 'Buruel','status' => '1','link_Pagina' => '',
 					'fotoURL' => 'alejandra.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m62'),
+				array('nombre' => 'Marco Alejandro','apellidoP' => 'Cornejo','apellidoM' => 'Bracamontes','status' => '1','link_Pagina' => '',
+					'fotoURL' => 'marco.jpg','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m63'),
+				array('nombre' => 'Edler Ulises','apellidoP' => 'Meza','apellidoM' => 'Lujan','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m66'),
+				array('nombre' => 'Jesús','apellidoP' => 'Galarza','apellidoM' => 'Mejía','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m67'),
+				array('nombre' => 'Diego Armando','apellidoP' => 'Saldaña','apellidoM' => 'Higadera','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m68'),
+				array('nombre' => 'Ana Patricia','apellidoP' => 'Guzmán','apellidoM' => 'Valenzuela','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m69'),
 				
 				
 
@@ -187,6 +198,9 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m59'),
 				array('nombre' => 'Luis','apellidoP' => 'Martinez','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m65'),
+				array('nombre' => 'Yuma','apellidoP' => 'Sandoval-Ibarra','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m70'),
+
 
 
 

@@ -46,6 +46,23 @@
 				array('proyecto' => 'pro7','miembro'=>'m3'),
 				array('proyecto' => 'pro7','miembro'=>'m21'),
 				array('proyecto' => 'pro7','miembro'=>'m13'),
+
+				array('proyecto' => 'pro8','miembro'=>'m46'),
+				array('proyecto' => 'pro8','miembro'=>'m99'),
+				array('proyecto' => 'pro8','miembro'=>'m61'),
+				array('proyecto' => 'pro8','miembro'=>'m60'),
+				array('proyecto' => 'pro8','miembro'=>'m64'),
+				array('proyecto' => 'pro8','miembro'=>'m66'),
+				array('proyecto' => 'pro8','miembro'=>'m67'),
+
+
+				array('proyecto' => 'pro9','miembro'=>'m46'),
+				array('proyecto' => 'pro9','miembro'=>'m2'),
+				array('proyecto' => 'pro9','miembro'=>'m22'),
+				array('proyecto' => 'pro9','miembro'=>'m23'),
+				array('proyecto' => 'pro9','miembro'=>'m62'),
+				array('proyecto' => 'pro9','miembro'=>'m68'),
+				array('proyecto' => 'pro9','miembro'=>'m69'),
 				
 				array('proyecto' => 'pro8','miembro'=>'m22'),
 				array('proyecto' => 'pro8','miembro'=>'m23'),

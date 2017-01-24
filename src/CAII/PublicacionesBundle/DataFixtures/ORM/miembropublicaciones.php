@@ -159,6 +159,11 @@
 				array('miembro' => 'm9','publicacion'=>'a44'),
 				array('miembro' => 'm65','publicacion'=>'a44'),
 
+				array('miembro' => 'm70','publicacion'=>'a45'),
+				array('miembro' => 'm35','publicacion'=>'a45'),
+				array('miembro' => 'm41','publicacion'=>'a45'),
+				array('miembro' => 'm1','publicacion'=>'a45'),
+
 				
 
 				//SESION DE POSTER
