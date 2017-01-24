@@ -64,8 +64,8 @@
 				array('proyecto' => 'pro9','miembro'=>'m68'),
 				array('proyecto' => 'pro9','miembro'=>'m69'),
 				
-				array('proyecto' => 'pro8','miembro'=>'m22'),
-				array('proyecto' => 'pro8','miembro'=>'m23'),
+				array('proyecto' => 'pro10','miembro'=>'m22'),
+				array('proyecto' => 'pro10','miembro'=>'m23'),
 				
 				
 

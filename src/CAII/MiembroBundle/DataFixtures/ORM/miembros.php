@@ -126,7 +126,7 @@
 				array('nombre' => 'Jesús','apellidoP' => 'Galarza','apellidoM' => 'Mejía','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m67'),
 				array('nombre' => 'Diego Armando','apellidoP' => 'Saldaña','apellidoM' => 'Higadera','status' => '0','link_Pagina' => '',
-					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m68'),
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'posgrado','referencia'=>'m68'),
 				array('nombre' => 'Ana Patricia','apellidoP' => 'Guzmán','apellidoM' => 'Valenzuela','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'licenciatura','referencia'=>'m69'),
 				
