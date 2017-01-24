@@ -16,10 +16,10 @@ class NoticiaType extends AbstractType
     {
         $builder
             ->add('titulo')
-            ->add('descripcion','textarea')
-            ->add('contenido','textarea')
+            ->add('descripcion','textarea', array('attr' => array('class'=>'span12'),))
+            ->add('contenido','textarea', array('attr' => array('class'=>'span12'),))
             ->add('foto','file',array('required'=>false))
-            ->add('fecha')
+            ->add('fecha', 'date', array('widget' => 'single_text',))
         ;
     }
     

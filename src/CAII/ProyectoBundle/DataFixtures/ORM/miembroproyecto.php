@@ -47,6 +47,8 @@
 				array('proyecto' => 'pro7','miembro'=>'m21'),
 				array('proyecto' => 'pro7','miembro'=>'m13'),
 				
+				array('proyecto' => 'pro8','miembro'=>'m22'),
+				array('proyecto' => 'pro8','miembro'=>'m23'),
 				
 				
 
