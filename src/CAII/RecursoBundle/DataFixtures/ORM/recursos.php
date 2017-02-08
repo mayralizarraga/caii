@@ -32,6 +32,13 @@
 						'idioma'=>'Español',
 						'languaje'=>'Spanish',
 						'path'=>'ManualDeElectronica.pdf'),
+				array(	'descripcion' => '',
+						'description' => '',
+						'nombre'=>'Fundamentos y conceptos basicos para robot sigue linea',
+						'name'=>'Fundamentals and basic concepts for robot follow line',
+						'idioma'=>'Español',
+						'languaje'=>'Spanish',
+						'path'=>'manualseguidores.pdf'),
 				
 
 			);

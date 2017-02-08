@@ -200,7 +200,7 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m65'),
 				array('nombre' => 'Yuma','apellidoP' => 'Sandoval-Ibarra','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m70'),
-				array('nombre' => 'Joh','apellidoP' => 'Domingue','apellidoM' => '','status' => '0','link_Pagina' => '',
+				array('nombre' => 'John','apellidoP' => 'Domingue','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m71'),
 
 
