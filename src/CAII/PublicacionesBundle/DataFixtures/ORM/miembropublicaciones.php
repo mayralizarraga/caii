@@ -248,6 +248,12 @@
 				array('miembro' => 'm37','publicacion'=>'a41'),
 				array('miembro' => 'm38','publicacion'=>'a41'),
 				array('miembro' => 'm1','publicacion'=>'a41'),
+
+				array('miembro' => 'm23','publicacion'=>'a46'),
+				array('miembro' => 'm22','publicacion'=>'a46'),
+				array('miembro' => 'm1','publicacion'=>'a46'),
+				array('miembro' => 'm20','publicacion'=>'a46'),
+				array('miembro' => 'm72','publicacion'=>'a46'),
 				
 
 

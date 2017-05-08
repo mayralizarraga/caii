@@ -202,6 +202,8 @@
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m70'),
 				array('nombre' => 'John','apellidoP' => 'Domingue','apellidoM' => '','status' => '0','link_Pagina' => '',
 					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m71'),
+				array('nombre' => 'Larysa','apellidoP' => 'Burtseva','apellidoM' => '','status' => '0','link_Pagina' => '',
+					'fotoURL' => '','alum_Descripcion' => '','idOcupacion'=>'','referencia'=>'m72'),
 
 
 
