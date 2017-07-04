@@ -38,8 +38,14 @@
 						'name'=>'Fundamentals and basic concepts for robot follow line',
 						'idioma'=>'Español',
 						'languaje'=>'Spanish',
-						'path'=>'manualseguidores.pdf'),
-				
+						'path'=>'manualseguidores.pdf'), 
+				array(	'descripcion' => '',
+						'description' => '',
+						'nombre'=>'Manual de Bolsillo: BeagleBone Black',
+						'name'=>'Handbook: BeagleBone Black',
+						'idioma'=>'Español',
+						'languaje'=>'Spanish',
+						'path'=>'Manual BeagleBoneBlack_2.pdf'),
 
 			);
 			
